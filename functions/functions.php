@@ -18,4 +18,3 @@ function isLoggedIn() {
         redirect_to_homepage();
     }
 }
-?>
