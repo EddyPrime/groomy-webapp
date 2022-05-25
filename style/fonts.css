@@ -1,0 +1,9 @@
+@font-face {
+  font-family: 'VintageStraps';
+  src: url('../fonts/Vintage_Straps_regular.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/Vintage_Straps_regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Vintage_Straps_regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Vintage_Straps_regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/Vintage_Straps_regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Vintage_Straps_regular.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
