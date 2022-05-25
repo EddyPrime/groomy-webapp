@@ -1,1 +1,1 @@
-mario;rossi;
+mario;rossi
