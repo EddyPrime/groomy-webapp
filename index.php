@@ -13,7 +13,7 @@
 
     <?php
     include "./functions/functions.php";
-    include "./navbar/navbar.html"
+    include "./navbar/navbar.php"
     ?>
 </head>
 
