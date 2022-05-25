@@ -13,7 +13,7 @@
 
     <?php
     include "./functions/functions.php";
-    include "./navbar/navbar.php";
+    include "./navbar/navbar.html"
     ?>
 </head>
 
@@ -21,6 +21,7 @@
     <?php
     isLoggedIn();
     ?>
+
 </body>
 
 </html>
