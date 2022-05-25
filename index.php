@@ -13,13 +13,13 @@
 
     <?php
     include "./functions/functions.php";
-    include "./navbar/navbar.php"
+    include "./navbar/navbar.php";
     ?>
 </head>
 
 <body>
     <?php
-    isLoggedIn();
+      isLoggedIn();
     ?>
 
 </body>
