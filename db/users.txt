@@ -1,1 +1,2 @@
-mario;rossi
+mario@a.it;rossi
+edoardo.coglione@sputo.it;Eldo

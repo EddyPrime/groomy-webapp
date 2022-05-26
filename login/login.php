@@ -11,11 +11,13 @@
   <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
 </head>
 
+
+
 <body>
   <!-- Pills content -->
   <div class="tab-content">
     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-      <form>
+      <form method="POST" action="log.php">
         <div class="text-center mb-3">
           <p>Sign in with:</p>
           <button type="button" class="btn btn-link btn-floating mx-1">
@@ -28,13 +30,13 @@
         <p class="text-center">or</p>
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="loginName">Email</label>
-          <input type="email" id="loginName" class="form-control" />
+          <label class="form-label"  for="loginName">Email</label>
+          <input type="email" name = "email" id="loginName" class="form-control" />
         </div>
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <label class="form-label" for="loginPassword">Password</label>
-          <input type="password" id="loginPassword" class="form-control" />
+          <label class="form-label" name = "password" for="loginPassword">Password</label>
+          <input type="password" name = "password" id="loginPassword" class="form-control" />
         </div>
         <!-- 2 column grid layout -->
         <div class="row mb-4">
