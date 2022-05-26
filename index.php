@@ -19,7 +19,11 @@
 
 <body>
   <?php
-  isLoggedIn();
+  if (isLoggedIn()) {
+    redirect_to("./home/home.php");
+  } else {
+    redirect_to("./login/login.php");
+  }
   ?>
 
 </body>
