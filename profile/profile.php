@@ -27,10 +27,24 @@
                         <h4 class="text-right">Profile</h4>
                     </div>
                     <div class="row mt-3">
-                        <div class="col-md-6"><label class="labels">Name</label></div>
-                        <div class="col-md-6"><label class="labels">Last name</label></div>
-                        <div class="col-md-6"><label class="labels">Email</label></div>
-                        <div class="col-md-6"><label class="labels">Phone number</label></div>
+                        <div class="col-md-6">
+                            <div class="col-md-6">
+                                <label class="labels">Name:</label>
+                                <label id="firstName"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labels">Last name:</label>
+                                <label id="lastName"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labels">Email:</label>
+                                <label id="email"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="labels">Phone number:</label>
+                                <label id="phoneNumber"></label>
+                        </div>
                     </div>
                     <div class="mt-5 text-center">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -45,5 +59,12 @@
         </div>
     </div>
 </body>
+
+<script>
+    document.getElementById("firstName").innerHTML = sessionStorage.getItem("log");
+    document.getElementById("lastName").innerHTML = sessionStorage.getItem("log");
+    document.getElementById("email").innerHTML = sessionStorage.getItem("log");
+    document.getElementById("phoneNumber").innerHTML = sessionStorage.getItem("log");
+</script>
 
 </html>
