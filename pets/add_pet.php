@@ -43,7 +43,7 @@ $line = $_SESSION['id'];
 $line = $name . '|' . $race . '|' . $weight . '|' . $size . '|' .
 $hair . '|' . $behaviours . '|' . $fears . '|' .
 isset($contests) . '|' . isset($groomed) . '|' .
-isset($comfortable) . '|' . $image;
+isset($comfortable) . '|' . $image . "\r\n";
 
 /* Open the pets.txt file */
 $fp = fopen('../db/pets.txt', 'a+');

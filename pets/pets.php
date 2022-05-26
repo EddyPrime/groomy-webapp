@@ -19,13 +19,26 @@
 
 <body>
     <h3>Here you can find all your pets</h3>
-    
+
     <ul>
-        <li>
-            Pet 1
-        </li>
-        <li>Pet2</li>
-        <li>Pet3</li>
+        <?php
+            $txt_file = fopen('../db/pets.txt','r');
+            $count = 1;
+            while ($line = fgets($txt_file)) {
+                $info = explode( "|", $line );
+                //print_r( $info );
+                if ( $count != 1 ){
+                    echo '<li>
+                    <div class="pet-image">
+                        <img src="../img/pet.svg" style="width: 10%"></img>
+                    </div>
+                    <div class=pet-info>
+                        Name: ' . $info[0] . '<br> Race: ' . $info[1];
+                }
+                $count++;
+            }
+            fclose($txt_file);
+        ?>
     </ul>
 
     <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
