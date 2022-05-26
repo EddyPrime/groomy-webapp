@@ -21,23 +21,23 @@
 
     <h1>Add new pet</h1>
 
-    <form>
+    <form method="post" action="add_pet.php">
         <div class="mb-3">
             <label for="pet_name" class="form-label">Name</label>
-            <input type="text" class="form-control" id="pet_name" name="pet_name">
+            <input type="text" class="form-control" id="pet_name" name="pet_name" required>
         </div>
 
         <div class="mb-3">
             <label for="pet_race" class="form-label">Race</label>
-            <input type="text" class="form-control" id="pet_race" name="pet_race">
+            <input type="text" class="form-control" id="pet_race" name="pet_race" required>
         </div>
 
         <div class="mb-3">
             <label for="pet_weight" class="form-label">Weight</label>
-            <input type="numeric" class="form-control" id="pet_weight" name="pet_weight">
+            <input type="numeric" class="form-control" id="pet_weight" name="pet_weight" required>
         </div>
 
-        <select class="form-select" aria-label="Size" name="pet_size">
+        <select class="form-select" aria-label="Size" name="pet_size" required>
             <option selected>Size</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -46,7 +46,7 @@
         <br>
         <div class="mb-3">
             <label for="pet_hair" class="form-label">Type of hair</label>
-            <input type="text" class="form-control" id="pet_hair" name="pet_hair">
+            <input type="text" class="form-control" id="pet_hair" name="pet_hair" required>
         </div>
 
         <div class="mb-3">
@@ -56,11 +56,11 @@
 
         <div class="mb-3">
             <label for="pet_fears" class="form-label">Is it scared about something?</label>
-            <input type="text" class="form-control" id="pet_fears">
+            <input type="text" class="form-control" id="pet_fears" name ="pet_fears">
         </div>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="partecipatingToContests" name="partecipatingToContests">
+            <input class="form-check-input" type="checkbox" value="" id="partecipatingToContests" name="partecipatingToContests" value="contests" />
             <label class="form-check-label" for="partecipatingToContests">
                 Is it partecipating to contests?
             </label>
@@ -69,7 +69,7 @@
         <br>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="usedToBeGroomed" name="usedToBeGroomed">
+            <input class="form-check-input" type="checkbox" value="" id="usedToBeGroomed" name="usedToBeGroomed" value="groomed" />
             <label class="form-check-label" for="usedToBeGroomed">
                 Is it used to be groomed?
             </label>
@@ -78,7 +78,7 @@
         <br>
 
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="comfortableWithOtherPets" name="comfortableWithOtherPets">
+            <input class="form-check-input" type="checkbox" value="" id="comfortableWithOtherPets" name="comfortableWithOtherPets" value="comfortable" />
             <label class="form-check-label" for="comfortableWithOtherPets">
                 Is it comfortable with other pets?
             </label>
