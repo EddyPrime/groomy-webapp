@@ -19,6 +19,7 @@
 
 <body>
     <h3>Here you can find all your pets</h3>
+    
     <ul>
         <li>
             Pet 1
@@ -28,7 +29,6 @@
     </ul>
 
     <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
-
 
 </body>
 

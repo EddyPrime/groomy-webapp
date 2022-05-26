@@ -1,2 +1,2 @@
 #structure: id_user, pet_name, pet_race, pet_weight, pet_size, pet_hair, strange_behaviours, pet_fears, partecipatingToContests, usedToBeGroomed, comfortableWithOtherPets, image_path
-Laika|noone|18|medium|short|brhaviours|scared|1|1|1|
+Laika|noone|18|medium|short|brhaviours|scared|1|1|1|Laika|noone|18|medium|short|brhaviours|scared|1|1|1|Laika|noone|18|medium|short|brhaviours|scared|1|1|1|Laika|noone|18|medium|short|brhaviours|scared|1|1|1|
