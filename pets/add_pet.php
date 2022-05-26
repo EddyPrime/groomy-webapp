@@ -24,4 +24,20 @@ echo 'Groomed: ' . isset($groomed);
 echo 'Comfortable: ' . isset($comfortable);
 echo 'Image: ' . $image;
 
+/*
+first element in each line of pets.txt is the id of the pet owner
+$line = $_SESSION['id'];
+*/
+
+$line = $name . '|' . $race . '|' . $weight . '|' . $size . '|' .
+$hair . '|' . $behaviours . '|' . $fears . '|' .
+isset($contests) . '|' . isset($groomed) . '|' .
+isset($comfortable) . '|' . $image;
+$fp = fopen('../db/pets.txt', 'a+');
+
+if(fwrite($fp, $line))  {
+    echo 'saved';
+
+}
+fclose ($fp);   
 ?>
