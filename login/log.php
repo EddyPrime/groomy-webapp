@@ -12,7 +12,7 @@ for ($i=0;$i<count($users);$i++){
         $isPresent = 1;
     }
 }
-
+ 
 if ($isPresent == 1){
     //setto il session storage con php
     //viene settato anche dopo dal codice javascript chiamato da php nell'echo
