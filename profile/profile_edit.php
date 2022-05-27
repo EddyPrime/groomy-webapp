@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
     <title>Edit Profile</title>
 
-    <link rel="stylesheet" type="text/css" href="./style/reset.css">
-    <link rel="stylesheet" type="text/css" href="./style/fonts.css">
-    <link rel="stylesheet" type="text/css" href="./style/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/reset.css">
+    <link rel="stylesheet" type="text/css" href="../style/fonts.css">
+    <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+
 
     <?php
     include "../navbar/navbar.php";
@@ -51,6 +53,7 @@
                         <div class="col-md-6">
                             <label class="labels">Confirm Password</label>
                             <input id="confirmPasswordInput" type="password" class="form-control" placeholder="Confirm password" value="" onclick="resetPasswordFields()" onchange="matchPasswords()">
+                            <i class="bi bi-eye-slash" id="togglePassword"></i>
                         </div>
                     </div>
                     <div class="mt-5 text-center">
@@ -69,25 +72,33 @@
 <script>
     var passwordsClicked = 0;
 
+    const firstNameInput = document.getElementById("firstNameInput");
+    const lastNameInput = document.getElementById("lastNameInput");
+    const emailInput = document.getElementById("emailInput");
+    const phoneNumberInput = document.getElementById("phoneNumberInput");
+    const passwordInput = document.getElementById("passwordInput");
+    const confirmPasswordInput = document.getElementById("confirmPasswordInput");
+    const togglePassword = document.getElementById("togglePassword");
+
     function resetPasswordFields() {
-        if (!passwordsClicked) {
-            document.getElementById("passwordInput").value = "";
-            document.getElementById("confirmPasswordInput").value = "";
+        if (!passwordsClicked && passwordInput.type == "password") {
+            passwordInput.value = "";
+            confirmPasswordInput.value = "";
             passwordsClicked = 1;
         }
     }
 
     function matchPasswords() {
-        var passowrd = document.getElementById("passwordInput").value;
-        var confirmPassowrd = document.getElementById("confirmPasswordInput").value;
+        var password = passwordInput.value;
+        var confirmpassword = confirmPasswordInput.value;
 
-        if (passowrd == confirmPassowrd) {
-            document.getElementById("passwordInput").style.borderColor = "green";
-            document.getElementById("confirmPasswordInput").style.borderColor = "green";
+        if (password == confirmPassword) {
+            passwordInput.style.borderColor = "green";
+            confirmPasswordInput.style.borderColor = "green";
             return true;
         }
-        document.getElementById("passwordInput").style.borderColor = "red";
-        document.getElementById("confirmPasswordInput").style.borderColor = "red";
+        passwordInput.style.borderColor = "red";
+        confirmPasswordInput.style.borderColor = "red";
         return false;
     }
 
@@ -96,13 +107,23 @@
             return;
         }
 
-        sessionStorage.setItem("firstName", document.getElementById("firstNameInput").value);
-        sessionStorage.setItem("lastName", document.getElementById("lastNameInput").value);
-        sessionStorage.setItem("email", document.getElementById("emailInput").value);
-        sessionStorage.setItem("phoneNumber", document.getElementById("phoneNumberInput").value);
-        sessionStorage.setItem("password", document.getElementById("passwordInput").value);
+        sessionStorage.setItem("firstName", firstNameInput.value);
+        sessionStorage.setItem("lastName", lastNameInput.value);
+        sessionStorage.setItem("email", emailInput.value);
+        sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
+        sessionStorage.setItem("password", passwordInput.value);
         window.location.href = './profile.php';
     }
+
+    togglePassword.addEventListener("click", function() {
+        // toggle the type attribute
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        confirmPasswordInput.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("bi-eye");
+    });
 
     sessionStorage.setItem("firstName", "firstName");
     sessionStorage.setItem("lastName", "lastName");
@@ -110,12 +131,12 @@
     sessionStorage.setItem("phoneNumber", "phoneNumber");
     sessionStorage.setItem("password", "password");
 
-    document.getElementById("firstNameInput").value = sessionStorage.getItem("firstName");
-    document.getElementById("lastNameInput").value = sessionStorage.getItem("lastName");
-    document.getElementById("emailInput").value = sessionStorage.getItem("email");
-    document.getElementById("phoneNumberInput").value = sessionStorage.getItem("phoneNumber");
-    document.getElementById("passwordInput").value = sessionStorage.getItem("password");
-    document.getElementById("confirmPasswordInput").value = sessionStorage.getItem("password");
+    firstNameInput.value = sessionStorage.getItem("firstName");
+    lastNameInput.value = sessionStorage.getItem("lastName");
+    emailInput.value = sessionStorage.getItem("email");
+    phoneNumberInput.value = sessionStorage.getItem("phoneNumber");
+    passwordInput.value = sessionStorage.getItem("password");
+    confirmPasswordInput.value = sessionStorage.getItem("password");
 </script>
 
 </html>
