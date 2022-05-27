@@ -1,5 +1,8 @@
 form i {
-  position: absolute;
-  right: 0;
-  top: 4px;
-}
+    margin-left: -30px;
+    cursor: pointer;
+    z-index: 200;
+    position: absolute;
+    font-size: large;
+    color: #6c757d;
+  }
