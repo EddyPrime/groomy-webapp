@@ -35,15 +35,15 @@
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Last name:</label>
-                                <label id="lastName"></label>
+                            <label id="lastName"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Email:</label>
-                                <label id="email"></label>
+                            <label id="email"></label>
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Phone number:</label>
-                                <label id="phoneNumber"></label>
+                            <label id="phoneNumber"></label>
                         </div>
                     </div>
                     <div class="mt-5 text-center">
@@ -61,10 +61,16 @@
 </body>
 
 <script>
-    document.getElementById("firstName").innerHTML = sessionStorage.getItem("log");
-    document.getElementById("lastName").innerHTML = sessionStorage.getItem("log");
-    document.getElementById("email").innerHTML = sessionStorage.getItem("log");
-    document.getElementById("phoneNumber").innerHTML = sessionStorage.getItem("log");
+    sessionStorage.setItem("firstName", "firstName");
+    sessionStorage.setItem("lastName", "lastName");
+    sessionStorage.setItem("email", "email");
+    sessionStorage.setItem("phoneNumber", "phoneNumber");
+    sessionStorage.setItem("password", "password");
+
+    document.getElementById("firstName").innerHTML = sessionStorage.getItem("firstName");
+    document.getElementById("lastName").innerHTML = sessionStorage.getItem("lastName");
+    document.getElementById("email").innerHTML = sessionStorage.getItem("email");
+    document.getElementById("phoneNumber").innerHTML = sessionStorage.getItem("phoneNumber");
 </script>
 
 </html>
