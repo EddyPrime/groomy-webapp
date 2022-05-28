@@ -1,2 +1,2 @@
-mario@a.it;rossi
-edoardo.coglione@sputo.it;Eldo
+mario@a.it;rossi;cookie;90000
+edoardo.coglione@sputo.it;Eldo;coglione;9000000
