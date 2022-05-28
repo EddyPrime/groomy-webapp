@@ -90,7 +90,7 @@
 
     function matchPasswords() {
         var password = passwordInput.value;
-        var confirmpassword = confirmPasswordInput.value;
+        var confirmPassword = confirmPasswordInput.value;
 
         if (password == confirmPassword) {
             passwordInput.style.borderColor = "green";
