@@ -4,4 +4,6 @@ function clearSessionStorage() {
     sessionStorage.setItem("email", "");
     sessionStorage.setItem("phoneNumber", "");
     sessionStorage.setItem("password", "");
+
+    //sessionStorage.clear()
 }
