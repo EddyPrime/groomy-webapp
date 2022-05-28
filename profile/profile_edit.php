@@ -61,13 +61,15 @@
                         <button class="btn btn-primary profile-button" type="button" onclick="saveChanges()">Save Changes</button>
                     </div>
                     <div class="mt-5 text-center">
-                        <button class="btn btn-danger" type="button">Delete Account</button>
+                        <button class="btn btn-danger" type="button" onclick="deleteAccount()">Delete Account</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
+<script type="text/javascript" src="../functions/functions.js"></script>
 
 <script>
     var passwordsClicked = 0;
@@ -113,6 +115,13 @@
         sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
         sessionStorage.setItem("password", passwordInput.value);
         window.location.href = './profile.php';
+    }
+
+    function deleteAccount() {
+        if (confirm("Are you sure you want to delete your account?")) {
+            clearSessionStorage();
+            window.location.href = '../index.php';
+        }
     }
 
     togglePassword.addEventListener("click", function() {
