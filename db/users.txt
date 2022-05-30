@@ -2,3 +2,11 @@ email;password;firstName;lastName;phoneNumber
 mario@a.it;ciao;mario;rossi;12345
 a@b.it;ab;aaa;bbb;123456
 luigi@gmail.com;peach;luigi;bianchi;678
+laurenzigiordano@gmail.com;abaco;Giordano;Laurenzi;3339977924
+liberati.eldo@gmail.com;Coglione;Edoardo;Liberati;3456788
+liberati.eeldo@gmail.com;a;Edoardo;Liberati;3456788
+lombardi@gmail.com;Abaco;Matteo;Lombardi;3456788
+a@a.it;Ciao;Matt;Lomb;1223
+aa@a.it;ciao;Matt;Lomb;1223
+aaaaaaba@a.it;Ciaoo;acqua;b;3456788
+aabaaqaaba@a.it;Ciaoo;acqua;b;3456788

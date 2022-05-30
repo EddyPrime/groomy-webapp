@@ -1,4 +1,5 @@
 <?php
+include("../functions/functions.php");
 $file = "../db/users.txt";
 
 $emailAddress = $_POST['email'];
@@ -7,20 +8,56 @@ $name = $_POST['name'];
 $surname = $_POST['surname'];
 $phoneNumber = $_POST['phoneNumber'];
 
-$account = $emailAddress . ";" . $password . ";";
-$messaggio = $emailAddress . ";" . $password . ";" . $name . ";" . $surname . ";" . $phoneNumber;
-$turno = 0;
-$var = fopen($file, "r");
-while (!feof($var)) {
-    $riga = fgets($var);
-    $split = explode(";", $riga);
-    if ($split[0] == $emailAddress) {
+
+$accountInfo = $emailAddress . ";" . $password . ";" . $name . ";" . $surname . ";" . $phoneNumber;
+function isPassworkOkay($password){
+    if (strlen($password) < 5){
+        return 0;
+    }
+    if (containsUpper($password) == 0) return 0;
+    return 1;
+
+}
+
+function containsUpper($str) {
+    for ($i=0; $i < strlen($str); $i++){
+        $chr = mb_substr ($str, $i, $i+1, "UTF-8");
+        if (mb_strtolower($chr, "UTF-8") != $chr) return 1;
+    }
+    return 0;
+}
+
+
+function insertAccount($filename, $accountInfo)
+{
+    $details = explode(";", $accountInfo);
+    if (isPassworkOkay($details[1]) == 0) return 1;
+    $fileContent = fopen($filename, "r");
+    while (!feof($fileContent)) {
+        $row = fgets($fileContent);
+        $infoElementArray = explode(";", $row);
+        if ($infoElementArray[0] == $details[0]) {
+            return 1;
+        }
+    }
+    file_put_contents($filename, $accountInfo . "\n", FILE_APPEND);
+    return 0;
+}
+
+/*
+$fileContent = fopen($file, "r");
+while (!feof($fileContent)) {
+    $row = fgets($fileContent);
+    $infoElementArray = explode(";", $row);
+    if ($infoElementArray[0] == $emailAddress) {
         $turno = 1;
     }
 }
+*/
+$turno = insertAccount($file, $accountInfo);
 
 if ($turno == 0) {
-    file_put_contents($file, $messaggio, FILE_APPEND);
+    //file_put_contents($file, $accountInfo . "\n", FILE_APPEND);
     session_start();
     $_SESSION["email"] = $emailAddress;
     $_SESSION["surname"] = $surname;
@@ -34,6 +71,9 @@ if ($turno == 0) {
         sessionStorage.setItem("loggedIn",1)
         
         ';
+        echo '
+        sessionStorage.setItem("password",';
+    echo '"' . $password . '")';
     echo '
         sessionStorage.setItem("name",';
     echo '"' . $name . '")';
@@ -47,7 +87,7 @@ if ($turno == 0) {
         document.location.href="../index.php"
         </script>
         ';
-} else if ($turno == 1) {
+} else {
     echo '
             <script type="text/javascript" lang="javascript">
                 window.alert("Nome utente già presente! Inserire un nuovo nome utente.");
