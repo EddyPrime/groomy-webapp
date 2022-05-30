@@ -22,7 +22,7 @@
   <div class="tab-content">
     
     <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-      <form>
+      <form method="POST" action="sign.php">
         <div class="text-center mb-3">
           <p>Sign up</p>
           
@@ -31,14 +31,14 @@
         <!-- Name input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="registerName">Name</label>
-          <input type="text" id="registerName" class="form-control" />
+          <input type="text" name = "name" id="registerName" class="form-control" />
           
         </div>
 
         <!-- Surname input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="registerSurname">Surname</label>
-          <input type="text" id="registerSurname" class="form-control" />
+          <input type="text" name = "surname" id="registerSurname" class="form-control" />
           
         </div>
 
@@ -46,13 +46,13 @@
         <!-- Email input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="registerEmail">Email</label>
-          <input type="email" id="registerEmail" class="form-control" />
+          <input type="email" name = "email" id="registerEmail" class="form-control" />
         </div>
 
          <!-- Telephone number input -->
          <div class="form-outline mb-4">
-          <label class="form-label" for="registerTelephone">Telephone</label>
-          <input type="tel" id="registerTelephone" class="form-control" />
+          <label class="form-label" for="registerTelephone">Phone Number</label>
+          <input type="tel" name = "phoneNumber" id="registerphone" class="form-control" />
         </div>
 
         
@@ -60,14 +60,14 @@
         <!-- Password input -->
         <div class="form-outline mb-4">
           <label class="form-label" for="registerPassword">Password</label>
-          <input type="password" id="registerPassword" class="form-control" />
+          <input type="password" name = "password" id="registerPassword" class="form-control" />
           
         </div>
 
         <!-- Repeat Password input -->
         <div class="form-outline mb-4">
         <label class="form-label" for="registerRepeatPassword">Repeat password</label>
-          <input type="password" id="registerRepeatPassword" class="form-control" />
+          <input type="password" name = "repeatPassword" id="registerRepeatPassword" class="form-control" />
           
         </div>
 
@@ -86,5 +86,83 @@
   </div>
   <!-- Pills content -->
 </body>
+
+<script>
+    var passwordsClicked = 0;
+
+    const firstNameInput = document.getElementById("registerName");
+    const lastNameInput = document.getElementById("registerSurname");
+    const emailInput = document.getElementById("registerEmail");
+    const phoneNumberInput = document.getElementById("registerphone");
+    const passwordInput = document.getElementById("registerPassword");
+    const confirmPasswordInput = document.getElementById("registerRepeatPassword");
+    //const togglePassword = document.getElementById("togglePassword");
+
+    function resetPasswordFields() {
+        if (!passwordsClicked && passwordInput.type == "password") {
+            passwordInput.value = "";
+            confirmPasswordInput.value = "";
+            passwordsClicked = 1;
+        }
+    }
+
+    function matchPasswords() {
+        var password = passwordInput.value;
+        var confirmPassword = confirmPasswordInput.value;
+
+        if (password == confirmPassword) {
+            passwordInput.style.borderColor = "green";
+            confirmPasswordInput.style.borderColor = "green";
+            return true;
+        }
+        passwordInput.style.borderColor = "red";
+        confirmPasswordInput.style.borderColor = "red";
+        return false;
+    }
+/*
+    function saveChanges() {
+        if (!matchPasswords()) {
+            return;
+        }
+
+        sessionStorage.setItem("firstName", firstNameInput.value);
+        sessionStorage.setItem("lastName", lastNameInput.value);
+        sessionStorage.setItem("email", emailInput.value);
+        sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
+        sessionStorage.setItem("password", passwordInput.value);
+        window.location.href = './profile.php';
+    }
+
+    function deleteAccount() {
+        if (confirm("Are you sure you want to delete your account?")) {
+            clearSessionStorage();
+            window.location.href = '../index.php';
+        }
+    }
+
+    togglePassword.addEventListener("click", function() {
+        // toggle the type attribute
+        const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+        passwordInput.setAttribute("type", type);
+        confirmPasswordInput.setAttribute("type", type);
+
+        // toggle the icon
+        this.classList.toggle("bi-eye");
+    });
+
+    sessionStorage.setItem("firstName", "firstName");
+    sessionStorage.setItem("lastName", "lastName");
+    sessionStorage.setItem("email", "email");
+    sessionStorage.setItem("phoneNumber", "phoneNumber");
+    sessionStorage.setItem("password", "password");
+
+    firstNameInput.value = sessionStorage.getItem("firstName");
+    lastNameInput.value = sessionStorage.getItem("lastName");
+    emailInput.value = sessionStorage.getItem("email");
+    phoneNumberInput.value = sessionStorage.getItem("phoneNumber");
+    passwordInput.value = sessionStorage.getItem("password");
+    confirmPasswordInput.value = sessionStorage.getItem("password");
+    */
+</script>
 
 </html>
