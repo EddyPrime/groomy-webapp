@@ -21,7 +21,7 @@
 
     <h1>Add new pet</h1>
 
-    <form method="post" action="add_pet.php">
+    <form method="post" action="" enctype="multipart/form-data">
         <div class="mb-3">
             <label for="pet_name" class="form-label">Name</label>
             <input type="text" class="form-control" id="pet_name" name="pet_name" required>
@@ -93,7 +93,7 @@
 
         <br>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" name="submit" class="btn btn-primary">Submit</button>
 
     </form>
 
@@ -101,3 +101,112 @@
 </body>
 
 </html>
+
+<?php
+
+if(isset($_POST["submit"])) {
+    echo '<script>
+        console.log("test");
+        </script>';
+
+    /* Parse each field received from the form */
+    $name = $_POST['pet_name'];
+    $race = $_POST['pet_race'];
+    $weight = $_POST['pet_weight'];
+    $size = $_POST['pet_size'];
+    $hair = $_POST['pet_hair'];
+    $behaviours = $_POST['pet_behaviours'];
+    $fears = $_POST['pet_fears'];
+    $contests = $_POST['partecipatingToContests'];
+    $groomed = $_POST['usedToBeGroomed'];
+    $comfortable = $_POST['comfortableWithOtherPets'];
+    $image = $_POST['pet_image'];
+    
+    /* Add a value to fields is they're not filled */
+    if ( $behaviours == '' ){
+        $behaviours = 'none';
+    }
+    
+    if ( $fears == '' ){
+        $fears = 'none';
+    }
+
+    if ( isset($contests) ) {
+        $contests = 1;
+    } else {
+        $contests = 0;
+    }
+
+    if ( isset($groomed) ) {
+        $groomed = 1;
+    } else {
+        $groomed = 0;
+    }
+
+    if ( isset($comfortable) ) {
+        $comfortable = 1;
+    } else {
+        $comfortable = 0;
+    }
+    
+    /* Save pet_image in img folder */
+    
+    if ( $_FILES['pet_image']['error'] > 0) {
+        $target = 'default';
+    } else {
+        $ext = $info['extension']; // get the extension of the file
+        //$newname = $_SESSION['email'] . $name .$ext; 
+        $newname = $name .$ext;
+        
+        $target = '../img/'.$newname;
+        move_uploaded_file( $_FILES['pet_image']['tmp_name'], $target);
+    }
+    
+    
+    
+    /* Print each field */
+    /*
+    echo 'Name : ' . $name;
+    echo 'Race : ' . $race;
+    echo 'Weight: ' . $weight;
+    echo 'Size: ' . $size;
+    echo 'Hair: ' . $hair;
+    echo 'Behaviours: ' . $behaviours;
+    echo 'Fears: ' . $fears;
+    echo 'Contests: ' . isset($contests);
+    echo 'Groomed: ' . isset($groomed);
+    echo 'Comfortable: ' . isset($comfortable);
+    echo 'Image: ' . $image;
+    */
+
+    /*
+    Create the line to add in the pets.txt file.
+    first element in each line of pets.txt is the id of the pet owner
+    $line = $_SESSION['id'];
+    */
+    $line = $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
+    $hair . ';' . $behaviours . ';' . $fears . ';' .
+    $contests . ';' . $groomed . ';' .
+    $comfortable . ';' . $target . "\r\n";
+    
+    /* Open the pets.txt file */
+    $fp = fopen('../db/pets.txt', 'a+');
+    
+    /* Write the line in the file */
+    if(fwrite($fp, $line))  {
+        echo 'saved';
+    
+    }
+    fclose ($fp);   
+    
+    //echo 'PET REGISTERED CORRECTLY';
+
+    echo '
+        <script>
+        alert("Pet added correctly!")
+        window.location="./pets.php"
+        </script>';
+    
+}
+
+?>

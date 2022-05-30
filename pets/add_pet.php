@@ -22,6 +22,13 @@ if ( $fears == '' ){
     $fears = 'none';
 }
 
+$ImageName = $_FILES['photo']['pet_image'];
+$fileElementName = 'photo';
+$path = 'img/'; 
+$location = $path . $_FILES['photo']['pet_image']; 
+move_uploaded_file($_FILES['photo']['tmp_name'], $location); 
+
+
 /* Print each field */
 echo 'Name : ' . $name;
 echo 'Race : ' . $race;
@@ -40,10 +47,10 @@ Create the line to add in the pets.txt file.
 first element in each line of pets.txt is the id of the pet owner
 $line = $_SESSION['id'];
 */
-$line = $name . '|' . $race . '|' . $weight . '|' . $size . '|' .
-$hair . '|' . $behaviours . '|' . $fears . '|' .
-isset($contests) . '|' . isset($groomed) . '|' .
-isset($comfortable) . '|' . $image . "\r\n";
+$line = $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
+$hair . ';' . $behaviours . ';' . $fears . ';' .
+isset($contests) . ';' . isset($groomed) . ';' .
+isset($comfortable) . ';' . $image . "\r\n";
 
 /* Open the pets.txt file */
 $fp = fopen('../db/pets.txt', 'a+');
