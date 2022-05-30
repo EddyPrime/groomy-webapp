@@ -11,6 +11,10 @@ function isLoggedIn()
     return $_SESSION["loggedIn"];
 }
 
+
+
+//ACCOUNT RELATED FUNCTIONS
+
 function existingAccount($filename, $account)
 {
     $users = explode("\n", file_get_contents($filename));
