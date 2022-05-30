@@ -34,7 +34,7 @@
                             <input id="firstNameInput" type="search" class="form-control" placeholder="First name" value="">
                         </div>
                         <div class="col-md-6">
-                            <label class="labels">Surname</label>
+                            <label class="labels">Last name</label>
                             <input id="lastNameInput" type="search" class="form-control" value="" placeholder="Last name">
                         </div>
                         <div class="col-md-6">
@@ -115,6 +115,24 @@
         sessionStorage.setItem("email", emailInput.value);
         sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
         sessionStorage.setItem("password", passwordInput.value);
+
+        var editUser = function() {
+            $.ajax({
+                url: './edit_user.php',
+                type: 'GET',
+                data: {
+                    firstName: sessionStorage.getItem("firstName"),
+                    lastName: sessionStorage.getItem("lastname"),
+                    email: sessionStorage.getItem("email"),
+                    phoneNumber: sessionStorage.getItem("phoneNumber"),
+                    password: sessionStorage.getItem("password")
+                },
+                success: function(data) {
+                    console.log(data); // Inspect this in your console
+                }
+            });
+        };
+        editUser();
         window.location.href = './profile.php';
     }
 
