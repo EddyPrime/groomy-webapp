@@ -61,12 +61,6 @@
 </body>
 
 <script>
-    sessionStorage.setItem("firstName", "firstName");
-    sessionStorage.setItem("lastName", "lastName");
-    sessionStorage.setItem("email", "email");
-    sessionStorage.setItem("phoneNumber", "phoneNumber");
-    sessionStorage.setItem("password", "password");
-
     document.getElementById("firstName").innerHTML = sessionStorage.getItem("firstName");
     document.getElementById("lastName").innerHTML = sessionStorage.getItem("lastName");
     document.getElementById("email").innerHTML = sessionStorage.getItem("email");

@@ -165,13 +165,7 @@
         // toggle the icon
         this.classList.toggle("bi-eye");
     });
-
-    sessionStorage.setItem("firstName", "firstName");
-    sessionStorage.setItem("lastName", "lastName");
-    sessionStorage.setItem("email", "b@b.it");
-    sessionStorage.setItem("phoneNumber", "phoneNumber");
-    sessionStorage.setItem("password", "password");
-
+    
     firstNameInput.value = sessionStorage.getItem("firstName");
     lastNameInput.value = sessionStorage.getItem("lastName");
     emailInput.value = sessionStorage.getItem("email");
