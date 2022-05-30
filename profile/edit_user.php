@@ -8,7 +8,7 @@ function editUser($firstName, $lastName, $email, $phoneNumber, $password)
         $infoElementArray = explode(";", $users[$i]);
         if ($infoElementArray[0] == $email) {
             $new_user = [];
-            array_push($new_user, $firstName, $lastName, $email, $phoneNumber, $password);
+            array_push($new_user, $email, $password, $firstName, $lastName, $phoneNumber);
             $users[$i] = implode(";", $new_user);
             $users = implode("\n", $users);
             file_put_contents($usersFile, $users);
@@ -16,4 +16,4 @@ function editUser($firstName, $lastName, $email, $phoneNumber, $password)
     }
 }
 
-editUser($_GET['firstName'],$_GET['lastname'],$_GET['email'],$_GET['phoneNumber'],$_GET['password']);
+editUser($_GET['firstName'],$_GET['lastName'],$_GET['email'],$_GET['phoneNumber'],$_GET['password']);

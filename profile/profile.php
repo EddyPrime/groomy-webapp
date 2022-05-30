@@ -61,8 +61,8 @@
 </body>
 
 <script>
-    document.getElementById("firstName").innerHTML = sessionStorage.getItem("firstName");
-    document.getElementById("lastName").innerHTML = sessionStorage.getItem("lastName");
+    document.getElementById("firstName").innerHTML = sessionStorage.getItem("name");
+    document.getElementById("lastName").innerHTML = sessionStorage.getItem("surname");
     document.getElementById("email").innerHTML = sessionStorage.getItem("email");
     document.getElementById("phoneNumber").innerHTML = sessionStorage.getItem("phoneNumber");
 </script>

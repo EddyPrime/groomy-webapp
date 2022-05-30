@@ -1,2 +1,4 @@
-mario@a.it;rossi;cookie;90000
-a;b;a@a.it;123456;
+email;password;firstName;lastName;phoneNumber
+mario@a.it;ciao;mario;rossi;12345
+a@b.it;ab;aaa;bbb;123456
+luigi@gmail.com;peach;luigi;bianchi;678

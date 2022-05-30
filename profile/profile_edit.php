@@ -110,22 +110,16 @@
             return;
         }
 
-        sessionStorage.setItem("firstName", firstNameInput.value);
-        sessionStorage.setItem("lastName", lastNameInput.value);
-        sessionStorage.setItem("email", emailInput.value);
-        sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
-        sessionStorage.setItem("password", passwordInput.value);
-
         var editUser = function() {
             $.ajax({
                 url: './edit_user.php',
                 type: 'GET',
                 data: {
-                    firstName: sessionStorage.getItem("firstName"),
-                    lastName: sessionStorage.getItem("lastname"),
-                    email: sessionStorage.getItem("email"),
-                    phoneNumber: sessionStorage.getItem("phoneNumber"),
-                    password: sessionStorage.getItem("password")
+                    firstName: firstNameInput.value,
+                    lastName: lastNameInput.value,
+                    email: emailInput.value,
+                    phoneNumber: phoneNumberInput.value,
+                    password: passwordInput.value
                 },
                 success: function(data) {
                     console.log(data); // Inspect this in your console
@@ -133,6 +127,13 @@
             });
         };
         editUser();
+
+        sessionStorage.setItem("name", firstNameInput.value);
+        sessionStorage.setItem("surname", lastNameInput.value);
+        sessionStorage.setItem("email", emailInput.value);
+        sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
+        sessionStorage.setItem("password", passwordInput.value);
+
         window.location.href = './profile.php';
     }
 
@@ -166,8 +167,8 @@
         this.classList.toggle("bi-eye");
     });
     
-    firstNameInput.value = sessionStorage.getItem("firstName");
-    lastNameInput.value = sessionStorage.getItem("lastName");
+    firstNameInput.value = sessionStorage.getItem("name");
+    lastNameInput.value = sessionStorage.getItem("surname");
     emailInput.value = sessionStorage.getItem("email");
     phoneNumberInput.value = sessionStorage.getItem("phoneNumber");
     passwordInput.value = sessionStorage.getItem("password");
