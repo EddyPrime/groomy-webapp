@@ -16,10 +16,9 @@
     <?php
     include "../navbar/navbar.php";
     ?>
-
 </head>
 
-<body >
+<body>
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row">
             <div class="col-md-3 border-right">
@@ -70,6 +69,8 @@
 </body>
 
 <script type="text/javascript" src="../functions/functions.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
 
 <script>
     var passwordsClicked = 0;
@@ -119,6 +120,19 @@
 
     function deleteAccount() {
         if (confirm("Are you sure you want to delete your account?")) {
+            var deleteUser = function() {
+                $.ajax({
+                    url: './delete_user.php',
+                    type: 'GET',
+                    data: {
+                        email: sessionStorage.getItem("email")
+                    },
+                    success: function(data) {
+                        console.log(data); // Inspect this in your console
+                    }
+                });
+            };
+            deleteUser();
             clearSessionStorage();
             window.location.href = '../index.php';
         }
@@ -136,7 +150,7 @@
 
     sessionStorage.setItem("firstName", "firstName");
     sessionStorage.setItem("lastName", "lastName");
-    sessionStorage.setItem("email", "email");
+    sessionStorage.setItem("email", "b@b.it");
     sessionStorage.setItem("phoneNumber", "phoneNumber");
     sessionStorage.setItem("password", "password");
 
