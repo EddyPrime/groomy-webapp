@@ -13,7 +13,7 @@ function isLoggedIn()
 
 
 
-//ACCOUNT RELATED FUNCTIONS
+//SIGN IN-UP RELATED FUNCTIONS
 
 function existingAccount($filename, $account)
 {
