@@ -26,6 +26,7 @@ if (!empty($a)) {
     //viene settato anche dopo dal codice javascript chiamato da php nell'echo
     session_start();
     $emailAddress = $a[0];
+    $password = $a[1];
     $name = $a[2];
     $surname = $a[3];
     $phoneNumber = $a[4];
@@ -41,7 +42,10 @@ if (!empty($a)) {
         sessionStorage.setItem("loggedIn",1)
         
         ';
-        echo '
+    echo '
+        sessionStorage.setItem("password",';
+    echo '"' . $password . '")';
+    echo '
         sessionStorage.setItem("name",';
     echo '"' . $name . '")';
     echo '
