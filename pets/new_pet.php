@@ -8,6 +8,7 @@
 
     <?php
     include_once("../navbar/navbar.php");
+    session_start();
     ?>
     <link rel="stylesheet" type="text/css" href="./style/reset.css">
     <link rel="stylesheet" type="text/css" href="./style/fonts.css">
@@ -184,7 +185,7 @@ if(isset($_POST["submit"])) {
     first element in each line of pets.txt is the id of the pet owner
     $line = $_SESSION['id'];
     */
-    $line = $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
+    $line = $_SESSION['email'] . ';' . $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
     $hair . ';' . $behaviours . ';' . $fears . ';' .
     $contests . ';' . $groomed . ';' .
     $comfortable . ';' . $target . "\r\n";

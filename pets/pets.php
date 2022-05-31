@@ -8,6 +8,7 @@
 
     <?php
     include_once("../navbar/navbar.php");
+    session_start();
     ?>
     <link rel="stylesheet" type="text/css" href="./style/reset.css">
     <link rel="stylesheet" type="text/css" href="./style/fonts.css">
@@ -34,10 +35,10 @@
                 //print_r( $info );
                 if ( $count != 1 && $line != '' ){
                     
-                    if ( strpos($info[10], 'default' ) !== false ){
+                    if ( strpos($info[11], 'default' ) !== false ){
                         $img = '../img/pet.svg';
                     } else {
-                        $img = $info[10];
+                        $img = $info[11];
                     }
                     
                     echo '<li>
@@ -45,10 +46,10 @@
                         <img src="'. $img . '" style="width: 10%"></img>
                     </div>
                     <div class=pet-info>
-                        Name: <span id="name">' . $info[0] . '</span><br> Race: ' . $info[1] . '
+                        Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
                     </div>
                     <div class="mt-5 text-center">
-                        <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[0] .'">Delete Pet</button>
+                        <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[1] .'">Delete Pet</button>
                     </div>    
                     </li>';
                     
@@ -56,6 +57,7 @@
                 
                 $count++;
             }
+
             fclose($txt_file);
         ?>
     </ul>
