@@ -9,6 +9,7 @@
   <link rel="stylesheet" type="text/css" href="../style/fonts.css">
   <link rel="stylesheet" type="text/css" href="../style/style.css">
   <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>
 
 
@@ -30,13 +31,14 @@
         <p class="text-center">or</p>
         <!-- Email input -->
         <div class="form-outline mb-4">
-          <label class="form-label"  for="loginName">Email</label>
-          <input type="email" name = "email" id="loginName" class="form-control" />
+          <label class="form-label" for="loginName">Email</label>
+          <input type="email" name="email" id="loginName" class="form-control" />
         </div>
         <!-- Password input -->
         <div class="form-outline mb-4">
-          <label class="form-label" name = "password" for="loginPassword">Password</label>
-          <input type="password" name = "password" id="loginPassword" class="form-control" />
+          <label class="form-label" name="password" for="loginPassword">Password</label>
+          <input type="password" name="password" id="loginPassword" class="form-control" />
+          <i class="bi bi-eye-slash" id="togglePassword"></i>
         </div>
         <!-- 2 column grid layout -->
         <div class="row mb-4">
@@ -47,7 +49,7 @@
               <label class="form-check-label" for="loginCheck"> Remember me </label>
             </div>
           </div>
-          
+
         </div>
         <div class="form-outline mb-4">
           <!-- Submit button -->
@@ -56,15 +58,37 @@
         <p class="text-center">or</p>
         <div class="form-outline mb-4">
 
-        <!-- Register buttons -->
-        <button type="button" class="btn btn-primary btn-block mb-4" onclick = "window.location='../signup/signup.php';">Sign up</button>
+          <!-- Register buttons -->
+          <button type="button" class="btn btn-primary btn-block mb-4" onclick="window.location='../signup/signup.php';">Sign up</button>
         </div>
         <div class="col-md-6 d-flex justify-content-center">
-            <!-- Simple link -->
-            <a href="#!">Forgot password?</a>
+          <!-- Simple link -->
+          <a href="#!" onclick="forgotPassword() ">Forgot password?</a>
         </div>
       </form>
     </div>
 </body>
+<script>
+  const passwordInput = document.getElementById("loginPassword");
+  const togglePassword = document.getElementById("togglePassword");
+
+
+  togglePassword.addEventListener("click", function() {
+    // toggle the type attribute
+    const type = passwordInput.getAttribute("type") === "password" ? "text" : "password";
+    passwordInput.setAttribute("type", type);
+
+    // toggle the icon
+    this.classList.toggle("bi-eye");
+  });
+
+
+  function forgotPassword() {
+    var res = window.prompt("Insert the email address for the password recovery procedure");
+    if (res) {
+      alert("An email has been sent to " + res);
+    }
+  }
+</script>
 
 </html>
