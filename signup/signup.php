@@ -61,7 +61,7 @@
           <!-- Password input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="registerPassword">Password</label>
-            <input type="password" name="password" id="registerPassword" class="form-control" onclick="resetPasswordFields()" onchange="matchPasswords()" />
+            <input type="password" name="password" id="registerPassword" class="form-control" oninput="matchPasswords()" />
 
           </div>
 
@@ -69,7 +69,7 @@
           <div class="form-outline mb-4">
             <label class="form-label" for="registerRepeatPassword">Repeat password</label>
             <span>
-              <input type="password" name="repeatPassword" id="registerRepeatPassword" class="form-control" onclick="resetPasswordFields()" onchange="matchPasswords()" />
+              <input type="password" name="repeatPassword" id="registerRepeatPassword" class="form-control" oninput="matchPasswords()" />
             </span>
             <span>
               <i class="bi bi-eye-slash" id="togglePassword"></i>
@@ -79,14 +79,14 @@
 
           <!-- Checkbox -->
           <div class="form-check d-flex justify-content-center mb-4">
-            <input class="form-check-input me-2" type="checkbox" value="" id="groomerCheck" checked aria-describedby="groomerCheckHelpText" />
+            <input class="form-check-input me-2" type="checkbox" value="" id="groomerCheck"  aria-describedby="groomerCheckHelpText" />
             <label class="form-check-label" for="groomerCheck">
               I am a pet groomer
             </label>
           </div>
 
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-3" onclick="if (!matchPassword()) return;">Sign in</button>
+          <button type="submit" class="btn btn-primary btn-block mb-3" >Sign in</button>
       </form>
     </div>
   </div>
@@ -103,6 +103,8 @@
   const passwordInput = document.getElementById("registerPassword");
   const confirmPasswordInput = document.getElementById("registerRepeatPassword");
   const togglePassword = document.getElementById("togglePassword");
+
+  
 
   function resetPasswordFields() {
     if (!passwordsClicked && passwordInput.type == "password") {
