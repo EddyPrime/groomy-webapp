@@ -1,14 +1,8 @@
-<<<<<<< HEAD
-a@a.it;Giordano11;aaaaa;aaaaa;112232323
-=======
-aa@a.it;Giordano;a;a;113
->>>>>>> f76e7686779f8ce34c9ae90efe7089048b53bdec
 a@ca.it;#aaAa;aa;a;23
 a@cia.it;aaAa#;aa;a;23
 a@c.it;aaAa!;aa;a;23
 a@coiu.it;#aaAaa;aa;a;23
 p@w.it;abaaaS#;assd;asdff;23
 e#ea@s.it;Scemo#;Edoardo;coglion;235
-
 aaa@a.it;Ciao1!;vdfdf;fddf;22
 b.e@b.it;Ciao!;aa;aa;22
