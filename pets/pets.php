@@ -33,7 +33,7 @@
                 //echo $line;
                 //echo $info[0];
                 //print_r( $info );
-                if ( $count != 1 && $line != '' ){
+                if ( $count != 1 && $line != '' && $info[0] == $_SESSION['email'] ){
                     
                     if ( strpos($info[11], 'default' ) !== false ){
                         $img = '../img/pet.svg';
