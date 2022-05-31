@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../style/fonts.css">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <?php
     include "../navbar/navbar.php";
@@ -53,6 +54,7 @@
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
                             </svg>
                         </a>
+                        <i class="fa fa-sign-out" style="font-size:24px" onclick="logout()"></i>
                     </div>
                 </div>
             </div>
@@ -60,11 +62,18 @@
     </div>
 </body>
 
+<script type="text/javascript" src="../functions/functions.js"></script>
+
 <script>
     document.getElementById("firstName").innerHTML = sessionStorage.getItem("name");
     document.getElementById("lastName").innerHTML = sessionStorage.getItem("surname");
     document.getElementById("email").innerHTML = sessionStorage.getItem("email");
     document.getElementById("phoneNumber").innerHTML = sessionStorage.getItem("phoneNumber");
+
+    function logout() {
+        clearSessionStorage();
+        window.location.href = '../index.php';
+    }
 </script>
 
 </html>

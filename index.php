@@ -18,13 +18,14 @@
 </head>
 
 <body>
-  <?php
-  if (isLoggedIn()) {
-    redirect_to("./home/home.php");
-  } else {
-    redirect_to("./login/login.php");
-  }
-  ?>
+
+  <script>
+    if (sessionStorage.getItem("loggedIn") == "0") {
+      window.location.href = "./login/login.php";
+    } else {
+      window.location.href = "./home/home.php";
+    }
+  </script>
 
 </body>
 

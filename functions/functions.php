@@ -5,14 +5,6 @@ function redirect_to($path)
     header("location:$path");
 }
 
-function isLoggedIn()
-{
-    session_start();
-    return $_SESSION["loggedIn"];
-}
-
-
-
 //SIGN IN-UP RELATED FUNCTIONS
 
 function existingAccount($filename, $account)
