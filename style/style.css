@@ -10,3 +10,15 @@ form i {
   form {
     padding-bottom: 120px !important;
   }
+
+  .navbar ul {
+    margin: auto !important;
+    width: 100%;
+  }
+
+  .navbar ul li {
+    text-align: center;
+    width: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
