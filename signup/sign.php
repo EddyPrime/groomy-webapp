@@ -4,17 +4,22 @@ $file = "../db/users.txt";
 
 $emailAddress = $_POST['email'];
 $password = $_POST['password'];
+$repeatPassword = $_POST['repeatPassword'];
 $name = $_POST['name'];
 $surname = $_POST['surname'];
 $phoneNumber = $_POST['phoneNumber'];
 
+//0 is false
+
+// 1 is true
 
 $accountInfo = $emailAddress . ";" . $password . ";" . $name . ";" . $surname . ";" . $phoneNumber;
-function isPassworkOkay($password){
+function isPassworkOkay($password, $repeatPassword){
     if (strlen($password) < 5){
         return 0;
     }
     if (containsUpper($password) == 0) return 0;
+    if ($password != $repeatPassword) return 0;
     return 1;
 
 }
@@ -28,10 +33,10 @@ function containsUpper($str) {
 }
 
 
-function insertAccount($filename, $accountInfo)
+function insertAccount($filename, $accountInfo, $repeatPassword)
 {
     $details = explode(";", $accountInfo);
-    if (isPassworkOkay($details[1]) == 0) return 1;
+    if (isPassworkOkay($details[1], $repeatPassword) == 0) return 1;
     $fileContent = fopen($filename, "r");
     while (!feof($fileContent)) {
         $row = fgets($fileContent);
@@ -54,7 +59,7 @@ while (!feof($fileContent)) {
     }
 }
 */
-$turno = insertAccount($file, $accountInfo);
+$turno = insertAccount($file, $accountInfo, $repeatPassword);
 
 if ($turno == 0) {
     //file_put_contents($file, $accountInfo . "\n", FILE_APPEND);
