@@ -25,26 +25,29 @@
         <?php
             $txt_file = fopen('../db/pets.txt','r');
             $count = 1;
-            while ($line = fgets($txt_file)) {
+            while ( $line = fgets($txt_file) ) {
+                $line = trim($line);
                 $info = explode( ";", $line );
+                //echo $line;
+                //echo $info[0];
                 //print_r( $info );
-                if ( $count != 1 ){
+                if ( $count != 1 && $line != '' ){
                     
-                    if (  strpos($info[10], 'default') !== false ){
+                    if ( strpos($info[10], 'default' ) !== false ){
                         $img = '../img/pet.svg';
                     } else {
                         $img = $info[10];
                     }
-
+                    
                     echo '<li>
                     <div class="pet-image">
                         <img src="'. $img . '" style="width: 10%"></img>
                     </div>
                     <div class=pet-info>
-                        <span id="name">Name</span>: ' . $info[0] . '<br> Race: ' . $info[1] . '
+                        Name: <span id="name">' . $info[0] . '</span><br> Race: ' . $info[1] . '
                     </div>
                     <div class="mt-5 text-center">
-                        <button class="btn btn-danger" type="button" onclick="deletePet()" name="delete_pet">Delete Pet</button>
+                        <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[0] .'">Delete Pet</button>
                     </div>    
                     </li>';
                     
@@ -56,29 +59,35 @@
         ?>
     </ul>
 
-    <button type="button" class="btn btn-success delete-pet" onclick="deletePet()">Add new pet</button>
+    <button type="button" class="btn btn-success delete-pet" onclick="location.href='./new_pet.php'">Add new pet</button>
 
 </body>
 
 </html>
 
 <script>
-    function deletePet() {
+    function delete_pet(obj) {
+        value = obj.value
+        //alert(value)
         if (confirm("Are you sure you want to delete your pet?")) {
-            var deleteUser = function() {
+            var deletePet = function() {
                 $.ajax({
                     url: './delete_pet.php',
                     type: 'GET',
                     data: {
-                        pet_name: document.getElementById("span").value
+                        pet_name: value
                     },
                     success: function(data) {
+                        //window.location.reload();
                         console.log(data); // Inspect this in your console
+                    },
+                    complete: function(){
+                        window.location.reload();
                     }
                 });
             };
-            //delete_pet();
-            window.location.href = './pets.php';
+            deletePet();
+            //setTimeout( window.location.reload(), 1000 );
         }
     }
 </script>

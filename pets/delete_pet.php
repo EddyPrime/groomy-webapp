@@ -1,17 +1,20 @@
 <?php
 
-function delete_pet($pet_name)
+function deletePet($pet_name)
 {
 
-    $txt_file = fopen('../db/pets.txt','r');
-    while ( $line = fgets($txt_file) ) {
-        $infoElementArray = explode(";", $line);
+    $petsFile = "../db/pets.txt";
+    $pets = explode("\n", file_get_contents($petsFile));
+    for ($i = 0; $i < count($pets); $i++) {
+        $infoElementArray = explode(";", $pets[$i]);
         if ($infoElementArray[0] == $pet_name) {
-            $users = implode("\n", $users);
-            file_put_contents($usersFile, $users);
+            $pets[$i] = "";
+            $pets = implode("\n", $pets);
+            file_put_contents($petsFile, $pets);
         }
     }
 }
 
-delete_pet($_GET['pet_name']);
+deletePet($_GET['pet_name']);
+
 ?>

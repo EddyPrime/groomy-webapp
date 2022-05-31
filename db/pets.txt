@@ -1,3 +1,3 @@
-#structure: id_user, pet_name, pet_race, pet_weight, pet_size, pet_hair, strange_behaviours, pet_fears, partecipatingToContests, usedToBeGroomed, comfortableWithOtherPets, image_path
-Laika;no one;18;medium;short;scared about everything;scared;1;1;1;default
+id_user;pet_name;pet_race;pet_weight;pet_size;pet_hair;strange_behaviours;pet_fears;partecipatingToContests;usedToBeGroomed;comfortableWithOtherPets;image_path
+
 testq;tes;red;medium;idbon;adbno;noefe;0;0;0;../img/testq
