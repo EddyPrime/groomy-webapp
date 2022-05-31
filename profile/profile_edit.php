@@ -47,11 +47,11 @@
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Password</label>
-                            <input id="passwordInput" type="password" class="form-control" placeholder="Password" value="" onclick="resetPasswordFields()" onchange="matchPasswords()">
+                            <input id="passwordInput" type="password" class="form-control" placeholder="Password" value="" oninput="matchPasswords()">
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Confirm Password</label>
-                            <input id="confirmPasswordInput" type="password" class="form-control" placeholder="Confirm password" value="" onclick="resetPasswordFields()" onchange="matchPasswords()">
+                            <input id="confirmPasswordInput" type="password" class="form-control" placeholder="Confirm password" value="" oninput="matchPasswords()">
                             <i class="bi bi-eye-slash" id="togglePassword"></i>
                         </div>
                     </div>
@@ -73,7 +73,7 @@
 
 
 <script>
-    var passwordsClicked = 0;
+    var passwordDeleted = 0;
 
     const firstNameInput = document.getElementById("firstNameInput");
     const lastNameInput = document.getElementById("lastNameInput");
@@ -83,11 +83,25 @@
     const confirmPasswordInput = document.getElementById("confirmPasswordInput");
     const togglePassword = document.getElementById("togglePassword");
 
+    passwordInput.addEventListener('keydown', function(event) {
+        const key = event.key; // const {key} = event; ES6+
+        if (key === "Backspace" || key === "Delete") {
+            resetPasswordFields()
+        }
+    });
+
+    confirmPasswordInput.addEventListener('keydown', function(event) {
+        const key = event.key; // const {key} = event; ES6+
+        if (key === "Backspace" || key === "Delete") {
+            resetPasswordFields()
+        }
+    });
+
     function resetPasswordFields() {
-        if (!passwordsClicked && passwordInput.type == "password") {
+        if (!passwordDeleted && passwordInput.type == "password") {
             passwordInput.value = "";
             confirmPasswordInput.value = "";
-            passwordsClicked = 1;
+            passwordDeleted = 1;
         }
     }
 
@@ -167,7 +181,7 @@
         // toggle the icon
         this.classList.toggle("bi-eye");
     });
-    
+
     firstNameInput.value = sessionStorage.getItem("name");
     lastNameInput.value = sessionStorage.getItem("surname");
     emailInput.value = sessionStorage.getItem("email");
