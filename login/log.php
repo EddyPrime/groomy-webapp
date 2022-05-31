@@ -32,7 +32,7 @@ if (!empty($a)) {
     $phoneNumber = $a[4];
     $_SESSION["email"] = $emailAddress;
     $_SESSION["surname"] = $surname;
-    $_SESSION["telephone"] = $phoneNumber;
+    $_SESSION["phoneNumber"] = $phoneNumber;
     $_SESSION["loggedIn"] = 1;
     echo '
         <script type="text/javascript" lang="javascript">

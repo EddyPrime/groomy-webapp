@@ -114,7 +114,7 @@ if ($turno == true) {
     session_start();
     $_SESSION["email"] = $emailAddress;
     $_SESSION["surname"] = $surname;
-    $_SESSION["telephone"] = $phoneNumber;
+    $_SESSION["phoneNumber"] = $phoneNumber;
     $_SESSION["loggedIn"] = 1;
     echo '
         <script type="text/javascript" lang="javascript">
