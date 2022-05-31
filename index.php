@@ -20,7 +20,7 @@
 <body>
 
   <script>
-    if (sessionStorage.getItem("loggedIn") == "0") {
+    if (sessionStorage.getItem("loggedIn") == "0" || sessionStorage.getItem("loggedIn") == null) {
       window.location.href = "./login/login.php";
     } else {
       window.location.href = "./home/home.php";
