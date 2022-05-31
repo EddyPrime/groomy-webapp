@@ -2,3 +2,4 @@ id_user;pet_name;pet_race;pet_weight;pet_size;pet_hair;strange_behaviours;pet_fe
 
 
 
+a@a.it;Ralph;Labrador;30;big;Short;Its perfection;Edoardo;0;1;1;../img/Ralph
