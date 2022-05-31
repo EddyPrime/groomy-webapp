@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Email</label>
-                            <input id="emailInput" type="search" class="form-control" placeholder="Email" value="">
+                            <input id="emailInput" type="search" class="form-control" placeholder="Email" value="" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Password</label>
@@ -129,10 +129,9 @@
                 url: './edit_user.php',
                 type: 'GET',
                 data: {
-                    oldEmail: sessionStorage.getItem("email"),
+                    email: sessionStorage.getItem("email"),
                     firstName: firstNameInput.value,
                     lastName: lastNameInput.value,
-                    email: emailInput.value,
                     phoneNumber: phoneNumberInput.value,
                     password: passwordInput.value
                 },
@@ -145,7 +144,6 @@
 
         sessionStorage.setItem("name", firstNameInput.value);
         sessionStorage.setItem("surname", lastNameInput.value);
-        sessionStorage.setItem("email", emailInput.value);
         sessionStorage.setItem("phoneNumber", phoneNumberInput.value);
         sessionStorage.setItem("password", passwordInput.value);
 

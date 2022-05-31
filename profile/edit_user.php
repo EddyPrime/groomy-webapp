@@ -1,12 +1,12 @@
 <?php
 
-function editUser($oldEmail, $firstName, $lastName, $email, $phoneNumber, $password)
+function editUser($email, $firstName, $lastName, $phoneNumber, $password)
 {
     $usersFile = "../db/users.txt";
     $users = explode("\n", file_get_contents($usersFile));
     for ($i = 0; $i < count($users); $i++) {
         $infoElementArray = explode(";", $users[$i]);
-        if ($infoElementArray[0] == $oldEmail) {
+        if ($infoElementArray[0] == $email) {
             $new_user = [];
             array_push($new_user, $email, $password, $firstName, $lastName, $phoneNumber);
             $users[$i] = implode(";", $new_user);
@@ -16,4 +16,4 @@ function editUser($oldEmail, $firstName, $lastName, $email, $phoneNumber, $passw
     }
 }
 
-editUser($_GET['oldEmail'],$_GET['firstName'],$_GET['lastName'],$_GET['email'],$_GET['phoneNumber'],$_GET['password']);
+editUser($_GET['email'],$_GET['firstName'],$_GET['lastName'],$_GET['phoneNumber'],$_GET['password']);
