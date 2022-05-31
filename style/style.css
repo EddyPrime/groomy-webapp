@@ -6,3 +6,7 @@ form i {
     font-size: large;
     color: #6c757d;
   }
+
+  form {
+    padding-bottom: 120px !important;
+  }
