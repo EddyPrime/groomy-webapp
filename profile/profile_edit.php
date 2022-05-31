@@ -115,6 +115,7 @@
                 url: './edit_user.php',
                 type: 'GET',
                 data: {
+                    oldEmail: sessionStorage.getItem("email"),
                     firstName: firstNameInput.value,
                     lastName: lastNameInput.value,
                     email: emailInput.value,
