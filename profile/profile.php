@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+
     <?php
     include "../navbar/navbar.php";
     ?>
@@ -75,6 +75,18 @@
         clearSessionStorage();
         window.location.href = '../index.php';
     }
+
+    home.setAttribute("class", "nav-link");
+    home.setAttribute("aria-current", "");
+
+    booking.setAttribute("class", "nav-link");
+    booking.setAttribute("aria-current", "");
+
+    pets.setAttribute("class", "nav-link");
+    pets.setAttribute("aria-current", "");
+
+    profile.setAttribute("class", "nav-link active");
+    profile.setAttribute("aria-current", "page");
 </script>
 
 </html>

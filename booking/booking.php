@@ -18,7 +18,23 @@ This is the booking page.
     ?>
 </head>
 
-<body>
+<body> 
+    
+</body>
+
+<script>
+    home.setAttribute("class", "nav-link");
+    home.setAttribute("aria-current", "");
+
+    booking.setAttribute("class", "nav-link active");
+    booking.setAttribute("aria-current", "page");
+
+    pets.setAttribute("class", "nav-link");
+    pets.setAttribute("aria-current", "");
+
+    profile.setAttribute("class", "nav-link");
+    profile.setAttribute("aria-current", "");
+</script>
 
 
 </html>

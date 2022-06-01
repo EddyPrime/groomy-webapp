@@ -93,4 +93,16 @@
             //setTimeout( window.location.reload(), 1000 );
         }
     }
+
+    home.setAttribute("class", "nav-link");
+    home.setAttribute("aria-current", "");
+
+    booking.setAttribute("class", "nav-link");
+    booking.setAttribute("aria-current", "");
+
+    pets.setAttribute("class", "nav-link active");
+    pets.setAttribute("aria-current", "page");
+
+    profile.setAttribute("class", "nav-link");
+    profile.setAttribute("aria-current", "");
 </script>
