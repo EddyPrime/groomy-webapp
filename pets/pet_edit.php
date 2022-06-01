@@ -145,3 +145,100 @@ for ($i = 0; $i < count($pets); $i++) {
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");
 </script>
+
+<?php
+
+include('./delete_pet.php');
+
+if(isset($_POST["submit"])) {
+
+
+    deletePet($pet_name);
+
+    /* Parse each field received from the form */
+    $name = $_POST['pet_name'];
+    $race = $_POST['pet_race'];
+    $weight = $_POST['pet_weight'];
+    $size = $_POST['pet_size'];
+    $hair = $_POST['pet_hair'];
+    $behaviours = $_POST['pet_behaviours'];
+    $fears = $_POST['pet_fears'];
+    $contests = $_POST['partecipatingToContests'];
+    $groomed = $_POST['usedToBeGroomed'];
+    $comfortable = $_POST['comfortableWithOtherPets'];
+    
+    /* Add a value to fields is they're not filled */
+    if ( $behaviours == '' ){
+        $behaviours = 'none';
+    }
+    
+    if ( $fears == '' ){
+        $fears = 'none';
+    }
+
+    if ( isset($contests) ) {
+        $contests = 1;
+    } else {
+        $contests = 0;
+    }
+
+    if ( isset($groomed) ) {
+        $groomed = 1;
+    } else {
+        $groomed = 0;
+    }
+
+    if ( isset($comfortable) ) {
+        $comfortable = 1;
+    } else {
+        $comfortable = 0;
+    }
+    
+    /* Save pet_image in img folder */
+    
+    $target = $img;
+
+    /* Print each field */
+    /*
+    echo 'Name : ' . $name;
+    echo 'Race : ' . $race;
+    echo 'Weight: ' . $weight;
+    echo 'Size: ' . $size;
+    echo 'Hair: ' . $hair;
+    echo 'Behaviours: ' . $behaviours;
+    echo 'Fears: ' . $fears;
+    echo 'Contests: ' . isset($contests);
+    echo 'Groomed: ' . isset($groomed);
+    echo 'Comfortable: ' . isset($comfortable);
+    echo 'Image: ' . $image;
+    */
+
+    /*
+    Create the line to add in the pets.txt file.
+    first element in each line of pets.txt is the id of the pet owner
+    $line = $_SESSION['id'];
+    */
+    $line = $_SESSION['email'] . ';' . $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
+    $hair . ';' . $behaviours . ';' . $fears . ';' .
+    $contests . ';' . $groomed . ';' .
+    $comfortable . ';' . $target . "\r\n";
+    
+    /* Open the pets.txt file */
+    $fp = fopen('../db/pets.txt', 'a+');
+    
+    /* Write the line in the file */
+    fwrite($fp, $line);
+    fclose ($fp);   
+
+    //echo 'PET REGISTERED CORRECTLY';
+    
+
+    echo '<script>
+        console.log("pet deleted");
+        
+        </script>';
+
+    header("Location: ./pet?pet_name=" . $name);
+    
+}
+?>

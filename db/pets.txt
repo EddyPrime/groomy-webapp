@@ -4,4 +4,6 @@ id_user;pet_name;pet_race;pet_weight;pet_size;pet_hair;strange_behaviours;pet_fe
 
 a@a.it;Ralph;Labrador;30;big;Short;Its perfection;Edoardo;0;1;1;../img/Ralph
 
-e#ea@s.it;Laika;Not defined;18;medium;short;scared about everything;people;0;1;1;../img/Laika
+
+
+e#ea@s.it;Laika;test;18;medium;short;scared about everything;people;0;1;1;
