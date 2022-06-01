@@ -6,9 +6,9 @@
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
   <title>Sign up</title>
 
-  <link rel="stylesheet" type="text/css" href="./style/reset.css">
-  <link rel="stylesheet" type="text/css" href="./style/fonts.css">
-  <link rel="stylesheet" type="text/css" href="./style/style.css">
+  <link rel="stylesheet" type="text/css" href="../style/reset.css">
+  <link rel="stylesheet" type="text/css" href="../style/fonts.css">
+  <link rel="stylesheet" type="text/css" href="../style/style.css">
   <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 </head>

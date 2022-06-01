@@ -1,7 +1,5 @@
 <nav class="navbar fixed-bottom navbar-expand bg-light">
   <div class="container-fluid">
-
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
@@ -21,7 +19,6 @@
           <a id="navProfile" class="nav-link" href="../profile/profile.php">Profile</a>
         </li>
       </ul>
-
     </div>
   </div>
 </nav>
