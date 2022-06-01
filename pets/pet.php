@@ -74,7 +74,7 @@ for ($i = 0; $i < count($pets); $i++) {
 </head>
 
 <body>
-    
+    <button type="button" class="btn btn-link" onclick="window.location.href='./pets.php'">Go Back</button>
     <div class="container">
         <div class="pet-image">
         <?php    
