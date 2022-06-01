@@ -44,15 +44,17 @@
                     }
                     
                     echo '<li>
-                    <div class="pet-image">
-                        <img src="'. $img . '" style="width: 10%"></img>
-                    </div>
-                    <div class=pet-info>
-                        Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
-                    </div>
-                    <div class="mt-5 text-center">
-                        <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[1] .'">Delete Pet</button>
-                    </div>    
+                    <a href="./pet.php?pet_name=' . $info[1] . '" > 
+                        <div class="pet-image">
+                            <img src="'. $img . '" style="width: 10%"></img>
+                        </div>
+                        <div class=pet-info>
+                            Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
+                        </div>
+                        <div class="mt-5 text-center">
+                            <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[1] .'">Delete Pet</button>
+                        </div>
+                    </a>    
                     </li>';
                     
                     $printed++;
