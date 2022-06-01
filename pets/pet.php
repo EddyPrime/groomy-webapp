@@ -95,6 +95,9 @@ for ($i = 0; $i < count($pets); $i++) {
                 echo '<div class="row">Is it comfortable with other pets? ' . $pet_comfortable . '</div>';
             ?>
         </div>
+        <?php
+            echo '<button type="button" class="btn btn-secondary" onclick=' . 'window.location.href="./pet_edit.php?pet_name='. $pet_name .'"' . '>Edit</button>';
+        ?>
     </div>
 
 </body>
