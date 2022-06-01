@@ -27,6 +27,8 @@
         <?php
             $txt_file = fopen('../db/pets.txt','r');
             $count = 1;
+            $printed = 0;
+
             while ( $line = fgets($txt_file) ) {
                 $line = trim($line);
                 $info = explode( ";", $line );
@@ -53,12 +55,17 @@
                     </div>    
                     </li>';
                     
+                    $printed++;
+                    
                 }
                 
                 $count++;
             }
-
             fclose($txt_file);
+
+            if ( $printed == 0 ){
+                echo '<p> You don\'t have any pet saved, add a new one!</p>';
+            }
         ?>
     </ul>
 
