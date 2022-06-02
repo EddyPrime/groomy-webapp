@@ -12,7 +12,7 @@ for ($i = 0; $i < count($pets); $i++) {
     $infoElementArray = explode(";", $pets[$i]);
     if ($infoElementArray[0] == $email && $infoElementArray[1] == $pet_name) {
         //PET FOUND --> retrieve img and infos
-        if ( strpos($info[11], 'default' ) !== false ){
+        if ( strpos($infoElementArray[11], 'default' ) !== false ){
             $img = '../img/pet.svg';
         } else {
             $img = $infoElementArray[11];
@@ -61,7 +61,7 @@ for ($i = 0; $i < count($pets); $i++) {
 
     <?php
     include_once("../navbar/navbar.php");
-    session_start();
+    //session_start();
     ?>
     <link rel="stylesheet" type="text/css" href="../style/reset.css">
     <link rel="stylesheet" type="text/css" href="../style/fonts.css">

@@ -7,9 +7,13 @@
     <title>Groomy This is the pets page.</title>
 
     <?php
-    include_once("../navbar/navbar.php");
+    include("../navbar/navbar.php");
     session_start();
     ?>
+
+    
+
+
     <link rel="stylesheet" type="text/css" href="../style/reset.css">
     <link rel="stylesheet" type="text/css" href="../style/fonts.css">
     <link rel="stylesheet" type="text/css" href="../style/style.css">
@@ -51,10 +55,11 @@
                         <div class=pet-info>
                             Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
                         </div>
+                        </a>
                         <div class="mt-5 text-center">
                             <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[1] .'">Delete Pet</button>
                         </div>
-                    </a>    
+                        
                     </li>';
                     
                     $printed++;

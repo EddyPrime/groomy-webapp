@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Email</label>
-                            <input id="emailInput" type="search" class="form-control" placeholder="Email" value="" readonly>
+                            <input id="emailInput" type="text" class="form-control" placeholder="Email" value="" readonly>
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Password</label>
