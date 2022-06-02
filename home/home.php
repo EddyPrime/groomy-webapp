@@ -1,4 +1,3 @@
-This is the homepage.
 <!doctype html>
 <html>
 
@@ -15,11 +14,16 @@ This is the homepage.
 
     <?php
     include "../navbar/navbar.php";
+    $user_name = $_SESSION['name'];
+    echo $user_name;
     ?>
 </head>
 
 <body>
-
+    <?php
+        session_start();
+        echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
+    <p>Here you can see all your appointments!</p>
 </body>
 
 <script>
