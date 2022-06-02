@@ -31,7 +31,7 @@ if (!empty($a)) {
     $surname = $a[3];
     $phoneNumber = $a[4];
     $_SESSION["email"] = $emailAddress;
-    $_SESSION['name'] = $name;
+    $_SESSION["name"] = $name;
     $_SESSION["surname"] = $surname;
     $_SESSION["phoneNumber"] = $phoneNumber;
     $_SESSION["loggedIn"] = 1;

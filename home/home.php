@@ -14,16 +14,16 @@
 
     <?php
     include "../navbar/navbar.php";
-    $user_name = $_SESSION['name'];
-    echo $user_name;
+    //$user_name = $_SESSION["name"];
+    //echo $user_name;
     ?>
 </head>
 
 <body>
-    
+    <label id="Welcome"></label>
     <?php
-        session_start();
-        echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
+        //session_start();
+        //echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
     <p>Here you can see all your appointments!</p>
 
 </body>
@@ -40,6 +40,8 @@
 
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");
+
+    document.getElementById("Welcome").innerHTML = "Hi, "+sessionStorage.getItem("name");
 </script>
 
 </html>
