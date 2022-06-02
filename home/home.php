@@ -20,10 +20,10 @@
 </head>
 
 <body>
-    <label id="Welcome"></label>
+    <h3 id="Welcome"></h3>
     <?php
-        //session_start();
-        //echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
+        session_start();
+        echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
     <p>Here you can see all your appointments!</p>
 
 </body>
@@ -41,7 +41,7 @@
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");
 
-    document.getElementById("Welcome").innerHTML = "Hi, "+sessionStorage.getItem("name");
+    //document.getElementById("Welcome").innerHTML = "Hi, "+sessionStorage.getItem("name");
 </script>
 
 </html>

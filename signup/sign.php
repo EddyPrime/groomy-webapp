@@ -113,6 +113,7 @@ if ($turno == true) {
     //file_put_contents($file, $accountInfo . "\n", FILE_APPEND);
     session_start();
     $_SESSION["email"] = $emailAddress;
+    $_SESSION["name"] = $name;
     $_SESSION["surname"] = $surname;
     $_SESSION["phoneNumber"] = $phoneNumber;
     $_SESSION["loggedIn"] = 1;
