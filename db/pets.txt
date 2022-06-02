@@ -11,3 +11,5 @@ e#ea@s.it;test;test;18;medium;short;test;test;1;1;1;../img/Laika
 
 
 
+mat@lomb.it;aaa;adff;adadvd;small;fdhdh;bd;none;0;0;0;default
+mat@lomb.it;sds;scs;ccs;Size;cscs;ccc;none;0;0;0;default
