@@ -1,6 +1,6 @@
 <?php 
 
-/* retrieve pet from pets.txt file */
+/* retrieve pet from pets.txt file to fill the input fields of the form */
 session_start();
 
 $email = $_SESSION['email'];
@@ -148,6 +148,8 @@ for ($i = 0; $i < count($pets); $i++) {
 
 <?php
 
+/* Retrieve old values of the pet */
+
 session_start();
 
 $email = $_SESSION['email'];
@@ -178,8 +180,11 @@ for ($i = 0; $i < count($pets); $i++) {
     }
 }
 
+/* When submit is clicked: replace the old line in the pets.txt file with the new one */
+
 if(isset($_POST["submit"])) {
     
+    /* Get new values from input fields */
     $name = $_POST['pet_name'];
     $race = $_POST['pet_race'];
     $weight = $_POST['pet_weight'];
@@ -218,25 +223,28 @@ if(isset($_POST["submit"])) {
         $comfortable = 0;
     }
 
+    /* Build the new line to add in the file */
     $line = $_SESSION['email'] . ';' . $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
     $hair . ';' . $behaviours . ';' . $fears . ';' .
     $contests . ';' . $groomed . ';' .
     $comfortable . ';' . $target;
 
+    /* Build the old line to remove from the file */
     $old_line = $_SESSION['email'] . ';' . $pet_name . ';' . $pet_race . ';' . $pet_weight . ';' . $pet_size . ';' .
     $pet_hair . ';' . $pet_behaviours . ';' . $pet_fears . ';' .
     $pet_contests . ';' . $pet_groomed . ';' .
     $pet_comfortable . ';' . $target;
 
+    /* Replace the lines */
     $file = file_get_contents('../db/pets.txt');
     $file = str_replace( $old_line, $line, $file );
     file_put_contents( '../db/pets.txt', $file );
 
-    //deletePet($pet_name);
-
+    /* Show a confirmation message and redirect the user to pets page */
     echo '<script>
     alert("Pet info changed correctly!");
     window.location.href = "./pets.php";
     </script>';
+    
 }
 ?>

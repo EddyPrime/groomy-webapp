@@ -1,4 +1,7 @@
 <?php
+
+/* Delete pet from pets.txt file */
+
 session_start();
 
 function deletePet($pet_name)

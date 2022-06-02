@@ -106,6 +106,8 @@
 
 <?php
 
+/* When Submit is clicked, add the new pet in pets.txt file */
+
 if(isset($_POST["submit"])) {
     echo '<script>
         console.log("test");
@@ -164,8 +166,6 @@ if(isset($_POST["submit"])) {
         move_uploaded_file( $_FILES['pet_image']['tmp_name'], $target);
     }
     
-    
-    
     /* Print each field */
     /*
     echo 'Name : ' . $name;
@@ -203,6 +203,7 @@ if(isset($_POST["submit"])) {
     
     //echo 'PET REGISTERED CORRECTLY';
 
+    /* Redirect the user to pets page */
     echo '
         <script>
         alert("Pet added correctly!")
