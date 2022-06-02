@@ -148,14 +148,38 @@ for ($i = 0; $i < count($pets); $i++) {
 
 <?php
 
-include('./delete_pet.php');
+session_start();
+
+$email = $_SESSION['email'];
+$pet_name = $_GET['pet_name'];
+
+$petsFile = "../db/pets.txt";
+$pets = explode("\n", file_get_contents($petsFile));
+for ($i = 0; $i < count($pets); $i++) {
+    $infoElementArray = explode(";", $pets[$i]);
+    if ($infoElementArray[0] == $email && $infoElementArray[1] == $pet_name) {
+        //PET FOUND --> retrieve img and infos
+        if ( strpos($info[11], 'default' ) !== false ){
+            $img = '../img/pet.svg';
+        } else {
+            $img = $infoElementArray[11];
+        }
+
+        $pet_race = $infoElementArray[2];
+        $pet_weight = $infoElementArray[3];
+        $pet_size = $infoElementArray[4];
+        $pet_hair = $infoElementArray[5];
+        $pet_behaviours = $infoElementArray[6];
+        $pet_fears = $infoElementArray[7];
+        $pet_contests = $infoElementArray[8];
+        $pet_groomed = $infoElementArray[9];
+        $pet_comfortable = $infoElementArray[10];
+
+    }
+}
 
 if(isset($_POST["submit"])) {
-
-
-    deletePet($pet_name);
-
-    /* Parse each field received from the form */
+    
     $name = $_POST['pet_name'];
     $race = $_POST['pet_race'];
     $weight = $_POST['pet_weight'];
@@ -193,52 +217,26 @@ if(isset($_POST["submit"])) {
     } else {
         $comfortable = 0;
     }
-    
-    /* Save pet_image in img folder */
-    
-    $target = $img;
 
-    /* Print each field */
-    /*
-    echo 'Name : ' . $name;
-    echo 'Race : ' . $race;
-    echo 'Weight: ' . $weight;
-    echo 'Size: ' . $size;
-    echo 'Hair: ' . $hair;
-    echo 'Behaviours: ' . $behaviours;
-    echo 'Fears: ' . $fears;
-    echo 'Contests: ' . isset($contests);
-    echo 'Groomed: ' . isset($groomed);
-    echo 'Comfortable: ' . isset($comfortable);
-    echo 'Image: ' . $image;
-    */
-
-    /*
-    Create the line to add in the pets.txt file.
-    first element in each line of pets.txt is the id of the pet owner
-    $line = $_SESSION['id'];
-    */
     $line = $_SESSION['email'] . ';' . $name . ';' . $race . ';' . $weight . ';' . $size . ';' .
     $hair . ';' . $behaviours . ';' . $fears . ';' .
     $contests . ';' . $groomed . ';' .
-    $comfortable . ';' . $target . "\r\n";
-    
-    /* Open the pets.txt file */
-    $fp = fopen('../db/pets.txt', 'a+');
-    
-    /* Write the line in the file */
-    fwrite($fp, $line);
-    fclose ($fp);   
+    $comfortable . ';' . $target;
 
-    //echo 'PET REGISTERED CORRECTLY';
-    
+    $old_line = $_SESSION['email'] . ';' . $pet_name . ';' . $pet_race . ';' . $pet_weight . ';' . $pet_size . ';' .
+    $pet_hair . ';' . $pet_behaviours . ';' . $pet_fears . ';' .
+    $pet_contests . ';' . $pet_groomed . ';' .
+    $pet_comfortable . ';' . $target;
+
+    $file = file_get_contents('../db/pets.txt');
+    $file = str_replace( $old_line, $line, $file );
+    file_put_contents( '../db/pets.txt', $file );
+
+    //deletePet($pet_name);
 
     echo '<script>
-        console.log("pet deleted");
-        
-        </script>';
-
-    header("Location: ./pet?pet_name=" . $name);
-    
+    alert("Pet info changed correctly!");
+    window.location.href = "./pets.php";
+    </script>';
 }
 ?>
