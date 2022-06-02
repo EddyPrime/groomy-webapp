@@ -67,7 +67,7 @@
 
           <!-- Repeat Password input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="registerRepeatPassword">Repeat password</label>
+            <label class="form-label" for="registerRepeatPassword">Confirm password</label>
             <span>
               <input type="password" name="repeatPassword" id="registerRepeatPassword" class="form-control" oninput="matchPasswords()" />
             </span>
@@ -86,9 +86,10 @@
           </div>
 
           <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-3" >Sign in</button>
+          <button type="submit" class="btn btn-primary btn-block mb-3" >Sign up</button>
       </form>
     </div>
+    <h6>By clicking on sign up, you are agreeing to our terms and conditions</h6>
   </div>
   <!-- Pills content -->
 </body>
