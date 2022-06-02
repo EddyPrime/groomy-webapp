@@ -20,10 +20,12 @@
 </head>
 
 <body>
+    
     <?php
         session_start();
         echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
     <p>Here you can see all your appointments!</p>
+
 </body>
 
 <script>
