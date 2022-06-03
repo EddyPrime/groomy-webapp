@@ -1,24 +1,25 @@
-form i {
-    margin-left: -30px;
-    cursor: pointer;
-    z-index: 200;
-    position: absolute;
-    font-size: large;
-    color: #6c757d;
-  }
+i {
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  z-index: 200;
+  top: 425px;
+  right: 30px;
+  cursor: pointer;
+}
 
-  form {
-    padding-bottom: 120px !important;
-  }
+form {
+  padding-bottom: 120px !important;
+}
 
-  .navbar ul {
-    margin: auto !important;
-    width: 100%;
-  }
+.navbar ul {
+  margin: auto !important;
+  width: 100%;
+}
 
-  .navbar ul li {
-    text-align: center;
-    width: 20%;
-    margin-left: 2.5%;
-    margin-right: 2.5%;
-  }
+.navbar ul li {
+  text-align: center;
+  width: 20%;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+}
