@@ -18,11 +18,11 @@
 </head>
 
 <body>
-
+    <div>
+        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';"> Back </button>
+    </div>
+    <input type="datetime-local" id="time" name="time">
 </body>
-<button onclick="window.location = './searchDate.php';">Search By Date </button>
-<p></p>
-<button onclick="window.location = './searchGroomer.php';">Search By Groomer </button>
 
 <script>
     home.setAttribute("class", "nav-link");

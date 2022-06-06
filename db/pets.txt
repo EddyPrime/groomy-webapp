@@ -1,15 +1,5 @@
 id_user;pet_name;pet_race;pet_weight;pet_size;pet_hair;strange_behaviours;pet_fears;partecipatingToContests;usedToBeGroomed;comfortableWithOtherPets;image_path
-
-
-
 a@a.it;Ralph;Labrador;30;big;Short;Its perfection;Edoardo;0;1;1;../img/Ralph
-
-
-
-
 e#ea@s.it;test;test;18;medium;short;test;test;1;1;1;../img/Laika
-
-
-
 mat@lomb.it;aaa;adff;adadvd;small;fdhdh;bd;none;0;0;0;default
 mat@lomb.it;sds;scs;ccs;Size;cscs;ccc;none;0;0;0;default

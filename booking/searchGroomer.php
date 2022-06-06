@@ -18,11 +18,19 @@
 </head>
 
 <body>
-
+    <div>
+        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';"> Back </button>
+    </div>
+    <button onclick="window.location = '#';">Favourite Groomer </button>
+    <p></p>
+    <button onclick="window.location = '#';">Search Groomer By Name </button>
+    <p></p>
+    <input type="search" placeholder="Enter groomer's name"></input>
+    <p></p>
+    <button onclick="window.location = '#';">Search Groomer By Distance </button>
+    <p></p>
+    <button onclick="window.location = '#';">Search Groomer Using Maps </button>
 </body>
-<button onclick="window.location = './searchDate.php';">Search By Date </button>
-<p></p>
-<button onclick="window.location = './searchGroomer.php';">Search By Groomer </button>
 
 <script>
     home.setAttribute("class", "nav-link");
