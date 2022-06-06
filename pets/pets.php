@@ -76,7 +76,7 @@
         ?>
     </ul>
 
-    <button type="button" class="btn btn-success delete-pet" onclick="location.href='./new_pet.php'">Add new pet</button>
+    <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
 
 </body>
 
