@@ -69,7 +69,7 @@ for ($i = 0; $i < count($pets); $i++) {
             </div>
 
             <div class="mb-3">
-                <label for="pet_weight" class="form-label">Weight</label>
+                <label for="pet_weight" class="form-label">Weight (kg)</label>
                 <input type="numeric" class="form-control" id="pet_weight" name="pet_weight" required <?php echo 'value="' . $pet_weight .'"'; ?>>
             </div>
 
