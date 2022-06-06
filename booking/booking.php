@@ -19,10 +19,14 @@
 
 <body>
 
+<div class='container'>
+    <button onclick="window.location = './searchDate.php';">Search By Date</button>
+    <br>
+    <button onclick="window.location = './searchGroomer.php';">Search By Groomer</button>
+</div>
+
 </body>
-<button onclick="window.location = './searchDate.php';">Search By Date </button>
-<p></p>
-<button onclick="window.location = './searchGroomer.php';">Search By Groomer </button>
+
 
 <script>
     home.setAttribute("class", "nav-link");

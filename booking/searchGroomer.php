@@ -19,7 +19,7 @@
 
 <body>
     <div>
-        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';"> Back </button>
+        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';">Back</button>
     </div>
     <button onclick="window.location = '#';">Favourite Groomer </button>
     <p></p>
