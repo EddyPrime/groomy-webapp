@@ -125,6 +125,7 @@ for ($i = 0; $i < count($pets); $i++) {
 
             <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
             <button type="button" class="btn btn-danger" onclick="history.back()">Cancel</button>
+            <button class="btn btn-danger" type="button" onclick="deletepet(this)" name="delete_pet" value="<?php echo $pet_name; ?>">Delete Pet</button>
         </form>
     </div>
 
@@ -133,6 +134,32 @@ for ($i = 0; $i < count($pets); $i++) {
 </html>
 
 <script>
+
+function deletepet(obj) {
+        value = obj.value
+        //alert(value)
+        if (confirm("Are you sure you want to delete your pet?")) {
+            var deletePet = function() {
+                $.ajax({
+                    url: './delete_pet.php',
+                    type: 'GET',
+                    data: {
+                        pet_name: value
+                    },
+                    success: function(data) {
+                        //window.location.reload();
+                        console.log(data); // Inspect this in your console
+                    },
+                    complete: function(){
+                        window.location = './pets.php';
+                    }
+                });
+            };
+            deletePet();
+            //setTimeout( window.location.reload(), 1000 );
+        }
+    }
+
     home.setAttribute("class", "nav-link");
     home.setAttribute("aria-current", "");
 
