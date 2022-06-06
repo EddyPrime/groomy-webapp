@@ -62,7 +62,7 @@ if (!empty($a)) {
 } else {
     echo '
     <script type="text/javascript" lang="javascript">
-        window.alert("Utente non registrato!")
+        window.alert("Warnig! Invalid email and/or password!")
         document.location.href="./login.php"
         </script>
     ';

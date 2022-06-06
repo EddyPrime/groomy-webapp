@@ -9,7 +9,7 @@ $name = $_POST['name'];
 $surname = $_POST['surname'];
 $phoneNumber = $_POST['phoneNumber'];
 
-$debugMessage = "Nome utente già presente! Inserire un nuovo nome utente.";
+$debugMessage = "Invalid email! Insert a new email address.";
 
 //0 is false
 

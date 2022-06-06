@@ -60,7 +60,6 @@
                                 </svg>
                                 <span id="passwordHint" class="hint" style="display: none;">
                                 Password should have at least 5 character.
-                                Password should contain at least a digit.
                                 Password should contain at least a letter.
                                 Password should contain at least a capital letter.
                                 Password should contain at least a symbol.
