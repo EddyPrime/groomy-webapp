@@ -21,7 +21,10 @@
     <div>
         <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';">Back</button>
     </div>
-    <input type="datetime-local" id="time" name="time">
+    <form action="./search.php" method="post">
+        <input type="datetime-local" id="time" name="time">
+        <button type = "submit"></button>
+    </form>
 </body>
 
 <script>
@@ -36,7 +39,11 @@
 
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");
+
+    var i = 0;
 </script>
+
+
 
 
 </html>
