@@ -1,1 +1,5 @@
 userEmail;groomer
+a@a.it;CanePulito
+a@a.it;JeannePulisciAnimali
+a@c.it;MusoProfumato
+a@ca.it;QuaLaZampa

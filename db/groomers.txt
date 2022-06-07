@@ -3,4 +3,4 @@ CanePulito;Via Portuense, 572;0632145315;canepulito@gmail.com;10-13 15-19
 JeannePulisciAnimali;Via Tiburtina, 205;0679854331;jeannepuliscianimali@gmail.com;10-17
 MusoProfumato;Via Antonio Scarpa, 14;0678543678;musoprofumato@gmail.com;9-14 16-19
 QuaLaZampa;Via Ariosto, 25;0698712563;qualazampa@libero.it;8-16
-ChezRalph&Laika;Via Emàno Darnasò, 30;0635648426;ralphelaika@tim.it;11-13 15-17
+ChezRalphAndLaika;Via Emàno Darnasò, 30;0635648426;ralphelaika@tim.it;11-13 15-17
