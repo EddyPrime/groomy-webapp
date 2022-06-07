@@ -56,9 +56,6 @@
                             Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
                         </div>
                         </a>
-                        <div class="mt-5 text-center">
-                            <button class="btn btn-danger" type="button" onclick="delete_pet(this)" name="delete_pet" value="'. $info[1] .'">Delete Pet</button>
-                        </div>
                         
                     </li>';
                     
