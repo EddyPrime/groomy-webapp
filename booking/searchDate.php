@@ -39,8 +39,6 @@
 
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");
-
-    var i = 0;
 </script>
 
 
