@@ -57,7 +57,7 @@ for ($i = 0; $i < count($pets); $i++) {
 <head> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
-    <title>Groomy This is the pets page.</title>
+    <title>Groomy This is the pet page.</title>
 
     <?php
     include_once("../navbar/navbar.php");
