@@ -74,7 +74,6 @@ for ($i = 0; $i < count($pets); $i++) {
             </div>
 
             <select class="form-select" aria-label="Size" name="pet_size" required>
-                <option >Size</option>
                 <option value="small" <?php if ($pet_size == 'small') { echo 'selected'; } ?>>Small</option>
                 <option value="medium" <?php if ($pet_size == 'medium') { echo 'selected'; } ?>>Medium</option>
                 <option value="big" <?php if ($pet_size == 'big') { echo 'selected'; } ?>>Big</option>

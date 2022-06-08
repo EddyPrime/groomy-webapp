@@ -38,6 +38,7 @@
             <label for="pet_weight" class="form-label">Weight (kg)</label>
             <input type="numeric" class="form-control" id="pet_weight" name="pet_weight" required>
         </div>
+        
         <br>
 
         <label for="pet_size" class="form-label">Size</label>
@@ -49,6 +50,7 @@
         </select>
 
         <br>
+
         <div class="mb-3">
             <label for="pet_hair" class="form-label">Type of hair</label>
             <input type="text" class="form-control" id="pet_hair" name="pet_hair" required>

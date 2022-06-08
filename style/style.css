@@ -30,3 +30,19 @@ select:invalid{
 option{
   color: black;
 }
+
+.to-confirm {
+  color: yellow;
+}
+
+.confirmed {
+  color: green;
+}
+
+.denied {
+  color: red;
+}
+
+.passed {
+  color: grey;
+}

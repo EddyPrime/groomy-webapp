@@ -60,7 +60,7 @@
                         echo '<li>
                             <a href="./appointment.php"> 
                                 <div class="appointmet-info ' . $class . '" >
-                                    Groomer: <span id="name">' . $groomer . '</span><br> Date: ' . $date . '<br>Hour:' . $hour . '  
+                                    Groomer: <span id="name">' . $groomer . '</span><br> Date: ' . $date . '<br>Hour: ' . $hour . '  
                                 </div>
                             </a>
                         </li>';
