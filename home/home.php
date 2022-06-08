@@ -39,12 +39,13 @@
                     //echo $info[0];
                     //print_r( $info );
                     if ( $count != 1 && $line != '' && $info[0] == $_SESSION['email'] ){
-                        $status = $info[5];
+                        $status = $info[6];
                         $class = '';
-                        $date = $info[4];
-                        $hour = $info[3];
+                        $date = $info[5];
+                        $hour = $info[4];
                         $groomer = $info[2];
                         $pet = $info[1];
+                        $address = $info[3];
 
                         if ( $status == 0 ){
                             $class = 'to-confirm';
@@ -61,7 +62,7 @@
                         echo '<li>
                             <a href="../appointment/appointment.php?groomer='.$groomer.'&pet='.$pet.'"> 
                                 <div class="appointment-info ' . $class . '" >
-                                    Groomer: <span id="name">' . $groomer . '</span><br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
+                                    Groomer: <span id="name">' . $groomer . '</span><br> Address: ' . $address . '<br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
                                 </div>
                             </a>
                         </li>';
