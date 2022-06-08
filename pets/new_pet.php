@@ -38,13 +38,16 @@
             <label for="pet_weight" class="form-label">Weight (kg)</label>
             <input type="numeric" class="form-control" id="pet_weight" name="pet_weight" required>
         </div>
+        <br>
 
-        <select class="form-select" aria-label="Size" name="pet_size" required>
-            <option selected>Size</option>
+        <label for="pet_size" class="form-label">Size</label>
+        <select class="form-select" aria-label="Size" name="pet_size" placeholder="Size" required>
+            <option value="" disabled selected hidden>Choose Size...</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
             <option value="big">Big</option>
         </select>
+
         <br>
         <div class="mb-3">
             <label for="pet_hair" class="form-label">Type of hair</label>

@@ -20,11 +20,67 @@
 </head>
 
 <body>
-    <h3 id="Welcome"></h3>
-    <?php
-        session_start();
-        echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
-    <p>Here you can see all your appointments!</p>
+    <div class="container">
+        <h3 id="Welcome"></h3>
+        <?php
+            session_start();
+            echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
+        <p>Here you can see all your appointments!</p>
+        <div class="appointments-list">
+            <?php
+                $txt_file = fopen('../db/appointments.txt','r');
+                $count = 1;
+                $printed = 0;
+
+                while ( $line = fgets($txt_file) ) {
+                    $line = trim($line);
+                    $info = explode( ";", $line );
+                    //echo $line;
+                    //echo $info[0];
+                    //print_r( $info );
+                    if ( $count != 1 && $line != '' && $info[0] == $_SESSION['email'] ){
+                        $status = $info[5];
+                        $class = '';
+                        $date = $info[4];
+                        $hour = $info[3];
+                        $groomer = $info[2];
+
+                        if ( $status == 0 ){
+                            $class = 'to-confirm';
+                        } else if ( $status == 1 ){
+                            $class = 'confirmed';
+                        } else {
+                            $class = 'denied';
+                        }
+
+                        if ( $date < date('d-m-y') ){
+                            $class = 'passed';
+                        }
+
+                        echo '<li>
+                            <a href="./appointment.php"> 
+                                <div class="appointmet-info ' . $class . '" >
+                                    Groomer: <span id="name">' . $groomer . '</span><br> Date: ' . $date . '<br>Hour:' . $hour . '  
+                                </div>
+                            </a>
+                        </li>';
+                        
+                        $printed++;
+                        
+                    }
+                    
+                    $count++;
+                }
+                fclose($txt_file);
+
+                if ( $printed == 0 ){
+                    echo '<p> You don\'t have any appointment!</p>';
+                }
+            ?>
+        </ul>
+        </div>
+    </div>
+    
 
 </body>
 

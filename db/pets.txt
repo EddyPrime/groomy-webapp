@@ -5,3 +5,4 @@ mat@lomb.it;aaa;adff;adadvd;small;fdhdh;bd;none;0;0;0;default
 mat@lomb.it;sds;scs;ccs;Size;cscs;ccc;none;0;0;0;default
 
 
+e#ea@s.it;Laika;not defined;17;medium;short;scared about everything;people;0;1;0;../img/Laika

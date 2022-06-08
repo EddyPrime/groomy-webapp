@@ -23,3 +23,10 @@ form {
   margin-left: 2.5%;
   margin-right: 2.5%;
 }
+
+select:invalid{
+  color: gray;
+}
+option{
+  color: black;
+}
