@@ -44,6 +44,7 @@
                         $date = $info[4];
                         $hour = $info[3];
                         $groomer = $info[2];
+                        $pet = $info[1];
 
                         if ( $status == 0 ){
                             $class = 'to-confirm';
@@ -58,9 +59,9 @@
                         }
 
                         echo '<li>
-                            <a href="./appointment.php"> 
+                            <a href="../appointment/appointment.php?groomer='.$groomer.'&pet='.$pet.'"> 
                                 <div class="appointmet-info ' . $class . '" >
-                                    Groomer: <span id="name">' . $groomer . '</span><br> Date: ' . $date . '<br>Hour: ' . $hour . '  
+                                    Groomer: <span id="name">' . $groomer . '</span><br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
                                 </div>
                             </a>
                         </li>';
