@@ -95,13 +95,21 @@ for ($i = 0; $i < count($appointments); $i++) {
 
 <body>
     <button type="button" class="btn btn-link" onclick="window.location.href='../home/home.php'"><</button>
-    <div class="container">
+    <div class="container" style="padding-bottom: 120px">
         <h3>Appointment details</h3>
         <?php 
-            echo $pet_name;
-            echo $pet_hair;
-            echo $pet_race;
-            echo $address;
+            echo '<strong>Date</strong>: ' . $date . '<br>';
+            echo '<strong>Hour</strong>: ' . $hour . '<br>';
+            echo '<strong>Pet groomer</strong>: ' . $groomer . '<br>';
+            echo '<strong>Address</strong>: ' . $address . '<br>';
+            echo '<img src="../img/map.jpeg" style="width:60%"><br>';
+            echo '<strong>Pet Info</strong><br>';
+            echo '<div class="row">Name: ' . $pet_name . '</div>';
+            echo '<div class="row">Race: ' . $pet_race . '</div>';
+            echo '<div class="row">Weight: ' . $pet_weight . '</div>';
+            echo '<div class="row">Size: ' . $pet_size . '</div>';
+            echo '<div class="row">Hair: ' . $pet_hair . '</div>';
+            
         ?>
     </div>
 
