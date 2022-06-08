@@ -23,7 +23,7 @@
 <body>
     <button type="button" class="btn btn-link" onclick="window.location.href='../home/home.php'"><</button>
     <div class="container">
-        
+        <h3>Appointment details</h3>
     </div>
 
 </body>

@@ -31,18 +31,34 @@ option{
   color: black;
 }
 
+
+/* HOMEPAGE */
+
 .to-confirm {
-  color: yellow;
+  border-color: yellow !important;
+  background-color: darkkhaki;
 }
 
 .confirmed {
-  color: green;
+  border-color: green !important;
+  background-color: greenyellow;
 }
 
 .denied {
-  color: red;
+  border-color: red !important;
+  background-color: red;
 }
 
 .passed {
-  color: grey;
+  border-color: grey !important;
+  background-color: darkslategray;
+} 
+
+.appointment-info {
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
+  border: 2px solid;
+  padding: 50px;
+  border-radius: 10px;
 }
