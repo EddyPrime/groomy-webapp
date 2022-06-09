@@ -64,7 +64,14 @@ for ($i = 0; $i < count($appointments); $i++) {
         $address = $infoElementArray[3];
         $hour = $infoElementArray[4];
         $date = $infoElementArray[5];
-        $notes = $infoElementArray[8];
+        $lavaggio = $infoElementArray[7];
+        //lavaggio;taglio_pelo;taglio_unghie;spa;anti_parassitari;acconciatura_concorsi
+        $taglio_pelo = $infoElementArray[8];
+        $taglio_unghie = $infoElementArray[9];
+        $spa = $infoElementArray[10];
+        $antiparassitari = $infoElementArray[11];
+        $acconciatura_concorsi = $infoElementArray[12];
+        $notes = $infoElementArray[13];
         /* TO DO: services */
     }
 }
@@ -98,19 +105,63 @@ for ($i = 0; $i < count($appointments); $i++) {
     <div class="container" style="padding-bottom: 120px">
         <h3>Appointment details</h3>
         <?php 
-            echo '<strong>Date</strong>: ' . $date . '<br>';
-            echo '<strong>Hour</strong>: ' . $hour . '<br>';
-            echo '<strong>Pet groomer</strong>: ' . $groomer . '<br>';
-            echo '<strong>Address</strong>: ' . $address . '<br>';
-            echo '<img src="../img/map.jpeg" style="width:60%"><br>';
-            echo '<strong>Pet Info</strong><br>';
+            echo '<div class="row">Date: ' . $date . '</div>';
+            echo '<div class="row">Hour: ' . $hour . '</div>';
+            echo '<div class="row">Pet groomer: ' . $groomer . '</div>';
+            echo '<div class="row">Address: ' . $address . '</div>';
+            echo '<div class="row">
+                    <img src="../img/map.jpeg" style="width:60%">
+                    </div>';
+            echo '<div class="row"><strong>Pet Info</strong></div>';
             echo '<div class="row">Name: ' . $pet_name . '</div>';
             echo '<div class="row">Race: ' . $pet_race . '</div>';
             echo '<div class="row">Weight: ' . $pet_weight . '</div>';
             echo '<div class="row">Size: ' . $pet_size . '</div>';
             echo '<div class="row">Hair: ' . $pet_hair . '</div>';
-            
-        ?>
+            echo '<div class="row"><strong>Services:</strong></div>';
+            ?>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="lavaggio" <?php if ($lavaggio == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                Lavaggio
+            </label>
+            </div>
+
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="taglio_pelo" <?php if ($taglio_pelo == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                Taglio pelo
+            </label>
+            </div>
+
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="taglio_unghie" <?php if ($taglio_unghie == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                Taglio unghie
+            </label>
+            </div>
+
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="spa" <?php if ($spa == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                SPA
+            </label>
+            </div>
+
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="anti_parassitari" <?php if ($antiparassitari == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                Anti parassitari
+            </label>
+            </div>
+
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="acconciatura_concorsi" <?php if ($acconciatura_concorsi == 1){ echo 'checked'; }?>>
+            <label class="form-check-label" for="flexCheckDefault">
+                Acconciatura per concorsi
+            </label>
+            </div>
+
     </div>
 
 </body>

@@ -1,3 +1,3 @@
-userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);services;notes
-e#ea@s.it;Laika;CanePulito;Via Roma;17:00;10-06-2022;0;
+userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);lavaggio;taglio_pelo;taglio_unghie;spa;anti_parassitari;acconciatura_concorsi;notes
+e#ea@s.it;Laika;CanePulito;Via Roma;17:00;10-06-2022;0;1;1;0;0;1;0;
 e#ea@s.it;Murphy;Test;Test;17:00;06-06-2022;0;
