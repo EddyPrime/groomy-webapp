@@ -121,42 +121,42 @@ for ($i = 0; $i < count($appointments); $i++) {
             echo '<div class="row"><strong>Services:</strong></div>';
             ?>
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="lavaggio" <?php if ($lavaggio == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="lavaggio" onclick="return false;" <?php if ($lavaggio == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Lavaggio
             </label>
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="taglio_pelo" <?php if ($taglio_pelo == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="taglio_pelo" onclick="return false;" <?php if ($taglio_pelo == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Taglio pelo
             </label>
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="taglio_unghie" <?php if ($taglio_unghie == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="taglio_unghie" onclick="return false;" <?php if ($taglio_unghie == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Taglio unghie
             </label>
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="spa" <?php if ($spa == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="spa" onclick="return false;" <?php if ($spa == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 SPA
             </label>
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="anti_parassitari" <?php if ($antiparassitari == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="anti_parassitari" onclick="return false;" <?php if ($antiparassitari == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Anti parassitari
             </label>
             </div>
 
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="acconciatura_concorsi" <?php if ($acconciatura_concorsi == 1){ echo 'checked'; }?>>
+            <input class="form-check-input" type="checkbox" id="acconciatura_concorsi" onclick="return false;" <?php if ($acconciatura_concorsi == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Acconciatura per concorsi
             </label>
