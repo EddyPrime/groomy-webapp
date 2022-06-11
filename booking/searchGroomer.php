@@ -45,6 +45,64 @@
 </body>
 
 <script>
+    function renderGroomer(ul, data) {
+
+        JSON.parse(data).forEach(_renderGroomer);
+
+        function _renderGroomer(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class', 'item');
+
+            const br = document.createElement('br');
+
+            var elem = document.createElement('span');
+            elem.innerHTML = element[0];
+            li.appendChild(elem);
+            li.appendChild(br);
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[1];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[2];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[3];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[4];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            ul.appendChild(li);
+        }
+    }
+
+    function renderFavGroomer(ul, data) {
+
+        JSON.parse(data).forEach(_renderGroomer);
+
+        function _renderGroomer(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class', 'item');
+
+            const br = document.createElement('br');
+
+            var elem = document.createElement('span');
+            elem.innerHTML = element;
+            li.appendChild(elem);
+            li.appendChild(br);
+
+            ul.appendChild(li);
+        }
+    }
+
     function searchFavouriteGroomers() {
 
         var getFavouriteGroomers = function() {
@@ -55,7 +113,7 @@
                     email: sessionStorage.getItem("email")
                 },
                 success: function(data) {
-                    console.log(data); // Inspect this in your console
+                    //console.log(data); // Inspect this in your console
 
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'favGroomersList');
@@ -63,16 +121,7 @@
                     document.getElementById('favGroomers').innerHTML = '';
                     document.getElementById('favGroomers').appendChild(ul);
 
-                    JSON.parse(data).forEach(renderGroomer);
-
-                    function renderGroomer(element, index, arr) {
-                        var li = document.createElement('li');
-                        li.setAttribute('class', 'item');
-
-                        ul.appendChild(li);
-
-                        li.innerHTML = li.innerHTML + element;
-                    }
+                    renderFavGroomer(ul, data);
                 }
             });
         };
@@ -95,7 +144,7 @@
                     name: name
                 },
                 success: function(data) {
-                    console.log(data); // Inspect this in your console
+                    //console.log(data); // Inspect this in your console
 
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'nameGroomersList');
@@ -105,16 +154,7 @@
                     document.getElementById('nameGroomers').innerHTML = '';
                     document.getElementById('nameGroomers').appendChild(ul);
 
-                    JSON.parse(data).forEach(renderGroomer);
-
-                    function renderGroomer(element, index, arr) {
-                        var li = document.createElement('li');
-                        li.setAttribute('class', 'item');
-
-                        ul.appendChild(li);
-
-                        li.innerHTML = li.innerHTML + element;
-                    }
+                    renderGroomer(ul, data);
                 }
             });
         };
@@ -130,7 +170,7 @@
                 type: 'GET',
                 data: {},
                 success: function(data) {
-                    console.log(data); // Inspect this in your console
+                    //console.log(data); // Inspect this in your console
 
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'closeGroomersList');
@@ -140,16 +180,7 @@
                     document.getElementById('closeGroomers').innerHTML = '';
                     document.getElementById('closeGroomers').appendChild(ul);
 
-                    JSON.parse(data).forEach(renderGroomer);
-
-                    function renderGroomer(element, index, arr) {
-                        var li = document.createElement('li');
-                        li.setAttribute('class', 'item');
-
-                        ul.appendChild(li);
-
-                        li.innerHTML = li.innerHTML + element;
-                    }
+                    renderGroomer(ul, data);
                 }
             });
         };
