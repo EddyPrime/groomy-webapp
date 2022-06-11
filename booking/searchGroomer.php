@@ -45,6 +45,12 @@
 </body>
 
 <script>
+
+    function setGroomer(name) {
+        sessionStorage.setItem("groomer",name);
+        console.log(sessionStorage.getItem("groomer"));
+    }
+
     function renderGroomer(ul, data) {
 
         JSON.parse(data).forEach(_renderGroomer);
@@ -52,6 +58,7 @@
         function _renderGroomer(element, index, arr) {
             var li = document.createElement('li');
             li.setAttribute('class', 'item');
+            li.setAttribute("onclick", "setGroomer(this.firstChild.innerHTML);");
 
             const br = document.createElement('br');
 
@@ -96,6 +103,7 @@
 
             var elem = document.createElement('span');
             elem.innerHTML = element;
+            elem.setAttribute("onclick", "setGroomer(this.innerHTML);");
             li.appendChild(elem);
             li.appendChild(br);
 
