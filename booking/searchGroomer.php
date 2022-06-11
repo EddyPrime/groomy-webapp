@@ -30,6 +30,7 @@
     <p></p>
     <div>
         <button onclick="searchGroomersByName();">Search Groomer By Name </button>
+        <br>
         <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
         <div id="nameGroomers"></div>
 
@@ -82,11 +83,16 @@
     function searchGroomersByName() {
 
         var getGroomersByName = function() {
+
+            const name = document.getElementById("groomerNameInput").value;
+            if (name.length < 1)
+                return;
+
             $.ajax({
                 url: './name.php',
                 type: 'GET',
                 data: {
-                    name: document.getElementById("groomerNameInput").value
+                    name: name
                 },
                 success: function(data) {
                     console.log(data); // Inspect this in your console
