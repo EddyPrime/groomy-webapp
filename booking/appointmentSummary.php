@@ -12,28 +12,44 @@
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <?php
     include "../navbar/navbar.php";
+
+    $time = $_POST['time'];
+
+    echo '
+        <script type="text/javascript" lang="javascript">
+        sessionStorage.setItem("date","' . $time . '")';
+
+    echo '
+        
+        </script>
+        ';
     ?>
 </head>
 
-<body> 
+<body>
     <div>
-        <button type="button" class="btn btn-primary btn-block mb-3" onclick="back();">Back</button>
+        <span id="groomer"></span>
     </div>
-    <form action="./appointmentSummary.php" method="post">
-        <input type="datetime-local" id="time" name="time" required>
-        <button type="submit"></button>
-    </form>
+    <div>
+        <span id="date"></span>
+    </div>
+    <div>
+        <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
+        <button class="btn btn-primary profile-button" type="button" onclick="">Confirm</button>
+    </div>
 </body>
 
 <script>
 
     function back() {
-        sessionStorage.setItem("groomer","");
-        window.location.href='./booking.php';
+        sessionStorage.setItem("date", "");
+        window.location.href = './searchGroomerCalendar.php';
     }
+
+    document.getElementById("groomer").innerHTML = sessionStorage.getItem("groomer");
+    document.getElementById("date").innerHTML = sessionStorage.getItem("date");
 
     home.setAttribute("class", "nav-link");
     home.setAttribute("aria-current", "");
