@@ -63,8 +63,8 @@
         </label>
     </div>
     <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="anti_parassitario" aria-describedby="" />
-        <label class="form-check-label" for="anti_parassitario">
+        <input class="form-check-input me-2" type="checkbox" value="" id="anti_parassitari" aria-describedby="" />
+        <label class="form-check-label" for="anti_parassitari">
             Anti Parasitic
         </label>
     </div>
@@ -99,6 +99,32 @@
 
     function confirmAppointment() {
         console.log("confirm appointment");
+
+        var addAppointment = function() {
+            $.ajax({
+                url: './add_appointment.php',
+                type: 'GET',
+                data: {
+                    email: sessionStorage.getItem("email"),
+                    pet: document.getElementById("petSelection").value,
+                    groomer: sessionStorage.getItem("groomer"),
+                    hour: sessionStorage.getItem("date"),
+                    date: sessionStorage.getItem("date"),
+                    lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
+                    taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
+                    taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
+                    spa: document.getElementById("spa").checked ? 1 : 0,
+                    anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
+                    notes: document.getElementById("notes").value,
+                },
+                success: function(data) {
+                    console.log("added appointment"); // Inspect this in your console
+                }
+            });
+        };
+
+        addAppointment();
+        window.location.href = "../index.php";
     }
 
     function getPets() {
@@ -114,7 +140,7 @@
                     data = JSON.parse(data);
                     console.log(data); // Inspect this in your console
                     const petSelection = document.getElementById("petSelection");
-                    for(var i = 0; i < data.length; i++) {
+                    for (var i = 0; i < data.length; i++) {
                         console.log(data[i]);
                         var opt = document.createElement("option");
                         opt.value = data[i];
