@@ -29,11 +29,13 @@
 </head>
 
 <body>
-    <div>
-        <span id="groomer"></span>
-    </div>
-    <div>
-        <span id="date"></span>
+    <div class="form-check d-flex">
+        <div>
+            <label for="pet">Choose your pet</label>
+            <select name="Pets" id="pet">
+                <option value="volvo">Volvo</option>
+            </select>
+        </div>
     </div>
     <div class="form-check d-flex">
         <input class="form-check-input me-2" type="checkbox" value="" id="lavaggio" aria-describedby="" />
@@ -74,6 +76,13 @@
     <div>
         <label class="labels">Notes</label>
         <input id="notes" type="search" class="form-control" placeholder="Additional notes" value="">
+    </div>
+    <h2>Summary</h2>
+    <div>
+        <span id="groomer"></span>
+    </div>
+    <div>
+        <span id="date"></span>
     </div>
     <div>
         <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
