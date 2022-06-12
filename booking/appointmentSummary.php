@@ -124,6 +124,9 @@
         };
 
         addAppointment();
+
+        sessionStorage.setItem("groomer","");
+        sessionStorage.setItem("date","");
         window.location.href = "../index.php";
     }
 
