@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
     <?php
     include "../navbar/navbar.php";
 
@@ -32,8 +34,7 @@
     <div class="form-check d-flex">
         <div>
             <label for="pet">Choose your pet</label>
-            <select name="Pets" id="pet">
-                <option value="volvo">Volvo</option>
+            <select name="Pets" id="petSelection">
             </select>
         </div>
     </div>
@@ -100,8 +101,37 @@
         console.log("confirm appointment");
     }
 
+    function getPets() {
+
+        var getPetsByUser = function() {
+            $.ajax({
+                url: './get_pets.php',
+                type: 'GET',
+                data: {
+                    email: sessionStorage.getItem("email")
+                },
+                success: function(data) {
+                    data = JSON.parse(data);
+                    console.log(data); // Inspect this in your console
+                    const petSelection = document.getElementById("petSelection");
+                    for(var i = 0; i < data.length; i++) {
+                        console.log(data[i]);
+                        var opt = document.createElement("option");
+                        opt.value = data[i];
+                        opt.innerHTML = data[i];
+                        petSelection.appendChild(opt);
+                    }
+                }
+            });
+        };
+
+        getPetsByUser();
+    }
+
     document.getElementById("groomer").innerHTML = sessionStorage.getItem("groomer");
     document.getElementById("date").innerHTML = sessionStorage.getItem("date");
+
+    getPets();
 
     home.setAttribute("class", "nav-link");
     home.setAttribute("aria-current", "");
