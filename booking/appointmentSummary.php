@@ -35,17 +35,60 @@
     <div>
         <span id="date"></span>
     </div>
+    <div class="form-check d-flex">
+        <input class="form-check-input me-2" type="checkbox" value="" id="lavaggio" aria-describedby="" />
+        <label class="form-check-label" for="lavaggio">
+            Wash
+        </label>
+    </div>
+    <div class="form-check d-flex">
+        <input class="form-check-input me-2" type="checkbox" value="" id="taglio_pelo" aria-describedby="" />
+        <label class="form-check-label" for="taglio_pelo">
+            Hair Cut
+        </label>
+    </div>
+    <div class="form-check d-flex">
+        <input class="form-check-input me-2" type="checkbox" value="" id="taglio_unghie" aria-describedby="" />
+        <label class="form-check-label" for="taglio_unghie">
+            Nail Cut
+        </label>
+    </div>
+    <div class="form-check d-flex">
+        <input class="form-check-input me-2" type="checkbox" value="" id="spa" aria-describedby="" />
+        <label class="form-check-label" for="spa">
+            Spa
+        </label>
+    </div>
+    <div class="form-check d-flex">
+        <input class="form-check-input me-2" type="checkbox" value="" id="anti_parassitario" aria-describedby="" />
+        <label class="form-check-label" for="anti_parassitario">
+            Anti Parasitic
+        </label>
+    </div>
+    <div class="form-check d-flex ">
+        <input class="form-check-input me-2" type="checkbox" value="" id="acconciatura_concorsi" aria-describedby="" />
+        <label class="form-check-label" for="acconciatura_concorsi">
+            Contest Hairstyle
+        </label>
+    </div>
+    <div>
+        <label class="labels">Notes</label>
+        <input id="notes" type="search" class="form-control" placeholder="Additional notes" value="">
+    </div>
     <div>
         <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
-        <button class="btn btn-primary profile-button" type="button" onclick="">Confirm</button>
+        <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
     </div>
 </body>
 
 <script>
-
     function back() {
         sessionStorage.setItem("date", "");
         window.location.href = './searchGroomerCalendar.php';
+    }
+
+    function confirmAppointment() {
+        console.log("confirm appointment");
     }
 
     document.getElementById("groomer").innerHTML = sessionStorage.getItem("groomer");
