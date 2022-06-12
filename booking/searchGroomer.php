@@ -49,6 +49,7 @@
     function setGroomer(name) {
         sessionStorage.setItem("groomer",name);
         console.log(sessionStorage.getItem("groomer"));
+        window.location.href = "./searchGroomerCalendar.php";
     }
 
     function renderGroomer(ul, data) {
