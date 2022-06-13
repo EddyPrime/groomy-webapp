@@ -1,5 +1,6 @@
 userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);lavaggio;taglio_pelo;taglio_unghie;spa;anti_parassitari;acconciatura_concorsi;notes
 e#ea@s.it;Laika;CanePulito;Via Roma;17:00;10-06-2022;0;1;1;0;0;1;0;
-e#ea@s.it;Murphy;Test;Test;17:00;06-06-2022;0;
 e#ea@s.it;Laika;ChezRalphAndLaika;Via Emàno Darnasò, 30;2022-06-16T11:17;2022-06-16T11:17;0;0;1;1;0;0;;
 e#ea@s.it;Laika;JeannePulisciAnimali;Via Tiburtina, 205;2022-06-10T11:19;2022-06-10T11:19;0;0;0;0;0;0;;
+e#ea@s.it;Laika;CanePulito;Via Portuense, 572;2022-06-10T16:47;2022-06-10T16:47;0;0;1;1;1;0;;
+e#ea@s.it;Laika;MusoProfumato;Via Antonio Scarpa, 14;2022-06-08T16:48;2022-06-08T16:48;0;1;1;0;0;1;;
