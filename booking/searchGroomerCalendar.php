@@ -24,7 +24,7 @@
     </div>
     <form action="./appointmentSummary.php" method="post">
         <input type="datetime-local" id="time" name="time" required>
-        <button type="submit"></button>
+        <button type="submit">Select</button>
     </form>
 </body>
 
