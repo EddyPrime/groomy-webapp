@@ -85,6 +85,7 @@
 <script>
     function back() {
         sessionStorage.setItem("date", "");
+        sessionStorage.setItem("hour", "");
         window.location.href = './searchGroomerCalendar.php';
     }
 
@@ -99,7 +100,7 @@
                     email: sessionStorage.getItem("email"),
                     pet: document.getElementById("petSelection").value,
                     groomer: sessionStorage.getItem("groomer"),
-                    hour: sessionStorage.getItem("date"),
+                    hour: sessionStorage.getItem("hour"),
                     date: sessionStorage.getItem("date"),
                     lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
                     taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
@@ -118,6 +119,7 @@
 
         sessionStorage.setItem("groomer","");
         sessionStorage.setItem("date","");
+        sessionStorage.setItem("hour","");
         window.location.href = "../index.php";
     }
 
@@ -150,6 +152,7 @@
 
     document.getElementById("groomer").innerHTML = sessionStorage.getItem("groomer");
     document.getElementById("date").innerHTML = sessionStorage.getItem("date");
+    document.getElementById("hour").innerHTML = sessionStorage.getItem("hour");
 
     getPets();
 
