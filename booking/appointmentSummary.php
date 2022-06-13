@@ -18,10 +18,13 @@
     include "../navbar/navbar.php";
 
     $time = $_POST['time'];
+    $date = substr($time, 0, strpos($time, 'T'));
+    $hour = substr($time, strpos($time, 'T') + 1 , strlen($time) - strpos($time, 'T'));
 
     echo '
         <script type="text/javascript" lang="javascript">
-        sessionStorage.setItem("date","' . $time . '")';
+        sessionStorage.setItem("date","' . $date . '");
+        sessionStorage.setItem("hour","' . $hour . '");';
 
     echo '
         
@@ -86,6 +89,9 @@
         <span id="date"></span>
     </div>
     <div>
+        <span id="hour"></span>
+    </div>
+    <div>
         <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
         <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
     </div>
@@ -108,7 +114,7 @@
                     email: sessionStorage.getItem("email"),
                     pet: document.getElementById("petSelection").value,
                     groomer: sessionStorage.getItem("groomer"),
-                    hour: sessionStorage.getItem("date"),
+                    hour: sessionStorage.getItem("hour"),
                     date: sessionStorage.getItem("date"),
                     lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
                     taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
@@ -127,6 +133,7 @@
 
         sessionStorage.setItem("groomer","");
         sessionStorage.setItem("date","");
+        sessionStorage.setItem("hour","");
         window.location.href = "../index.php";
     }
 
@@ -159,6 +166,7 @@
 
     document.getElementById("groomer").innerHTML = sessionStorage.getItem("groomer");
     document.getElementById("date").innerHTML = sessionStorage.getItem("date");
+    document.getElementById("hour").innerHTML = sessionStorage.getItem("hour");
 
     getPets();
 
