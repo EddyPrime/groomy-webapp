@@ -77,6 +77,9 @@
         <span id="date"></span>
     </div>
     <div>
+        <span id="hour"></span>
+    </div>
+    <div>
         <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
         <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
     </div>
