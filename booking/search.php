@@ -4,14 +4,15 @@ $file = "../db/groomers.txt";
 
 $time = $_POST['time'];
 
+echo '
 
-$debugMessage = "Invalid email! Insert a new email address.";
+        <script type="text/javascript" lang="javascript">
+        sessionStorage.setItem("date",';
+echo '"' . $time . '")';
+        
 
 echo '
-        <script type="text/javascript" lang="javascript">
-        console.log("'. $time. '")';
-
-    echo '
-        
+        window.location = "searchGroomerDate.php";
         </script>
         ';
+?>

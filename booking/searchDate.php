@@ -23,7 +23,7 @@
     </div>
     <form action="./search.php" method="post">
         <input type="datetime-local" id="time" name="time">
-        <button type = "submit"></button>
+        <button type = "submit">Search</button>
     </form>
 </body>
 
