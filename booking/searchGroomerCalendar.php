@@ -18,7 +18,7 @@
     ?>
 </head>
 
-<body> 
+<body>
     <div>
         <button type="button" class="btn btn-primary btn-block mb-3" onclick="back();">Back</button>
     </div>
@@ -29,10 +29,12 @@
 </body>
 
 <script>
+    const today = (new Date()).toISOString().slice(0,16); // get local current date
+    document.getElementById("time").min = today;
 
     function back() {
-        sessionStorage.setItem("groomer","");
-        window.location.href='./booking.php';
+        sessionStorage.setItem("groomer", "");
+        window.location.href = './booking.php';
     }
 
     home.setAttribute("class", "nav-link");

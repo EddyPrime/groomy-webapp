@@ -23,11 +23,14 @@
     </div>
     <form action="./search.php" method="post">
         <input type="datetime-local" id="time" name="time">
-        <button type = "submit">Search</button>
+        <button type="submit">Search</button>
     </form>
 </body>
 
 <script>
+    const today = (new Date()).toISOString().slice(0, 16); // get local current date
+    document.getElementById("time").min = today;
+    
     home.setAttribute("class", "nav-link");
     home.setAttribute("aria-current", "");
 
