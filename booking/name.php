@@ -9,7 +9,7 @@ function getGroomerByName($name)
 
     for ($i = 1; $i < count($groomers); $i++) {
         $infoElementArray = explode(";", $groomers[$i]);
-        if (strpos($infoElementArray[0], $name) !== false) {
+        if (strpos(strtolower($infoElementArray[0]), strtolower($name)) !== false) {
             array_push($groms, $infoElementArray);
         }
     }
