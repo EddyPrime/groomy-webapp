@@ -39,6 +39,7 @@
     <br>
     <div>
         <button onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
+        <div id="closeGroomers"></div>
     </div>
     <br>
     <br>
