@@ -1,11 +1,3 @@
-a@ca.it;#aaAa;aa;a;23
-a@cia.it;aaAa#;aa;a;23
-a@c.it;aaAa!;aa;a;23
-a@coiu.it;#aaAaa;aa;a;23
-p@w.it;abaaaS#;assd;asdff;23
-e#ea@s.it;Scemo#;Edoardo;coglion;235
-aaa@a.it;Ciao1!;vdfdf;fddf;22
-b.e@b.it;Ciao!;aa;aa;22
-a@a.it;Ciao!;Gio;Lau;233
-mat@lomb.it;Ciao!;Matteoooo;Lombbb;123
-q@s.it;Ciao!;q;qw;122
+laurenzigio@gmail.com;Groomy1!;Giordano;Laurenzi;3339977923
+mattlom@libero.it;Groomy2!;Matteo;Lombardi;3492345678
+eldo.liberati@gmail.com;Groomy3!Edoardo;Liberati;3289856232

@@ -1,6 +1,6 @@
 userEmail;groomer
-a@a.it;CanePulito
-a@a.it;JeannePulisciAnimali
-a@c.it;MusoProfumato
-a@ca.it;QuaLaZampa
-e#ea@s.it;MusoProfumato
+laurenzigio@gmail.com;CanePulito
+laurenzigio@gmail.com;JeannePulisciAnimali
+laurenzigio@gmail.com;MusoProfumato
+mattlom@libero.it;QuaLaZampa
+mattlom@libero.it;MusoProfumato
