@@ -123,42 +123,42 @@ for ($i = 0; $i < count($appointments); $i++) {
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="lavaggio" onclick="return false;" <?php if ($lavaggio == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                Lavaggio
+                Wash
             </label>
             </div>
 
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="taglio_pelo" onclick="return false;" <?php if ($taglio_pelo == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                Taglio pelo
+                Hair cut
             </label>
             </div>
 
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="taglio_unghie" onclick="return false;" <?php if ($taglio_unghie == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                Taglio unghie
+                Nails cut
             </label>
             </div>
 
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="spa" onclick="return false;" <?php if ($spa == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                SPA
+                SPA treatment
             </label>
             </div>
 
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="anti_parassitari" onclick="return false;" <?php if ($antiparassitari == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                Anti parassitari
+                Anti Parasitic
             </label>
             </div>
 
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="acconciatura_concorsi" onclick="return false;" <?php if ($acconciatura_concorsi == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
-                Acconciatura per concorsi
+                Contest Preparation
             </label>
             </div>
 

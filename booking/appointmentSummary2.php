@@ -44,13 +44,13 @@
     <div class="form-check d-flex">
         <input class="form-check-input me-2" type="checkbox" value="" id="taglio_unghie" aria-describedby="" />
         <label class="form-check-label" for="taglio_unghie">
-            Nail Cut
+            Nails Cut
         </label>
     </div>
     <div class="form-check d-flex">
         <input class="form-check-input me-2" type="checkbox" value="" id="spa" aria-describedby="" />
         <label class="form-check-label" for="spa">
-            Spa
+            SPA Treatment
         </label>
     </div>
     <div class="form-check d-flex">
@@ -62,7 +62,7 @@
     <div class="form-check d-flex ">
         <input class="form-check-input me-2" type="checkbox" value="" id="acconciatura_concorsi" aria-describedby="" />
         <label class="form-check-label" for="acconciatura_concorsi">
-            Contest Hairstyle
+            Contest Preparation
         </label>
     </div>
     <div>
