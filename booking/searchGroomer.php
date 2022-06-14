@@ -26,8 +26,8 @@
         <button onclick="searchFavouriteGroomers();">Favourite Groomer </button>
         <div id="favGroomers"></div>
     </div>
-    <p></p>
-    <p></p>
+    <br>
+    <br>
     <div>
         <button onclick="searchGroomersByName();">Search Groomer By Name </button>
         <br>
@@ -35,16 +35,35 @@
         <div id="nameGroomers"></div>
 
     </div>
-    <p></p>
+    <br>
+    <br>
     <div>
         <button onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
-        <div id="closeGroomers"></div>
     </div>
-    <p></p>
-    <button onclick="window.location = '#';">Search Groomer Using Maps </button>
+    <br>
+    <br>
+    <button onclick="showMap();">Search Groomer Using Maps </button>
+        <div id="groomersMap" style="display: none;">
+            <a onclick="setGroomer('CanePulito');">
+                <img src="../img/MAP.png" style="width: 75%;">
+            </a>
+        </div>
 </body>
 
 <script>
+
+    var map_displayed = 0;
+
+    function showMap() {
+        console.log('test');
+        if ( map_displayed == 0 ) {
+            document.getElementById('groomersMap').style.display = 'block';
+            map_displayed = 1;
+        } else {
+            document.getElementById('groomersMap').style.display = 'none';
+            map_displayed = 0;
+        }
+    }
 
     function setGroomer(name) {
         sessionStorage.setItem("groomer",name);
