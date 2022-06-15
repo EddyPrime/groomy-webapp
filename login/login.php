@@ -52,18 +52,23 @@
             </div>
           </div>
         </div>
-        <div class="form-outline mb-4">
+        <div class="form-outline">
           <!-- Submit button -->
           <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Login</button>
         </div>
 
-        <div class="form-outline mb-4">
-          <button type="button" class="btn btn-link btn-floating mx-1">
-          <i class="fab fa-facebook fa-3x" aria-hidden="true"></i>
-          </button>
-          <button type="button" class="btn btn-link btn-floating mx-1">
-            <i class="fab fa-google fa-2x" aria-hidden="true"></i>
-          </button>
+        <div class="form-outline mb-2 row">
+          <div class="col">
+            <button type="button" class="btn">
+              <img src="../img/facebook.svg"></img>
+            </button>
+          </div>
+          <div class="col">
+            <button type="button" class="btn">
+            <img src="../img/google.svg"></img>
+            </button>
+          </div>
+          
         </div>
         
         <p class="text-center">or</p>
