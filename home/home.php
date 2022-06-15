@@ -20,17 +20,18 @@
 </head>
 
 <body>
-    <div class="container">
-        <h3 id="Welcome"></h3>
+    <div class="container text-center homepage">
         <?php
             session_start();
-            echo '<h3>Hi ' . $_SESSION["name"] . '!</h3>';?>
-        <p>Here you can see all your appointments!</p>
+            echo '<h1 style="font-weight: bold ;">Hi ' . $_SESSION["name"] . '!</h1>';?>
+        <p>Here you can see the summary of your appointments!</p>
         <div class="appointments-list">
             <?php
                 $txt_file = fopen('../db/appointments.txt','r');
                 $count = 1;
                 $printed = 0;
+
+                echo '<ol>';
 
                 while ( $line = fgets($txt_file) ) {
                     $line = trim($line);
@@ -74,7 +75,7 @@
                     $count++;
                 }
                 fclose($txt_file);
-
+                echo '</ol>';
                 if ( $printed == 0 ){
                     echo '<p> You don\'t have any appointment!</p>';
                 }

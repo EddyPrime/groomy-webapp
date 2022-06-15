@@ -10,7 +10,8 @@
     cursor: pointer;
   }
   */
-  form:not(.sign-up-form, .login-form){
+  form:not(.sign-up-form, .login-form),
+  .homepage {
     padding-bottom: 120px !important;
   }
 
@@ -55,32 +56,54 @@
   /* HOMEPAGE */
   
   .to-confirm {
-    border-color: yellow !important;
-    background-color: darkkhaki;
+    border-color: rgb(192, 192, 2) !important;
+    background-color: yellow;
+    color: black;
   }
   
   .confirmed {
     border-color: green !important;
     background-color: greenyellow;
+    color: black;
   }
   
   .denied {
-    border-color: red !important;
-    background-color: red;
+    border-color: rgb(128, 0, 0) !important;
+    background-color: rgb(245, 45, 45);
+    color: black;
   }
   
   .passed {
-    border-color: grey !important;
-    background-color: darkslategray;
+    border-color: rgb(80, 79, 79) !important;
+    background-color: grey;
+    color: black;
   } 
   
   .appointment-info {
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 15%;
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
     border: 2px solid;
-    padding: 50px;
+    padding: 25px;
     border-radius: 10px;
+    text-align: left;
+  }
+
+  .appointments-list a {
+    text-decoration: none;
+  }
+
+  .appointments-list ol {
+    list-style: none;
+    padding: 0 !important;
+  }
+
+  .appointments-list ol li {
+    margin-bottom: 7.5%;
+  }
+
+  .appointments-list ol li:last-of-type {
+    margin-bottom: 0;
   }
 
 }
