@@ -11,7 +11,8 @@
   }
   */
   form:not(.sign-up-form, .login-form),
-  .homepage {
+  .homepage,
+  .appointment-page {
     padding-bottom: 120px !important;
   }
 

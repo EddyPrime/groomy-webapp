@@ -101,24 +101,29 @@ for ($i = 0; $i < count($appointments); $i++) {
 </head>
 
 <body>
-    <button type="button" class="btn btn-link" onclick="window.location.href='../home/home.php'"><</button>
-    <div class="container" style="padding-bottom: 120px">
-        <h3>Appointment details</h3>
-        <?php 
-            echo '<div class="row">Date: ' . $date . '</div>';
-            echo '<div class="row">Hour: ' . $hour . '</div>';
-            echo '<div class="row">Pet groomer: ' . $groomer . '</div>';
-            echo '<div class="row">Address: ' . $address . '</div>';
-            echo '<div class="row">
-                    <img src="../img/map.jpeg" style="width:60%">
+    
+    <div class="container appointment-page">
+        <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='../home/home.php'">
+            <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+        </button>
+        <div>
+
+            <h1 style="font-weight: bold ;" class="text-center">Appointment details</h1>
+            <?php 
+            echo '<div class="form-outline mb-1">Date: ' . $date . '</div>';
+            echo '<div class="form-outline mb-1">Hour: ' . $hour . '</div>';
+            echo '<div class="form-outline mb-1">Pet groomer: ' . $groomer . '</div>';
+            echo '<div class="form-outline mb-1">Address: ' . $address . '</div>';
+            echo '<div class="form-outline mb-2">
+                    <img src="../img/map.jpeg" style="width:100%">
                     </div>';
-            echo '<div class="row"><strong>Pet Info</strong></div>';
-            echo '<div class="row">Name: ' . $pet_name . '</div>';
-            echo '<div class="row">Race: ' . $pet_race . '</div>';
-            echo '<div class="row">Weight: ' . $pet_weight . '</div>';
-            echo '<div class="row">Size: ' . $pet_size . '</div>';
-            echo '<div class="row">Hair: ' . $pet_hair . '</div>';
-            echo '<div class="row"><strong>Services:</strong></div>';
+            echo '<div class="form-outline mb-1"><strong>Pet Info</strong></div>';
+            echo '<div class="form-outline mb-1">Name: ' . $pet_name . '</div>';
+            echo '<div class="form-outline mb-1">Race: ' . $pet_race . '</div>';
+            echo '<div class="form-outline mb-1">Weight: ' . $pet_weight . '</div>';
+            echo '<div class="form-outline mb-1">Size: ' . $pet_size . '</div>';
+            echo '<div class="form-outline mb-1">Hair: ' . $pet_hair . '</div>';
+            echo '<div class="form-outline mb-1"><strong>Services:</strong></div>';
             ?>
             <div class="form-check">
             <input class="form-check-input" type="checkbox" id="lavaggio" onclick="return false;" <?php if ($lavaggio == 1){ echo 'checked'; }?>>
@@ -161,7 +166,7 @@ for ($i = 0; $i < count($appointments); $i++) {
                 Contest Preparation
             </label>
             </div>
-
+        </div>
     </div>
 
 </body>
