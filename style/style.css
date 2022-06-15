@@ -10,7 +10,7 @@
     cursor: pointer;
   }
   */
-  form {
+  form:not(.sign-up-form, .login-form){
     padding-bottom: 120px !important;
   }
 
@@ -18,12 +18,17 @@
     margin-bottom: 4%;
   }
   
-  #pills-login {
+  #pills-login,
+  #pills-register {
     margin-top: 10%;
   }
 
   h1 {
     font-size: 40px !important;
+  }
+
+  .go-back-btn {
+    position: absolute;
   }
 
   .navbar ul {

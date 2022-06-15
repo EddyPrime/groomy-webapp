@@ -25,7 +25,7 @@
     <h1 style="font-weight: bold ;">Groomy</h1>
     <p>Take care of your pets</p>
     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-      <form method="POST" action="log.php">
+      <form method="POST" action="log.php" class="login-form">
         <!-- Email input -->
         <label class="form-label" for="loginName">Email</label>
         <div class="input-group form-outline text-center">
