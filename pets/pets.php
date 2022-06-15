@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 
-<head> 
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no">
     <title>Groomy This is the pets page.</title>
@@ -11,7 +11,7 @@
     session_start();
     ?>
 
-    
+
 
 
     <link rel="stylesheet" type="text/css" href="../style/reset.css">
@@ -19,60 +19,61 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    
+
 </head>
 
 <body>
     <h3>Here you can find all your pets</h3>
-
-    <ul>
-        <?php
-            $txt_file = fopen('../db/pets.txt','r');
+    <div class="pets-list">
+        <ul>
+            <?php
+            $txt_file = fopen('../db/pets.txt', 'r');
             $count = 1;
             $printed = 0;
 
-            while ( $line = fgets($txt_file) ) {
+
+            while ($line = fgets($txt_file)) {
                 $line = trim($line);
-                $info = explode( ";", $line );
+                $info = explode(";", $line);
                 //echo $line;
                 //echo $info[0];
                 //print_r( $info );
-                if ( $count != 1 && $line != '' && $info[0] == $_SESSION['email'] ){
-                    
-                    if ( strpos($info[11], 'default' ) !== false ){
+                if ($count != 1 && $line != '' && $info[0] == $_SESSION['email']) {
+
+                    if (strpos($info[11], 'default') !== false) {
                         $img = '../img/pet.svg';
                     } else {
                         $img = $info[11];
                     }
-                    
+
                     echo '<li>
+                    <div class = "pet-details row" >
                     <a href="./pet.php?pet_name=' . $info[1] . '" > 
-                        <div class="pet-image">
-                            <img src="'. $img . '" style="width: 10%"></img>
+                        <div class="pet-image col-md-2">
+                            <img src="' . $img . '" style="width: 10%"></img>
                         </div>
-                        <div class=pet-info>
+                        <div class="pet-info col-md-2">
                             Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
                         </div>
                         </a>
-                        
+                        </div>
                     </li>';
-                    
+
                     $printed++;
-                    
                 }
-                
+
                 $count++;
             }
             fclose($txt_file);
 
-            if ( $printed == 0 ){
+            if ($printed == 0) {
                 echo '<p> You don\'t have any pet saved, add a new one!</p>';
             }
-        ?>
-    </ul>
-
+            ?>
+        </ul>
+    </div>
     <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
 
 </body>
@@ -95,7 +96,7 @@
                         //window.location.reload();
                         console.log(data); // Inspect this in your console
                     },
-                    complete: function(){
+                    complete: function() {
                         window.location.reload();
                     }
                 });
