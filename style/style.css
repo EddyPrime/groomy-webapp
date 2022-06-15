@@ -1,64 +1,81 @@
-i .bi-eye-slash{
-  width: 25px;
-  height: 25px;
-  position: absolute;
-  z-index: 200;
-  top: 425px;
-  right: 30px;
-  cursor: pointer;
+@media only screen and (max-width: 640px) {
+/*
+  .bi-eye-slash{
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    z-index: 200;
+    top: 28px;
+    right: 10px;
+    cursor: pointer;
+  }
+  */
+  form {
+    padding-bottom: 120px !important;
+  }
+
+  form .input-group {
+    margin-bottom: 4%;
+  }
+  
+  #pills-login {
+    margin-top: 10%;
+  }
+
+  h1 {
+    font-size: 40px !important;
+  }
+
+  .navbar ul {
+    margin: auto !important;
+    width: 100%;
+  }
+  
+  .navbar ul li {
+    text-align: center;
+    width: 20%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+  }
+  
+  select:invalid{
+    color: gray;
+  }
+  option{
+    color: black;
+  }
+  
+  
+  /* HOMEPAGE */
+  
+  .to-confirm {
+    border-color: yellow !important;
+    background-color: darkkhaki;
+  }
+  
+  .confirmed {
+    border-color: green !important;
+    background-color: greenyellow;
+  }
+  
+  .denied {
+    border-color: red !important;
+    background-color: red;
+  }
+  
+  .passed {
+    border-color: grey !important;
+    background-color: darkslategray;
+  } 
+  
+  .appointment-info {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    border: 2px solid;
+    padding: 50px;
+    border-radius: 10px;
+  }
+
 }
 
-form {
-  padding-bottom: 120px !important;
-}
-
-.navbar ul {
-  margin: auto !important;
-  width: 100%;
-}
-
-.navbar ul li {
-  text-align: center;
-  width: 20%;
-  margin-left: 2.5%;
-  margin-right: 2.5%;
-}
-
-select:invalid{
-  color: gray;
-}
-option{
-  color: black;
-}
-
-
-/* HOMEPAGE */
-
-.to-confirm {
-  border-color: yellow !important;
-  background-color: darkkhaki;
-}
-
-.confirmed {
-  border-color: green !important;
-  background-color: greenyellow;
-}
-
-.denied {
-  border-color: red !important;
-  background-color: red;
-}
-
-.passed {
-  border-color: grey !important;
-  background-color: darkslategray;
-} 
-
-.appointment-info {
-  width: 70%;
-  margin-left: 15%;
-  margin-right: 15%;
-  border: 2px solid;
-  padding: 50px;
-  border-radius: 10px;
-}
