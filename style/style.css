@@ -116,23 +116,6 @@
     text-decoration: none;
   }
 
-  .pet-info {
-    width: 70%;
-    margin-left: 30.5%;
-    margin-right: 7.5%;
-    padding: 25px;
-    
-    text-align: left;
-    color: black;
-  }
-
-  .pet-image{
-    float: left;
-    width: 100%;
-    margin-left: 7.5%;
-    margin-right: 7.5%;
-  }
-
   .pet-details{
     display: flex;
     align-items: center;
@@ -140,6 +123,30 @@
 
   .form-check{
     text-align: left;
+  }
+
+  /* PET PAGE */
+  .pet-image {
+    width: 100%;
+    margin-bottom: 5%;
+  }
+
+  .pet-info {
+    width: 100%;
+  }
+
+  .pet-page h1 {
+    margin-bottom: 10%;
+  }
+
+  .pet-image img {
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+  }
+
+  .pet-info .form-outline:last-of-type {
+    margin-bottom: 5%;
   }
 }
 

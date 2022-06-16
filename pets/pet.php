@@ -73,31 +73,35 @@ for ($i = 0; $i < count($pets); $i++) {
 </head>
 
 <body>
-    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./pets.php';">
-        <img src="../img/arrow-left.svg" style="color: white !important;"></img>
-    </button>
-    <div class="container">
-        <div class="pet-image">
+    <div class="container pet-page">
+        <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./pets.php';">
+            <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+        </button>
+        <h1 style="font-weight: bold ;" class="text-center">
+            <?php echo $pet_name; ?>
+        </h1>
+        <div class="pet-image form-outline">
             <?php
             echo '<img src="' . $img . '"></img>';
             ?>
         </div>
         <div class="pet-info">
             <?php
-            echo '<div class="row">Name: ' . $pet_name . '</div>';
-            echo '<div class="row">Race: ' . $pet_race . '</div>';
-            echo '<div class="row">Weight: ' . $pet_weight . '</div>';
-            echo '<div class="row">Size: ' . $pet_size . '</div>';
-            echo '<div class="row">Hair: ' . $pet_hair . '</div>';
-            echo '<div class="row">Strange Behaviours: ' . $pet_behaviours . '</div>';
-            echo '<div class="row">Fears: ' . $pet_fears . '</div>';
-            echo '<div class="row">Is it partecipating to contests? ' . $pet_contests . '</div>';
-            echo '<div class="row">Is it used to be groomed? ' . $pet_groomed . '</div>';
-            echo '<div class="row">Is it comfortable with other pets? ' . $pet_comfortable . '</div>';
+            echo '<div class="form-outline mb-1">Race: ' . $pet_race . '</div>';
+            echo '<div class="form-outline mb-1">Weight: ' . $pet_weight . '</div>';
+            echo '<div class="form-outline mb-1">Size: ' . $pet_size . '</div>';
+            echo '<div class="form-outline mb-1">Hair: ' . $pet_hair . '</div>';
+            echo '<div class="form-outline mb-1">Strange Behaviours: ' . $pet_behaviours . '</div>';
+            echo '<div class="form-outline mb-1">Fears: ' . $pet_fears . '</div>';
+            echo '<div class="form-outline mb-1">Is it partecipating to contests? ' . $pet_contests . '</div>';
+            echo '<div class="form-outline mb-1">Is it used to be groomed? ' . $pet_groomed . '</div>';
+            echo '<div class="form-outline">Is it comfortable with other pets? ' . $pet_comfortable . '</div>';
             ?>
         </div>
         <?php
-        echo '<button type="button" class="btn btn-secondary" onclick=' . 'window.location.href="./pet_edit.php?pet_name=' . $pet_name . '"' . '>Edit</button>';
+        echo '<div class="form-outline text-center">
+        <button type="button" class="btn btn-secondary btn-lg" onclick=' . 'window.location.href="./pet_edit.php?pet_name=' . $pet_name . '"' . '>Edit</button>
+        </div>';
         ?>
     </div>
 
