@@ -22,15 +22,19 @@
     <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
         <img src="../img/arrow-left.svg" style="color: white !important;"></img>
     </button>
-    <div style="margin-top: 15%;">
+    <div class="text-center" style="margin-top: 15%;">
         <div>
-            <button onclick="searchFavouriteGroomers();">Favourite Groomer </button>
+            <button onclick="searchFavouriteGroomers();" style="width: 75%;">Favourite Groomer </button><br>
+            <div style="visibility: hidden;">
+                <input type="search" placeholder="Enter groomer's name"></input>
+                <button class="btn btn-info">Search</button>
+            </div>
             <div id="favGroomers"></div>
         </div>
         <br>
         <br>
         <div>
-            <button onclick="showSearchByName();">Search Groomer By Name </button>
+            <button onclick="showSearchByName();" style="width: 75%;">Search Groomer By Name </button>
             <br>
             <div id="searchByName" style="visibility: hidden;">
                 <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
@@ -42,12 +46,16 @@
         <br>
         <br>
         <div>
-            <button onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
+            <button onclick="searchGroomersByDistance();" style="width: 75%;">Search Groomer By Distance </button>
+            <div style="visibility: hidden;">
+                <input type="search" placeholder="Enter groomer's name"></input>
+                <button class="btn btn-info">Search</button>
+            </div>
             <div id="closeGroomers"></div>
         </div>
         <br>
         <br>
-        <button onclick="showMap();">Search Groomer Using Maps </button>
+        <button onclick="showMap();" style="width: 75%;">Search Groomer Using Maps </button>
         <div id="groomersMap" style="display: none;">
             <a onclick="setGroomer('CanePulito');">
                 <img src="../img/MAP.png" style="width: 75%;">
@@ -66,6 +74,9 @@
         if (map_displayed == 0) {
             document.getElementById('groomersMap').style.display = 'block';
             map_displayed = 1;
+            document.getElementById("nameGroomers").innerHTML = "";
+            document.getElementById("favGroomers").innerHTML = "";
+            document.getElementById("closeGroomers").innerHTML = "";
         } else {
             document.getElementById('groomersMap').style.display = 'none';
             map_displayed = 0;
@@ -150,6 +161,11 @@
                 success: function(data) {
                     //console.log(data); // Inspect this in your console
 
+                    document.getElementById("nameGroomers").innerHTML = "";
+                    document.getElementById("closeGroomers").innerHTML = "";
+                    document.getElementById("groomersMap").setAttribute("style", "display: none;");
+                    hideSearchByName();
+
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'favGroomersList');
 
@@ -166,13 +182,24 @@
 
     var formVisible = 0;
 
+    function hideSearchByName() {
+        formVisible = 0;
+        document.getElementById("searchByName").setAttribute("style", "visibility: hidden;")
+    }
+
+    function displaySearchByName() {
+        formVisible = 1;
+        document.getElementById("searchByName").setAttribute("style", "visibility: visible;")
+    }
+
     function showSearchByName() {
         if (formVisible) {
-            formVisible = 0;
-            document.getElementById("searchByName").setAttribute("style", "visibility: hidden;")
+            hideSearchByName();
         } else {
-            formVisible = 1;
-            document.getElementById("searchByName").setAttribute("style", "visibility: visible;")
+            displaySearchByName();
+            document.getElementById("favGroomers").innerHTML = "";
+            document.getElementById("closeGroomers").innerHTML = "";
+            document.getElementById("groomersMap").setAttribute("style", "display: none;");
         }
     }
 
@@ -218,6 +245,10 @@
                 data: {},
                 success: function(data) {
                     //console.log(data); // Inspect this in your console
+
+                    document.getElementById("nameGroomers").innerHTML = "";
+                    document.getElementById("favGroomers").innerHTML = "";
+                    document.getElementById("groomersMap").setAttribute("style", "display: none;");
 
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'closeGroomersList');
