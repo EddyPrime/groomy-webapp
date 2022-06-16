@@ -57,39 +57,43 @@ for ($i = 0; $i < count($pets); $i++) {
 
 <body>
     <div class="container">
+    <h1 style="font-weight: bold ; text-align: center;">PET</h1>
+    <h6 style="text-align: center;">Edit your pet information</h6>
         <form method="post" action="" enctype="multipart/form-data">
-            <div class="mb-3">
+        <div class="text-center mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_name" class="form-label">Name</label>
                 <input type="text" class="form-control" id="pet_name" name="pet_name" required <?php echo 'value="' . $pet_name .'"'; ?>>
             </div>
 
-            <div class="mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_race" class="form-label">Race</label>
                 <input type="text" class="form-control" id="pet_race" name="pet_race" required <?php echo 'value="' . $pet_race .'"'; ?> >
             </div>
 
-            <div class="mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_weight" class="form-label">Weight (kg)</label>
                 <input type="numeric" class="form-control" id="pet_weight" name="pet_weight" required <?php echo 'value="' . $pet_weight .'"'; ?>>
             </div>
 
+            <label for="pet_size" class="form-label">Size</label>
             <select class="form-select" aria-label="Size" name="pet_size" required>
                 <option value="small" <?php if ($pet_size == 'small') { echo 'selected'; } ?>>Small</option>
                 <option value="medium" <?php if ($pet_size == 'medium') { echo 'selected'; } ?>>Medium</option>
                 <option value="big" <?php if ($pet_size == 'big') { echo 'selected'; } ?>>Big</option>
             </select>
             <br>
-            <div class="mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_hair" class="form-label">Type of hair</label>
                 <input type="text" class="form-control" id="pet_hair" name="pet_hair" required <?php echo 'value="' . $pet_hair .'"'; ?>>
             </div>
 
-            <div class="mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_behaviours" class="form-label">Strange behaviours?</label>
                 <input type="text" class="form-control" id="pet_behaviours" name="pet_behaviours" <?php echo 'value="' . $pet_behaviours .'"'; ?>>
             </div>
 
-            <div class="mb-3">
+            <div class="form-outline mb-4">
                 <label for="pet_fears" class="form-label">Is it scared about something?</label>
                 <input type="text" class="form-control" id="pet_fears" name ="pet_fears" <?php echo 'value="' . $pet_fears .'"'; ?>>
             </div>
@@ -122,9 +126,11 @@ for ($i = 0; $i < count($pets); $i++) {
             <br>
             <br>
 
-            <button type="submit" name="submit" class="btn btn-primary">Save Changes</button>
-            <button type="button" class="btn btn-danger" onclick="history.back()">Cancel</button>
-            <button class="btn btn-danger" type="button" onclick="deletepet(this)" name="delete_pet" value="<?php echo $pet_name; ?>">Delete Pet</button>
+            <button type="button" class="btn btn-lg btn-primary btn-block mb-4 btn-danger"  onclick="history.back()">Cancel</button>
+            <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block mb-4" style="margin-left:20%">Save</button>
+            
+            <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger"  type="button" onclick="deletepet(this)" name="delete_pet" value="<?php echo $pet_name; ?>">Delete Pet</button>
+        </div>
         </form>
     </div>
 

@@ -15,85 +15,86 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='../login/login.php';">
-    <img src="../img/arrow-left.svg" style="color: white !important;"></img>
-  </button>
-  <!-- Pills content -->
-  <div class="tab-content text-center">
-    <h1 style="font-weight: bold ;">Sign up</h1>
-    <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
-      <form method="POST" action="sign.php" class="sign-up-form">
-        <div class="text-center mb-3">
-          <!-- Name input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerName">Name</label>
-            <input type="text" name="name" id="registerName" class="form-control" />
+    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='../login/login.php';">
+      <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+    </button>
+    <!-- Pills content -->
+    <div class="tab-content text-center">
+      <h1 style="font-weight: bold ;">Sign up</h1>
+      <div class="tab-pane fade show active" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form method="POST" action="sign.php" class="sign-up-form">
+          <div class="text-center mb-3">
+            <!-- Name input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="registerName">Name</label>
+              <input type="text" name="name" id="registerName" class="form-control" />
 
-          </div>
+            </div>
 
-          <!-- Surname input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerSurname">Surname</label>
-            <input type="text" name="surname" id="registerSurname" class="form-control" />
+            <!-- Surname input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="registerSurname">Surname</label>
+              <input type="text" name="surname" id="registerSurname" class="form-control" />
 
-          </div>
-
-
-          <!-- Email input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerEmail">Email</label>
-            <input type="email" name="email" id="registerEmail" class="form-control" />
-          </div>
-
-          <!-- Telephone number input -->
-          <div class="form-outline mb-4">
-            <label class="form-label" for="registerTelephone">Phone Number</label>
-            <input type="tel" name="phoneNumber" id="registerphone" class="form-control" />
-          </div>
+            </div>
 
 
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="registerEmail">Email</label>
+              <input type="email" name="email" id="registerEmail" class="form-control" />
+            </div>
 
-          <!-- Password input -->
-          <div class="row">
+            <!-- Telephone number input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="registerTelephone">Phone Number</label>
+              <input type="tel" name="phoneNumber" id="registerphone" class="form-control" />
+            </div>
+
+
+
+            <!-- Password input -->
+            <div class="row">
               <label class="form-label" for="registerPassword">Password
-              <img src="../img/question-circle-fill.svg" id="howToPassword"></img>
+                <img src="../img/question-circle-fill.svg" id="howToPassword"></img>
               </label>
-          </div>
-          
-          <div class="form-outline mb-4">
-            <input type="password" name="password" id="registerPassword" class="form-control" oninput="matchPasswords()" />
-          </div>
-          
+            </div>
 
-          <!-- Repeat Password input -->
-          <label class="form-label" for="registerRepeatPassword">Confirm password</label>
-          <div class="input-group form-outline text-center">
+            <div class="form-outline mb-4">
+              <input type="password" name="password" id="registerPassword" class="form-control" oninput="matchPasswords()" />
+            </div>
+
+
+            <!-- Repeat Password input -->
+            <label class="form-label" for="registerRepeatPassword">Confirm password</label>
+            <div class="input-group form-outline text-center">
               <input type="password" name="repeatPassword" id="registerRepeatPassword" class="form-control" oninput="matchPasswords()" />
-            <span class="input-group-text">
-              <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer"></i>
-            </span>
+              <span class="input-group-text">
+                <i class="bi bi-eye-slash" id="togglePassword" style="cursor: pointer"></i>
+              </span>
+            </div>
+
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="groomerCheck" aria-describedby="groomerCheckHelpText" />
+              <label class="form-check-label" for="groomerCheck">
+                I am a pet groomer
+              </label>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign up</button>
+            <h6>By clicking on sign up, you are agreeing to our terms and conditions</h6>
           </div>
-
-
-          <!-- Checkbox -->
-          <div class="form-check d-flex justify-content-center mb-4">
-            <input class="form-check-input me-2" type="checkbox" value="" id="groomerCheck" aria-describedby="groomerCheckHelpText" />
-            <label class="form-check-label" for="groomerCheck">
-              I am a pet groomer
-            </label>
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign up</button>
-          <h6>By clicking on sign up, you are agreeing to our terms and conditions</h6>
-      </form>
+        </form>
+      </div>
     </div>
+    <!-- Pills content -->
+
   </div>
-  <!-- Pills content -->
-    
-</div>
 
 </body>
 
@@ -141,7 +142,7 @@
     this.classList.toggle("bi-eye");
   });
 
-  var hintOn = 0;
+
   howToPassword.addEventListener("click", function() {
     alert('Password should have at least 5 character. \nPassword should contain at least a letter. \nPassword should contain at least a capital letter. \nPassword should contain at least a symbol.');
   });
