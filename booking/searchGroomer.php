@@ -19,9 +19,9 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';">Back</button>
-    </div>
+    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
+        <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+    </button>
     <div>
         <button onclick="searchFavouriteGroomers();">Favourite Groomer </button>
         <div id="favGroomers"></div>
@@ -44,20 +44,19 @@
     <br>
     <br>
     <button onclick="showMap();">Search Groomer Using Maps </button>
-        <div id="groomersMap" style="display: none;">
-            <a onclick="setGroomer('CanePulito');">
-                <img src="../img/MAP.png" style="width: 75%;">
-            </a>
-        </div>
+    <div id="groomersMap" style="display: none;">
+        <a onclick="setGroomer('CanePulito');">
+            <img src="../img/MAP.png" style="width: 75%;">
+        </a>
+    </div>
 </body>
 
 <script>
-
     var map_displayed = 0;
 
     function showMap() {
         console.log('test');
-        if ( map_displayed == 0 ) {
+        if (map_displayed == 0) {
             document.getElementById('groomersMap').style.display = 'block';
             map_displayed = 1;
         } else {
@@ -67,7 +66,7 @@
     }
 
     function setGroomer(name) {
-        sessionStorage.setItem("groomer",name);
+        sessionStorage.setItem("groomer", name);
         console.log(sessionStorage.getItem("groomer"));
         window.location.href = "./searchGroomerCalendar.php";
     }
