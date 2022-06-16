@@ -22,33 +22,40 @@
     <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
         <img src="../img/arrow-left.svg" style="color: white !important;"></img>
     </button>
-    <div>
-        <button onclick="searchFavouriteGroomers();">Favourite Groomer </button>
-        <div id="favGroomers"></div>
-    </div>
-    <br>
-    <br>
-    <div>
-        <button onclick="searchGroomersByName();">Search Groomer By Name </button>
+    <div style="margin-top: 15%;">
+        <div>
+            <button onclick="searchFavouriteGroomers();">Favourite Groomer </button>
+            <div id="favGroomers"></div>
+        </div>
         <br>
-        <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
-        <div id="nameGroomers"></div>
+        <br>
+        <div>
+            <button onclick="showSearchByName();">Search Groomer By Name </button>
+            <br>
+            <div id="searchByName" style="visibility: hidden;">
+                <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
+                <button class="btn btn-info" onclick="searchGroomersByName();">Search</button>
+            </div>
+            <div id="nameGroomers"></div>
+
+        </div>
+        <br>
+        <br>
+        <div>
+            <button onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
+            <div id="closeGroomers"></div>
+        </div>
+        <br>
+        <br>
+        <button onclick="showMap();">Search Groomer Using Maps </button>
+        <div id="groomersMap" style="display: none;">
+            <a onclick="setGroomer('CanePulito');">
+                <img src="../img/MAP.png" style="width: 75%;">
+            </a>
+        </div>
 
     </div>
-    <br>
-    <br>
-    <div>
-        <button onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
-        <div id="closeGroomers"></div>
-    </div>
-    <br>
-    <br>
-    <button onclick="showMap();">Search Groomer Using Maps </button>
-    <div id="groomersMap" style="display: none;">
-        <a onclick="setGroomer('CanePulito');">
-            <img src="../img/MAP.png" style="width: 75%;">
-        </a>
-    </div>
+
 </body>
 
 <script>
@@ -155,6 +162,18 @@
         };
 
         getFavouriteGroomers();
+    }
+
+    var formVisible = 0;
+
+    function showSearchByName() {
+        if (formVisible) {
+            formVisible = 0;
+            document.getElementById("searchByName").setAttribute("style", "visibility: hidden;")
+        } else {
+            formVisible = 1;
+            document.getElementById("searchByName").setAttribute("style", "visibility: visible;")
+        }
     }
 
     function searchGroomersByName() {
