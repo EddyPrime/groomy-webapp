@@ -21,9 +21,9 @@
 
 <body>
 
-    <h1>Add new pet</h1>
+    <h1 style="font-weight: bold ;">Add new pet</h1>
 
-    <form method="post" action="" enctype="multipart/form-data">
+    <form method="post" action="" enctype="multipart/form-data" >
         <div class="mb-3">
             <label for="pet_name" class="form-label">Name</label>
             <input type="text" class="form-control" id="pet_name" name="pet_name" required>
@@ -95,7 +95,7 @@
 
         <div class="input-group">
             <input type="file" class="form-control" id="pet_image" aria-label="Upload" name="pet_image">
-            <button class="btn btn-outline-secondary" type="button" id="pet_image">Button</button>
+            
         </div>
 
         <br>

@@ -49,12 +49,12 @@
                     }
 
                     echo '<li>
-                    <div class = "pet-details row" >
+                    <div class = "pet-details " >
                     <a href="./pet.php?pet_name=' . $info[1] . '" > 
-                        <div class="pet-image col-md-2">
+                        <div class="pet-image ">
                             <img src="' . $img . '" style="width: 10%"></img>
                         </div>
-                        <div class="pet-info col-md-2">
+                        <div class="pet-info ">
                             Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
                         </div>
                         </a>
