@@ -116,37 +116,54 @@
     text-decoration: none;
   }
 
-  .pet-details{
-    display: flex;
-    align-items: center;
-  }
-
   .form-check{
     text-align: left;
   }
 
   /* PET PAGE */
-  .pet-image {
+  .pet-page .pet-image {
     width: 100%;
     margin-bottom: 5%;
   }
 
-  .pet-info {
+  .pet-page .pet-info {
     width: 100%;
   }
 
-  .pet-page h1 {
+  .pet-page .pet-page h1 {
     margin-bottom: 10%;
   }
 
-  .pet-image img {
+  .pet-page .pet-image img {
     width: 70%;
     margin-left: 15%;
     margin-right: 15%;
   }
 
-  .pet-info .form-outline:last-of-type {
+  .pet-page .pet-info .form-outline:last-of-type {
     margin-bottom: 5%;
   }
+
+  /*PETS PAGE */
+
+  .pets-page .pet-details {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pet-details .pet-image {
+    width: 30%;
+    position: relative;
+    float: left;
+  }
+
+  .pet-details .pet-info {
+    width: 70%;
+    position: relative;
+    float: left;
+    margin-top: 9%;
+  }
+
 }
 

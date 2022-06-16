@@ -25,57 +25,58 @@
 </head>
 
 <body>
-    <h3>Here you can find all your pets</h3>
-    <div class="pets-list">
-        <ul>
-            <?php
-            $txt_file = fopen('../db/pets.txt', 'r');
-            $count = 1;
-            $printed = 0;
+    <div class="container pets-page">
+        <h3>Here you can find all your pets</h3>
+        <div class="pets-list">
+            <ul>
+                <?php
+                $txt_file = fopen('../db/pets.txt', 'r');
+                $count = 1;
+                $printed = 0;
 
 
-            while ($line = fgets($txt_file)) {
-                $line = trim($line);
-                $info = explode(";", $line);
-                //echo $line;
-                //echo $info[0];
-                //print_r( $info );
-                if ($count != 1 && $line != '' && $info[0] == $_SESSION['email']) {
+                while ($line = fgets($txt_file)) {
+                    $line = trim($line);
+                    $info = explode(";", $line);
+                    //echo $line;
+                    //echo $info[0];
+                    //print_r( $info );
+                    if ($count != 1 && $line != '' && $info[0] == $_SESSION['email']) {
 
-                    if (strpos($info[11], 'default') !== false) {
-                        $img = '../img/pet.svg';
-                    } else {
-                        $img = $info[11];
+                        if (strpos($info[11], 'default') !== false) {
+                            $img = '../img/pet.svg';
+                        } else {
+                            $img = $info[11];
+                        }
+
+                        echo '<li>
+                        <div class = "pet-details " >
+                            <a href="./pet.php?pet_name=' . $info[1] . '" > 
+                                <div class="pet-image ">
+                                    <img src="' . $img . '"></img>
+                                </div>
+                                <div class="pet-info ">
+                                    Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
+                                </div>
+                            </a>
+                        </div>
+                        </li>';
+
+                        $printed++;
                     }
 
-                    echo '<li>
-                    <div class = "pet-details " >
-                    <a href="./pet.php?pet_name=' . $info[1] . '" > 
-                        <div class="pet-image ">
-                            <img src="' . $img . '" style="width: 10%"></img>
-                        </div>
-                        <div class="pet-info ">
-                            Name: <span id="name">' . $info[1] . '</span><br> Race: ' . $info[2] . '
-                        </div>
-                        </a>
-                        </div>
-                    </li>';
-
-                    $printed++;
+                    $count++;
                 }
+                fclose($txt_file);
 
-                $count++;
-            }
-            fclose($txt_file);
-
-            if ($printed == 0) {
-                echo '<p> You don\'t have any pet saved, add a new one!</p>';
-            }
-            ?>
-        </ul>
+                if ($printed == 0) {
+                    echo '<p> You don\'t have any pet saved, add a new one!</p>';
+                }
+                ?>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
     </div>
-    <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
-
 </body>
 
 </html>
