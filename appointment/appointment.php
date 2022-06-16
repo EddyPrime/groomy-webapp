@@ -171,8 +171,9 @@ for ($i = 0; $i < count($appointments); $i++) {
 
             <?php
                 
-                    echo '<button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . '" ?>Delete Appointment</button>
-                    ';
+                    echo '<div class="form-outline mb-1 text-center">
+                    <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . '" ?>Delete Appointment</button>
+                    </div>';
                 
             ?>
         </div>
