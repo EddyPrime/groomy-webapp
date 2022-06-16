@@ -7,7 +7,7 @@ session_start();
 function deleteAppointment($groomer, $pet_name)
 {
     $email = $_SESSION['email'];
-    $petsFile = "../db/appointment.txt";
+    $petsFile = "../db/appointments.txt";
     $pets = explode("\n", file_get_contents($petsFile));
     for ($i = 0; $i < count($pets); $i++) {
         $infoElementArray = explode(";", $pets[$i]);

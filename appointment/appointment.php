@@ -187,6 +187,8 @@ for ($i = 0; $i < count($appointments); $i++) {
 function deleteappointment(obj) {
         value = obj.value
         info = value.split(";");
+        parameter1 = info[0];
+        parameter2 = info[1];
         //alert(info[1]);
         if (confirm("Are you sure you want to delete your pet?")) {
             var deleteAppointment = function() {
@@ -194,8 +196,8 @@ function deleteappointment(obj) {
                     url: './delete_appointment.php',
                     type: 'GET',
                     data: {
-                        groomer: info[0],
-                        pet_name: info[1]
+                        groomer: parameter1,
+                        pet_name: parameter2
                     },
                     success: function(data) {
                         //window.location.reload();
