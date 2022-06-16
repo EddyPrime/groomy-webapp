@@ -69,17 +69,20 @@
 <script>
     var map_displayed = 0;
 
+    function hideMap() {
+        document.getElementById('groomersMap').style.display = 'none';
+        map_displayed = 0;
+    }
+
     function showMap() {
-        console.log('test');
         if (map_displayed == 0) {
             document.getElementById('groomersMap').style.display = 'block';
             map_displayed = 1;
-            document.getElementById("nameGroomers").innerHTML = "";
+            hideSearchByName();
             document.getElementById("favGroomers").innerHTML = "";
             document.getElementById("closeGroomers").innerHTML = "";
         } else {
-            document.getElementById('groomersMap').style.display = 'none';
-            map_displayed = 0;
+            hideMap();
         }
     }
 
@@ -163,7 +166,7 @@
 
                     document.getElementById("nameGroomers").innerHTML = "";
                     document.getElementById("closeGroomers").innerHTML = "";
-                    document.getElementById("groomersMap").setAttribute("style", "display: none;");
+                    hideMap();
                     hideSearchByName();
 
                     var ul = document.createElement('ul');
@@ -199,7 +202,7 @@
             displaySearchByName();
             document.getElementById("favGroomers").innerHTML = "";
             document.getElementById("closeGroomers").innerHTML = "";
-            document.getElementById("groomersMap").setAttribute("style", "display: none;");
+            hideMap();
         }
     }
 
@@ -246,9 +249,9 @@
                 success: function(data) {
                     //console.log(data); // Inspect this in your console
 
-                    document.getElementById("nameGroomers").innerHTML = "";
+                    hideSearchByName();
                     document.getElementById("favGroomers").innerHTML = "";
-                    document.getElementById("groomersMap").setAttribute("style", "display: none;");
+                    hideMap();
 
                     var ul = document.createElement('ul');
                     ul.setAttribute('id', 'closeGroomersList');
