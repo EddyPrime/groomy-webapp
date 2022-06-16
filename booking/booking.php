@@ -30,7 +30,7 @@
                     <div id="datetimeForm" style="visibility: hidden;">
                         <form action="./search.php" method="post">
                             <input type="datetime-local" id="time" name="time">
-                            <button type="submit">Search</button>
+                            <button type="submit" class="btn btn-info">Search</button>
                         </form>
                     </div>
                 </div>
