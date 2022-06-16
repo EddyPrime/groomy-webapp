@@ -19,21 +19,20 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" class="btn btn-primary btn-block mb-3" onclick="window.location.href='./booking.php';">Back</button>
-    </div>
-    
-    <div>
-        
+
+    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
+        <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+    </button>
+
+    <div style="margin-top: 15%;">
         <div id="closeGroomers"></div>
     </div>
-    
+
 </body>
 
 <script>
-
     function setGroomer(name) {
-        sessionStorage.setItem("groomer",name);
+        sessionStorage.setItem("groomer", name);
         console.log(sessionStorage.getItem("groomer"));
         window.location.href = "./appointmentSummary2.php";
     }
@@ -78,7 +77,7 @@
         }
     }
 
-    
+
 
 
 
