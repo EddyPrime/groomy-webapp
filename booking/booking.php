@@ -46,8 +46,8 @@
 
 
 <script>
+    
     var formVisible = 0;
-
     function searchByDateClick() {
         if (formVisible) {
             formVisible = 0;
