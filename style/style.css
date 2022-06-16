@@ -147,27 +147,30 @@
   /*PETS PAGE */
 
   .pets-page .pet-details {
-    width: 100%;
+    width: 80%;
     position: relative;
     overflow: hidden;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
   .pet-details .pet-image {
-    width: 30%;
+    width: 50%;
     position: relative;
     float: left;
   }
 
   .pet-details .pet-image img {
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
   }
 
   .pet-details .pet-info {
-    width: 70%;
+    width: 50%;
     position: relative;
     float: left;
+    text-align: left;
   }
 
 }

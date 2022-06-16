@@ -25,8 +25,9 @@
 </head>
 
 <body>
-    <div class="container pets-page">
-        <h3>Here you can find all your pets</h3>
+    <div class="container pets-page text-center">
+        <h1 style="font-weight: bold ;">Pets</h1>
+        <p class="mb-5">Here you can manage you pets and register new ones!</p>
         <div class="pets-list">
             <ul>
                 <?php
