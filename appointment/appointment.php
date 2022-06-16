@@ -64,6 +64,8 @@ for ($i = 0; $i < count($appointments); $i++) {
         $address = $infoElementArray[3];
         $hour = $infoElementArray[4];
         $date = $infoElementArray[5];
+        $appointment_status = $infoElementArray[6];
+        //echo $appointment_status;
         $lavaggio = $infoElementArray[7];
         //lavaggio;taglio_pelo;taglio_unghie;spa;anti_parassitari;acconciatura_concorsi
         $taglio_pelo = $infoElementArray[8];
@@ -166,6 +168,13 @@ for ($i = 0; $i < count($appointments); $i++) {
                 Contest Preparation
             </label>
             </div>
+
+            <?php
+                
+                    echo '<button class="btn btn-lg btn-primary btn-block mb-4 btn-danger"  type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . '" ?>Delete Appointment</button>
+                    ';
+                
+            ?>
         </div>
     </div>
 
@@ -174,6 +183,34 @@ for ($i = 0; $i < count($appointments); $i++) {
 </html>
 
 <script>
+
+function deleteappointment(obj) {
+        value = obj.value
+        info = value.split(";");
+        //alert(info[1]);
+        if (confirm("Are you sure you want to delete your pet?")) {
+            var deleteAppointment = function() {
+                $.ajax({
+                    url: './delete_appointment.php',
+                    type: 'GET',
+                    data: {
+                        groomer: info[0],
+                        pet_name: info[1]
+                    },
+                    success: function(data) {
+                        //window.location.reload();
+                        console.log(data); // Inspect this in your console
+                    },
+                    complete: function(){
+                        window.location = '../home/home.php';
+                    }
+                });
+            };
+            deleteAppointment();
+            //setTimeout( window.location.reload(), 1000 );
+        }
+    }
+
     home.setAttribute("class", "nav-link");
     home.setAttribute("aria-current", "");
 
@@ -181,7 +218,7 @@ for ($i = 0; $i < count($appointments); $i++) {
     booking.setAttribute("aria-current", "");
 
     pets.setAttribute("class", "nav-link active");
-    pets.setAttribute("aria-current", "page");
+    pets.setAttribute("aria-current", "");
 
     profile.setAttribute("class", "nav-link");
     profile.setAttribute("aria-current", "");

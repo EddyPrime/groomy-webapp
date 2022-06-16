@@ -2,8 +2,4 @@ userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);lavaggio;taglio_pelo;ta
 
 
 mattlom@libero.it;Laika;JeannePulisciAnimali;Via Tiburtina, 205;11:35;2022-06-16;1;1;0;0;0;0;;
-<<<<<<< HEAD
-mattlom@libero.it;Laika;JeannePulisciAnimali;Via Tiburtina, 205;11:00;2022-06-15;0;0;1;0;0;0;;
-=======
 mattlom@libero.it;Laika;QuaLaZampa;Via Ariosto, 25;18:06;2022-06-16;0;0;1;0;0;0;;
->>>>>>> f79bf56439281044f6f3a964a7eda6ef36b24984
