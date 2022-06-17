@@ -19,22 +19,33 @@
 </head>
 
 <body>
-    <div>
-        <button type="button" class="btn btn-primary btn-block mb-3" onclick="back();">Back</button>
+
+    <div class="container">
+        <button type="button" class="btn btn-info btn-block go-back-btn" onclick="back();">
+            <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+        </button>
+
+        
+        <div>
+            <h1 style="font-weight: bold;" class="text-center">Choose</h1>
+            <h1 style="font-weight: bold;" class="text-center">Date and Hour</h1>
+
+        
+        <form style="margin-top:15%;" action="./appointmentSummary.php" method="post">
+            <input type="datetime-local" id="time" name="time" required>
+            <button type="submit" class="btn btn-info">Search</button>
+        </form>
+        </div>
     </div>
-    <form action="./appointmentSummary.php" method="post">
-        <input type="datetime-local" id="time" name="time" required>
-        <button type="submit">Select</button>
-    </form>
 </body>
 
 <script>
-    const today = (new Date()).toISOString().slice(0,16); // get local current date
+    const today = (new Date()).toISOString().slice(0, 16); // get local current date
     document.getElementById("time").min = today;
 
     function back() {
         sessionStorage.setItem("groomer", "");
-        window.location.href = './booking.php';
+        window.location.href = './searchGroomer.php';
     }
 
     home.setAttribute("class", "nav-link");
