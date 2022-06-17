@@ -90,6 +90,10 @@
     text-align: left;
   }
 
+  .appointments-list {
+    margin-top: 10%;
+  }
+
   .appointments-list a {
     text-decoration: none;
   }
