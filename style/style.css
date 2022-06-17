@@ -215,7 +215,70 @@
   }
 
   .container .tab-content .search-modality {
-    margin-bottom: 7.5%;
+    margin-bottom: 10%;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+
   }
+
+  .container .tab-content .search-modality button {
+    width: 100%;
+  }
+
+  .search-modality #searchByName {
+    margin-top: 5%;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  .search-modality #searchByName input {
+    width: 70%;
+    margin-right: 5%;
+    position: relative;
+    float: left;
+    height: 40px;
+  }
+
+  .search-modality #searchByName button {
+    width: 25%;
+    position: relative;
+    float: left;
+    height: 40px;
+  }
+
+  .search-modality #searchByName:after {
+    clear: both;
+    content: "";
+    display: table;
+  }
+
+  .search-groomer-by-name-page #closeGroomers ul,
+  .search-groomer-by-name-page #favGroomers ul {
+    list-style: none;
+    padding: 0 !important;
+  }
+
+  .search-groomer-by-name-page li:first-of-type {
+    margin-top: 7.5%;
+  }
+
+  .search-groomer-by-name-page li {
+    width: 100%;
+    margin-bottom: 7.5%;
+    border: 2px solid #5cc7eb;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+  }
+
+  .search-groomer-by-name-page {
+    padding-bottom: 120px;
+  }
+
 }
 
