@@ -209,5 +209,13 @@
     padding-bottom: 60px !important;
   }
 
+  /* SEARCH GROOMER BY NAME */
+  .container .tab-content .search-modality:first-of-type {
+    margin-top: 10%;
+  }
+
+  .container .tab-content .search-modality {
+    margin-bottom: 7.5%;
+  }
 }
 

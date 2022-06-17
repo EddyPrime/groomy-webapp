@@ -19,49 +19,49 @@
 </head>
 
 <body>
-    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
-        <img src="../img/arrow-left.svg" style="color: white !important;"></img>
-    </button>
-    <div class="text-center" style="margin-top: 15%;">
-        <div>
-            <button onclick="searchFavouriteGroomers();" style="width: 75%;">Favourite Groomer </button><br>
-            <div style="visibility: hidden;">
-                <input type="search" placeholder="Enter groomer's name"></input>
-                <button class="btn btn-info">Search</button>
+    <div class="container search-groomer-by-name-page">
+        <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
+            <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+        </button> 
+        <div class="tab-content text-center">
+            <h1 style="font-weight: bold ;">Choose a Groomer</h1>
+       
+            <div class="search-modality">
+                <button class="btn btn-info" onclick="searchFavouriteGroomers();" style="width: 75%;">Favourite Groomer </button><br>
+                <div style="visibility: hidden;">
+                    <input type="search" placeholder="Enter groomer's name"></input>
+                    <button class="btn btn-info">Search</button>
+                </div>
+                <div id="favGroomers"></div>
             </div>
-            <div id="favGroomers"></div>
-        </div>
-        <br>
-        <br>
-        <div>
-            <button onclick="showSearchByName();" style="width: 75%;">Search Groomer By Name </button>
-            <br>
-            <div id="searchByName" style="visibility: hidden;">
-                <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
-                <button class="btn btn-info" onclick="searchGroomersByName();">Search</button>
+            <div class="search-modality">
+                <button class="btn btn-info" onclick="showSearchByName();" style="width: 75%;">Search Groomer By Name </button>
+                <br>
+                <div id="searchByName" style="visibility: hidden;">
+                    <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
+                    <button class="btn btn-info" onclick="searchGroomersByName();">Search</button>
+                </div>
+                <div id="nameGroomers"></div>
+
             </div>
-            <div id="nameGroomers"></div>
+            <div class="search-modality">
+                <button class="btn btn-info" onclick="searchGroomersByDistance();" style="width: 75%;">Search Groomer By Distance </button>
+                <div style="visibility: hidden;">
+                    <input type="search" placeholder="Enter groomer's name"></input>
+                    <button class="btn btn-info">Search</button>
+                </div>
+                <div id="closeGroomers"></div>
+            </div>
+            <div class="search-modality">
+                <button class="btn btn-info" onclick="showMap();" style="width: 75%;">Search Groomer Using Maps </button>
+            </div>
+            <div id="groomersMap" style="display: none;">
+                <a onclick="setGroomer('CanePulito');">
+                    <img src="../img/MAP.png" style="width: 75%;">
+                </a>
+            </div>
 
         </div>
-        <br>
-        <br>
-        <div>
-            <button onclick="searchGroomersByDistance();" style="width: 75%;">Search Groomer By Distance </button>
-            <div style="visibility: hidden;">
-                <input type="search" placeholder="Enter groomer's name"></input>
-                <button class="btn btn-info">Search</button>
-            </div>
-            <div id="closeGroomers"></div>
-        </div>
-        <br>
-        <br>
-        <button onclick="showMap();" style="width: 75%;">Search Groomer Using Maps </button>
-        <div id="groomersMap" style="display: none;">
-            <a onclick="setGroomer('CanePulito');">
-                <img src="../img/MAP.png" style="width: 75%;">
-            </a>
-        </div>
-
     </div>
 
 </body>
