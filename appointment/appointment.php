@@ -220,7 +220,7 @@ function deleteappointment(obj) {
     booking.setAttribute("class", "nav-link");
     booking.setAttribute("aria-current", "");
 
-    pets.setAttribute("class", "nav-link active");
+    pets.setAttribute("class", "nav-link");
     pets.setAttribute("aria-current", "");
 
     profile.setAttribute("class", "nav-link");
