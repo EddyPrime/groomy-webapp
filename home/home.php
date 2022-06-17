@@ -15,7 +15,7 @@
     <?php
     include "../navbar/navbar.php";
     //$user_name = $_SESSION["name"];
-    //echo $user_name;
+    
     ?>
 </head>
 

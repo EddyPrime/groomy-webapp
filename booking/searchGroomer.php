@@ -27,7 +27,7 @@
             <h1 style="font-weight: bold ;">Choose a Groomer</h1>
        
             <div class="search-modality">
-                <button class="btn btn-info" onclick="searchFavouriteGroomers();">Favourite Groomer </button><br>
+                <button class="btn btn-info" onclick="searchFavouriteGroomers();">Favourite Groomer</button>
                 <div style="display: none;">
                     <input type="search" placeholder="Enter groomer's name"></input>
                     <button class="btn btn-info">Search</button>
@@ -68,6 +68,7 @@
 
 <script>
     var map_displayed = 0;
+    var favourite_groomers_displayed = 0;
 
     function hideMap() {
         document.getElementById('groomersMap').style.display = 'none';
@@ -153,34 +154,40 @@
     }
 
     function searchFavouriteGroomers() {
+        if ( favourite_groomers_displayed == 0 ){
+            var getFavouriteGroomers = function() {
+                $.ajax({
+                    url: './favourites.php',
+                    type: 'GET',
+                    data: {
+                        email: sessionStorage.getItem("email")
+                    },
+                    success: function(data) {
+                        //console.log(data); // Inspect this in your console
 
-        var getFavouriteGroomers = function() {
-            $.ajax({
-                url: './favourites.php',
-                type: 'GET',
-                data: {
-                    email: sessionStorage.getItem("email")
-                },
-                success: function(data) {
-                    //console.log(data); // Inspect this in your console
+                        document.getElementById("nameGroomers").innerHTML = "";
+                        document.getElementById("closeGroomers").innerHTML = "";
+                        hideMap();
+                        hideSearchByName();
 
-                    document.getElementById("nameGroomers").innerHTML = "";
-                    document.getElementById("closeGroomers").innerHTML = "";
-                    hideMap();
-                    hideSearchByName();
+                        var ul = document.createElement('ul');
+                        ul.setAttribute('id', 'favGroomersList');
 
-                    var ul = document.createElement('ul');
-                    ul.setAttribute('id', 'favGroomersList');
+                        document.getElementById('favGroomers').innerHTML = '';
+                        document.getElementById('favGroomers').appendChild(ul);
 
-                    document.getElementById('favGroomers').innerHTML = '';
-                    document.getElementById('favGroomers').appendChild(ul);
+                        renderFavGroomer(ul, data);
+                    }
+                });
+            };
 
-                    renderFavGroomer(ul, data);
-                }
-            });
-        };
-
-        getFavouriteGroomers();
+            getFavouriteGroomers();
+            favourite_groomers_displayed = 1;
+        } else {
+            document.getElementById("favGroomers").innerHTML = "";
+            favourite_groomers_displayed = 0;
+        }
+        
     }
 
     var formVisible = 0;
