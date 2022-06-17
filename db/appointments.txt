@@ -5,3 +5,4 @@ userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);lavaggio;taglio_pelo;ta
 
 
 mattlom@libero.it;Laika;MusoProfumato;Via Antonio Scarpa, 14;16:44;2022-06-23;1;0;0;0;0;0;;
+mattlom@libero.it;Laika;QuaLaZampa;Via Ariosto, 25;15:37;2022-06-26;0;0;0;0;0;0;;

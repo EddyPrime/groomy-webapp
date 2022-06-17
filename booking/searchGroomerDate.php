@@ -19,15 +19,21 @@
 </head>
 
 <body>
+    <div class="container">
+        <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
+            <img src="../img/arrow-left.svg" style="color: white !important;"></img>
+        </button>
+        <div class="tab-content text-center">
+            <h1 style="font-weight: bold ;">Choose a Groomer</h1>
+            
+            <h6>Here you can find the groomers available at the selected slot</h6>
 
-    <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
-        <img src="../img/arrow-left.svg" style="color: white !important;"></img>
-    </button>
 
-    <div style="margin-top: 15%;">
-        <div id="closeGroomers"></div>
+            <div style="margin-top: 15%;">
+                <div id="closeGroomers"></div>
+            </div>
+        </div>
     </div>
-
 </body>
 
 <script>
