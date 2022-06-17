@@ -19,7 +19,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container search-by-date">
         <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
             <img src="../img/arrow-left.svg" style="color: white !important;"></img>
         </button>
@@ -29,7 +29,7 @@
             <h6>Here you can find the groomers available at the selected slot</h6>
 
 
-            <div style="margin-top: 15%;">
+            <div style="margin-top: 10%;">
                 <div id="closeGroomers"></div>
             </div>
         </div>

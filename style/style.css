@@ -173,5 +173,30 @@
     text-align: left;
   }
 
+  /* SEARCH GROOMER BY DATE */
+
+  .search-by-date {
+    padding-bottom: 120px;
+  }
+
+  .search-by-date #closeGroomers ul {
+    list-style: none;
+    padding: 0 !important;
+  }
+
+
+  .search-by-date li {
+    width: 85%;
+    margin-left: 7.5%;
+    margin-right: 7.5%;
+    margin-bottom: 7.5%;
+    border: 2px solid #5cc7eb;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: left;
+    background-color: white;
+    cursor: pointer;
+  }
+
 }
 

@@ -26,7 +26,7 @@
         <div class="tab-content text-center">
             <h1 style="font-weight: bold ;">Appointment Summary</h1>
             <div style="margin-top: 5%;">
-                <div class="form-check d-flex" style="text-align: left;">
+                <div class="form-check d-flex" style="text-align: left; padding-left: 0;">
                     <div>
                         <label for="pet">Choose your pet</label>
                         <select name="Pets" id="petSelection">
@@ -103,36 +103,38 @@
 
     function confirmAppointment() {
         console.log("confirm appointment");
+        if ( confirm("Are you sure you want to add a new appointment?") ) {
+            var addAppointment = function() {
+                $.ajax({
+                    url: './add_appointment.php',
+                    type: 'GET',
+                    data: {
+                        email: sessionStorage.getItem("email"),
+                        pet: document.getElementById("petSelection").value,
+                        groomer: sessionStorage.getItem("groomer"),
+                        hour: sessionStorage.getItem("hour"),
+                        date: sessionStorage.getItem("date"),
+                        lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
+                        taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
+                        taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
+                        spa: document.getElementById("spa").checked ? 1 : 0,
+                        anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
+                        notes: document.getElementById("notes").value,
+                    },
+                    success: function(data) {
+                        console.log("added appointment"); // Inspect this in your console
+                    }
+                });
+            };
 
-        var addAppointment = function() {
-            $.ajax({
-                url: './add_appointment.php',
-                type: 'GET',
-                data: {
-                    email: sessionStorage.getItem("email"),
-                    pet: document.getElementById("petSelection").value,
-                    groomer: sessionStorage.getItem("groomer"),
-                    hour: sessionStorage.getItem("hour"),
-                    date: sessionStorage.getItem("date"),
-                    lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
-                    taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
-                    taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
-                    spa: document.getElementById("spa").checked ? 1 : 0,
-                    anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
-                    notes: document.getElementById("notes").value,
-                },
-                success: function(data) {
-                    console.log("added appointment"); // Inspect this in your console
-                }
-            });
-        };
+            addAppointment();
 
-        addAppointment();
-
-        sessionStorage.setItem("groomer","");
-        sessionStorage.setItem("date","");
-        sessionStorage.setItem("hour","");
-        window.location.href = "../index.php";
+            sessionStorage.setItem("groomer","");
+            sessionStorage.setItem("date","");
+            sessionStorage.setItem("hour","");
+            window.location.href = "../index.php";
+        }
+        
     }
 
     function getPets() {
