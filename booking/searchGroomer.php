@@ -27,17 +27,17 @@
             <h1 style="font-weight: bold ;">Choose a Groomer</h1>
        
             <div class="search-modality">
-                <button class="btn btn-info" onclick="searchFavouriteGroomers();" style="width: 75%;">Favourite Groomer </button><br>
-                <div style="visibility: hidden;">
+                <button class="btn btn-info" onclick="searchFavouriteGroomers();">Favourite Groomer </button><br>
+                <div style="display: none;">
                     <input type="search" placeholder="Enter groomer's name"></input>
                     <button class="btn btn-info">Search</button>
                 </div>
                 <div id="favGroomers"></div>
             </div>
             <div class="search-modality">
-                <button class="btn btn-info" onclick="showSearchByName();" style="width: 75%;">Search Groomer By Name </button>
+                <button class="btn btn-info" onclick="showSearchByName();">Search Groomer By Name </button>
                 <br>
-                <div id="searchByName" style="visibility: hidden;">
+                <div id="searchByName" style="display:none;">
                     <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
                     <button class="btn btn-info" onclick="searchGroomersByName();">Search</button>
                 </div>
@@ -45,22 +45,22 @@
 
             </div>
             <div class="search-modality">
-                <button class="btn btn-info" onclick="searchGroomersByDistance();" style="width: 75%;">Search Groomer By Distance </button>
-                <div style="visibility: hidden;">
+                <button class="btn btn-info" onclick="searchGroomersByDistance();">Search Groomer By Distance </button>
+                <div style="display: none;">
                     <input type="search" placeholder="Enter groomer's name"></input>
                     <button class="btn btn-info">Search</button>
                 </div>
                 <div id="closeGroomers"></div>
             </div>
             <div class="search-modality">
-                <button class="btn btn-info" onclick="showMap();" style="width: 75%;">Search Groomer Using Maps </button>
+                <button class="btn btn-info" onclick="showMap();">Search Groomer Using Maps </button>
+            
+                <div id="groomersMap" style="display: none;">
+                    <a onclick="setGroomer('CanePulito');">
+                        <img src="../img/MAP.png" style="width: 100%; margin-top: 5%;">
+                    </a>
+                </div>
             </div>
-            <div id="groomersMap" style="display: none;">
-                <a onclick="setGroomer('CanePulito');">
-                    <img src="../img/MAP.png" style="width: 75%;">
-                </a>
-            </div>
-
         </div>
     </div>
 
@@ -187,12 +187,12 @@
 
     function hideSearchByName() {
         formVisible = 0;
-        document.getElementById("searchByName").setAttribute("style", "visibility: hidden;")
+        document.getElementById("searchByName").setAttribute("style", "display: none;")
     }
 
     function displaySearchByName() {
         formVisible = 1;
-        document.getElementById("searchByName").setAttribute("style", "visibility: visible;")
+        document.getElementById("searchByName").setAttribute("style", "display: block;")
     }
 
     function showSearchByName() {
