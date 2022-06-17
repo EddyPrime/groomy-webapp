@@ -114,7 +114,7 @@
             li.appendChild(br.cloneNode(true));
 
             elem = document.createElement('span');
-            elem.innerHTML = element[2];
+            elem.innerHTML = 'Tel' + element[2];
             li.appendChild(elem);
             li.appendChild(br.cloneNode(true));
 
@@ -124,7 +124,7 @@
             li.appendChild(br.cloneNode(true));
 
             elem = document.createElement('span');
-            elem.innerHTML = element[4];
+            elem.innerHTML = 'Hour' + element[4];
             li.appendChild(elem);
             li.appendChild(br.cloneNode(true));
 
