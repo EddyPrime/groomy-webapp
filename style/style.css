@@ -202,5 +202,12 @@
     cursor: pointer;
   }
 
+  /* BOOKING PAGE */
+
+  #datetimeForm form {
+    margin-top: 5%;
+    padding-bottom: 60px !important;
+  }
+
 }
 

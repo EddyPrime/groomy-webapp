@@ -26,7 +26,6 @@
             <div class="text-center mb-3" style=" display: flex; justify-content: center;">
                 <div>
                     <button class="btn btn-outline-info" onclick="searchByDateClick();">Search By Date</button>
-                    <h1></h1>
                     <div id="datetimeForm" style="visibility: hidden;">
                         <form action="./search.php" method="post">
                             <input type="datetime-local" id="time" name="time">
