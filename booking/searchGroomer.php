@@ -124,7 +124,7 @@
             li.appendChild(br.cloneNode(true));
 
             elem = document.createElement('span');
-            elem.innerHTML = 'Hour: ' + element[4];
+            elem.innerHTML = 'Hours: ' + element[4];
             li.appendChild(elem);
             li.appendChild(br.cloneNode(true));
 
