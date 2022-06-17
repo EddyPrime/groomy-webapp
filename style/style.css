@@ -209,6 +209,11 @@
     padding-bottom: 60px !important;
   }
 
+  #datetimeForm input,
+  #datetimeForm button {
+    height: 40px;
+  }
+
   /* SEARCH GROOMER BY NAME */
   .container .tab-content .search-modality:first-of-type {
     margin-top: 10%;
