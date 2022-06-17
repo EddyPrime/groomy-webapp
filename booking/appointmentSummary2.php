@@ -22,66 +22,75 @@
 </head>
 
 <body>
-    <div class="form-check d-flex">
-        <div>
-            <label for="pet">Choose your pet</label>
-            <select name="Pets" id="petSelection">
-            </select>
+    <div class="container">
+        <div class="tab-content text-center">
+            <h1 style="font-weight: bold ;">Appointment Summary</h1>
+            <div style="margin-top: 5%;">
+                <div class="form-check d-flex" style="text-align: left;">
+                    <div>
+                        <label for="pet">Choose your pet</label>
+                        <select name="Pets" id="petSelection">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="lavaggio" aria-describedby="" />
+                    <label class="form-check-label" for="lavaggio">
+                        Wash
+                    </label>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="taglio_pelo" aria-describedby="" />
+                    <label class="form-check-label" for="taglio_pelo">
+                        Hair Cut
+                    </label>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="taglio_unghie" aria-describedby="" />
+                    <label class="form-check-label" for="taglio_unghie">
+                        Nails Cut
+                    </label>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="spa" aria-describedby="" />
+                    <label class="form-check-label" for="spa">
+                        SPA Treatment
+                    </label>
+                </div>
+                <div class="form-check d-flex">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="anti_parassitari" aria-describedby="" />
+                    <label class="form-check-label" for="anti_parassitari">
+                        Anti Parasitic
+                    </label>
+                </div>
+                <div class="form-check d-flex ">
+                    <input class="form-check-input me-2" type="checkbox" value="" id="acconciatura_concorsi" aria-describedby="" />
+                    <label class="form-check-label" for="acconciatura_concorsi">
+                        Contest Preparation
+                    </label>
+                </div>
+                <div style="margin-top: 5%;">
+                    <label class="labels">Notes</label>
+                    <input id="notes" type="search" class="form-control" placeholder="Additional notes" value="">
+                </div>
+            </div>
+            <div style="margin-top: 10%;">
+                <h2>Summary</h2>
+            </div>
+            <div>
+                <span id="groomer"></span>
+            </div>
+            <div>
+                <span id="date"></span>
+            </div>
+            <div>
+                <span id="hour"></span>
+            </div>
+            <div style="margin-top: 10%;">
+                <button class="btn btn-danger profile-button" type="button" onclick="back();">Cancel</button>
+                <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
+            </div>
         </div>
-    </div>
-    <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="lavaggio" aria-describedby="" />
-        <label class="form-check-label" for="lavaggio">
-            Wash
-        </label>
-    </div>
-    <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="taglio_pelo" aria-describedby="" />
-        <label class="form-check-label" for="taglio_pelo">
-            Hair Cut
-        </label>
-    </div>
-    <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="taglio_unghie" aria-describedby="" />
-        <label class="form-check-label" for="taglio_unghie">
-            Nails Cut
-        </label>
-    </div>
-    <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="spa" aria-describedby="" />
-        <label class="form-check-label" for="spa">
-            SPA Treatment
-        </label>
-    </div>
-    <div class="form-check d-flex">
-        <input class="form-check-input me-2" type="checkbox" value="" id="anti_parassitari" aria-describedby="" />
-        <label class="form-check-label" for="anti_parassitari">
-            Anti Parasitic
-        </label>
-    </div>
-    <div class="form-check d-flex ">
-        <input class="form-check-input me-2" type="checkbox" value="" id="acconciatura_concorsi" aria-describedby="" />
-        <label class="form-check-label" for="acconciatura_concorsi">
-            Contest Preparation
-        </label>
-    </div>
-    <div>
-        <label class="labels">Notes</label>
-        <input id="notes" type="search" class="form-control" placeholder="Additional notes" value="">
-    </div>
-    <h2>Summary</h2>
-    <div>
-        <span id="groomer"></span>
-    </div>
-    <div>
-        <span id="date"></span>
-    </div>
-    <div>
-        <span id="hour"></span>
-    </div>
-    <div>
-        <button class="btn btn-warning profile-button" type="button" onclick="back();">Cancel</button>
-        <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
     </div>
 </body>
 
@@ -89,7 +98,7 @@
     function back() {
         sessionStorage.setItem("date", "");
         sessionStorage.setItem("hour", "");
-        window.location.href = './searchGroomerCalendar.php';
+        window.location.href = './searchGroomerDate.php';
     }
 
     function confirmAppointment() {

@@ -109,6 +109,7 @@
 <script>
     function back() {
         sessionStorage.setItem("date", "");
+        sessionStorage.setItem("hour", "");
         window.location.href = './searchGroomerCalendar.php';
     }
 
