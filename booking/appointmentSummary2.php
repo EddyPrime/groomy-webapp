@@ -102,37 +102,53 @@
     }
 
     function confirmAppointment() {
-        console.log("confirm appointment");
-        if ( confirm("Are you sure you want to add a new appointment?") ) {
-            var addAppointment = function() {
-                $.ajax({
-                    url: './add_appointment.php',
-                    type: 'GET',
-                    data: {
-                        email: sessionStorage.getItem("email"),
-                        pet: document.getElementById("petSelection").value,
-                        groomer: sessionStorage.getItem("groomer"),
-                        hour: sessionStorage.getItem("hour"),
-                        date: sessionStorage.getItem("date"),
-                        lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
-                        taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
-                        taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
-                        spa: document.getElementById("spa").checked ? 1 : 0,
-                        anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
-                        notes: document.getElementById("notes").value,
-                    },
-                    success: function(data) {
-                        console.log("added appointment"); // Inspect this in your console
-                    }
-                });
-            };
+        var service_ctr = 0;
+        var lavaggio_control = document.getElementById('lavaggio').checked;
+        var taglio_pelo_control = document.getElementById('taglio_pelo').checked;
+        var taglio_unghie_control = document.getElementById('taglio_unghie').checked;
+        var spa_control = document.getElementById('spa').checked;
+        var anti_parassitari_control = document.getElementById('anti_parassitari').checked;
+        var acconciatura_concorsi_control = document.getElementById('acconciatura_concorsi').checked;
 
-            addAppointment();
+        if ( lavaggio_control == 1 || taglio_pelo_control == 1 || taglio_unghie_control == 1 || spa_control == 1 || anti_parassitari_control == 1 || acconciatura_concorsi_control == 1 ) {
+            service_ctr = 1;
+        }
+        
+        if ( service_ctr == 0 ) {
+            alert("At least one service must be chosen!");
+        } else {
+            console.log("confirm appointment");
+            if ( confirm("Are you sure you want to add a new appointment?") ) {
+                var addAppointment = function() {
+                    $.ajax({
+                        url: './add_appointment.php',
+                        type: 'GET',
+                        data: {
+                            email: sessionStorage.getItem("email"),
+                            pet: document.getElementById("petSelection").value,
+                            groomer: sessionStorage.getItem("groomer"),
+                            hour: sessionStorage.getItem("hour"),
+                            date: sessionStorage.getItem("date"),
+                            lavaggio: document.getElementById("lavaggio").checked ? 1 : 0,
+                            taglio_pelo: document.getElementById("taglio_pelo").checked ? 1 : 0,
+                            taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
+                            spa: document.getElementById("spa").checked ? 1 : 0,
+                            anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
+                            notes: document.getElementById("notes").value,
+                        },
+                        success: function(data) {
+                            console.log("added appointment"); // Inspect this in your console
+                        }
+                    });
+                };
 
-            sessionStorage.setItem("groomer","");
-            sessionStorage.setItem("date","");
-            sessionStorage.setItem("hour","");
-            window.location.href = "../index.php";
+                addAppointment();
+
+                sessionStorage.setItem("groomer", "");
+                sessionStorage.setItem("date", "");
+                sessionStorage.setItem("hour", "");
+                window.location.href = "../index.php";
+            }
         }
         
     }
