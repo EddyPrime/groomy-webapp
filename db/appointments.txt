@@ -1,11 +1,4 @@
 userEmail;pet;groomer;address;hour;date;confirmed(0-1-2);lavaggio;taglio_pelo;taglio_unghie;spa;anti_parassitari;acconciatura_concorsi;notes
-
-
-
-
 mattlom@libero.it;Laika;QuaLaZampa;Via Ariosto, 25;15:37;2022-06-26;1;0;0;0;0;0;;
-
-
-
 mattlom@libero.it;Laika;CanePulito;Via Portuense, 572;16:38;2022-06-18;0;0;1;0;0;0;;
 mattlom@libero.it;Laika;QuaLaZampa;Via Ariosto, 25;11:34;2022-06-19;0;1;0;0;0;0;;
