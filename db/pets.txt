@@ -4,4 +4,4 @@ laurenzigio@gmail.com;Ralph;Labrador;30;big;Short;Its perfection;Edoardo;0;1;1;.
 mattlom@libero.it;Laika;None;18;small;Short;No;si;0;0;0;default
 
 
-mattlom@libero.it;Edoardo;Mix;79;big;None;A lot;Everything;0;1;1;../img/Edoardo
+mattlom@libero.it;Edoardo;Mix;79;big;None 💀💀;A lot;Everything;0;1;1;../img/Edoardo
