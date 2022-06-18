@@ -28,7 +28,7 @@
                     <button class="btn btn-outline-info" onclick="searchByDateClick();">Search By Date</button>
                     <div id="datetimeForm" style="visibility: hidden;">
                         <form action="./search.php" method="post">
-                            <input type="datetime-local" id="time" name="time">
+                            <input type="datetime-local" id="time" name="time" required>
                             <button type="submit" class="btn btn-info">Search</button>
                         </form>
                     </div>

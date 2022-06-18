@@ -260,6 +260,7 @@
     display: table;
   }
 
+  .search-groomer-by-name-page #nameGroomers ul,
   .search-groomer-by-name-page #closeGroomers ul,
   .search-groomer-by-name-page #favGroomers ul {
     list-style: none;
