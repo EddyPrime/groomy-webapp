@@ -35,7 +35,7 @@
                 <div id="favGroomers"></div>
             </div>
             <div class="search-modality">
-                <button class="btn btn-info" onclick="showSearchByName();">Search Groomer By Name </button>
+                <button class="btn btn-info" onclick="showSearchByName();">Search Groomer By Name</button>
                 <br>
                 <div id="searchByName" style="display:none;">
                     <input id="groomerNameInput" type="search" placeholder="Enter groomer's name"></input>
@@ -176,7 +176,6 @@
                     success: function(data) {
                         //console.log(data); // Inspect this in your console
 
-                        document.getElementById("nameGroomers").innerHTML = "";
                         hideClose();
                         hideMap();
                         hideSearchByName();
@@ -195,7 +194,7 @@
             getFavouriteGroomers();
             favourite_groomers_displayed = 1;
         } else {
-            hideFavs()
+            hideFavs();
         }
 
     }
@@ -205,6 +204,7 @@
     function hideSearchByName() {
         formVisible = 0;
         document.getElementById("searchByName").setAttribute("style", "display: none;")
+        document.getElementById("nameGroomers").innerHTML = "";
     }
 
     function displaySearchByName() {
