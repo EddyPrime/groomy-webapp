@@ -1,0 +1,3 @@
+name;address;phone;email;stars;workingHours;distance
+JeannePulisciAnimali;Via Tiburtina, 205;0679854331;jeannepuliscianimali@gmail.com;10-17;0.1
+ChezRalphAndLaika;Via Emàno Darnasò, 30;0635648426;ralphelaika@tim.it;11-13 15-17;0.789

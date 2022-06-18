@@ -144,6 +144,51 @@
         }
     }
 
+    function renderCloseGroomer(ul, data) {
+
+        JSON.parse(data).forEach(_renderGroomer);
+
+        function _renderGroomer(element, index, arr) {
+            var li = document.createElement('li');
+            li.setAttribute('class', 'item');
+            li.setAttribute("onclick", "setGroomer(this.firstChild.innerHTML);");
+
+            const br = document.createElement('br');
+
+            var elem = document.createElement('span');
+            elem.innerHTML = element[0];
+            li.appendChild(elem);
+            li.appendChild(br);
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[1];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = 'Tel: ' + element[2];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = element[3];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = 'Hours: ' + element[4];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            elem = document.createElement('span');
+            elem.innerHTML = 'Distance (Km): ' + element[5];
+            li.appendChild(elem);
+            li.appendChild(br.cloneNode(true));
+
+            ul.appendChild(li);
+        }
+    }
+
     function renderFavGroomer(ul, data) {
 
         JSON.parse(data).forEach(_renderGroomer);
@@ -278,7 +323,7 @@
                         document.getElementById('closeGroomers').innerHTML = '';
                         document.getElementById('closeGroomers').appendChild(ul);
 
-                        renderGroomer(ul, data);
+                        renderCloseGroomer(ul, data);
                     }
                 });
             };
