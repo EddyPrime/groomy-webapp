@@ -20,7 +20,7 @@
 <body>
 
     <div class='container text-center'>
-        <h1 style="font-weight: bold ; text-align: center;">BOOK</h1>
+        <h1 style="font-weight: bold ; text-align: center;">Book</h1>
         <h6>Here you can book your appointments! You may choose either to reserve an appointment with a groomer on a time slot that you choose or to choose the time slot on the base of the pet groomer you selected!</h6>
         <div style="margin-top: 30%;">
             <div class="text-center mb-3" style=" display: flex; justify-content: center;">

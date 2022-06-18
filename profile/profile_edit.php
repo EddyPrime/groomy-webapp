@@ -21,7 +21,7 @@
 <body>
 
     <div class="container">
-        <h1 style="font-weight: bold ; text-align: center;">PROFILE EDIT</h1>
+        <h1 style="font-weight: bold ; text-align: center;">Profile Edit</h1>
 
         <div class="text-center mb-3">
 

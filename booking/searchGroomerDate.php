@@ -24,8 +24,9 @@
             <img src="../img/arrow-left.svg" style="color: white !important;"></img>
         </button>
         <div class="tab-content text-center">
-            <h1 style="font-weight: bold ;">Choose a Groomer</h1>
-            
+            <h1 style="font-weight: bold ;">Choose a</h1>
+            <h1 style="font-weight: bold ; margin-top:-5%;">Groomer</h1>
+<br>
             <h6>Here you can find the groomers available at the selected slot</h6>
 
 

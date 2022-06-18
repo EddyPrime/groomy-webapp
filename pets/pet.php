@@ -100,7 +100,7 @@ for ($i = 0; $i < count($pets); $i++) {
         </div>
         <?php
         echo '<div class="form-outline text-center">
-        <button type="button" class="btn btn-secondary btn-lg" onclick=' . 'window.location.href="./pet_edit.php?pet_name=' . $pet_name . '"' . '>Edit</button>
+        <button type="button" class="btn btn-outline-primary" onclick=' . 'window.location.href="./pet_edit.php?pet_name=' . $pet_name . '"' . '>Edit</button>
         </div>';
         ?>
     </div>

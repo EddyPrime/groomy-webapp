@@ -22,7 +22,7 @@
     <div class="container">
 
 
-        <h1 style="font-weight: bold ; text-align: center;">PROFILE EDIT</h1>
+        <h1 style="font-weight: bold ; text-align: center;">Profile</h1>
         <p style="text-align: center;">Here you can find all the information related to your account and you can modify it!</>
         <br><br><br>
 

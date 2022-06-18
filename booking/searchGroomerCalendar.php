@@ -28,7 +28,7 @@
         
         <div>
             <h1 style="font-weight: bold;" class="text-center">Choose</h1>
-            <h1 style="font-weight: bold;" class="text-center">Date and Hour</h1>
+            <h1 style="font-weight: bold; margin-top:-5%" class="text-center">Date and Hour</h1>
             <h6>Choose an appointment for the selected groomer</h6>
         
         <form style="margin-top:15%;" action="./appointmentSummary.php" method="post">

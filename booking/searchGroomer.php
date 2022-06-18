@@ -24,7 +24,8 @@
             <img src="../img/arrow-left.svg" style="color: white !important;"></img>
         </button>
         <div class="tab-content text-center">
-            <h1 style="font-weight: bold ;">Choose a Groomer</h1>
+            <h1 style="font-weight: bold ;">Choose a</h1>
+            <h1 style="font-weight: bold ; margin-top:-5%;">Groomer</h1>
 
             <div class="search-modality">
                 <button class="btn btn-info" onclick="searchFavouriteGroomers();">Favourite Groomer</button>
