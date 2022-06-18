@@ -22,10 +22,10 @@
     <div class="container search-groomer-by-name-page">
         <button type="button" class="btn btn-info btn-block go-back-btn" onclick="window.location.href='./booking.php'">
             <img src="../img/arrow-left.svg" style="color: white !important;"></img>
-        </button> 
+        </button>
         <div class="tab-content text-center">
             <h1 style="font-weight: bold ;">Choose a Groomer</h1>
-       
+
             <div class="search-modality">
                 <button class="btn btn-info" onclick="searchFavouriteGroomers();">Favourite Groomer</button>
                 <div style="display: none;">
@@ -54,7 +54,7 @@
             </div>
             <div class="search-modality">
                 <button class="btn btn-info" onclick="showMap();">Search Groomer Using Maps </button>
-            
+
                 <div id="groomersMap" style="display: none;">
                     <a onclick="setGroomer('CanePulito');">
                         <img src="../img/MAP.png" style="width: 100%; margin-top: 5%;">
@@ -71,6 +71,16 @@
     var favourite_groomers_displayed = 0;
     var groomers_by_distance_displayed = 0;
 
+    function hideFavs() {
+        document.getElementById("favGroomers").innerHTML = "";
+        favourite_groomers_displayed = 0;
+    }
+
+    function hideClose() {
+        document.getElementById("closeGroomers").innerHTML = "";
+        groomers_by_distance_displayed = 0;
+    }
+
     function hideMap() {
         document.getElementById('groomersMap').style.display = 'none';
         map_displayed = 0;
@@ -81,8 +91,8 @@
             document.getElementById('groomersMap').style.display = 'block';
             map_displayed = 1;
             hideSearchByName();
-            document.getElementById("favGroomers").innerHTML = "";
-            document.getElementById("closeGroomers").innerHTML = "";
+            hideFavs();
+            hideClose();
         } else {
             hideMap();
         }
@@ -155,7 +165,7 @@
     }
 
     function searchFavouriteGroomers() {
-        if ( favourite_groomers_displayed == 0 ){
+        if (favourite_groomers_displayed == 0) {
             var getFavouriteGroomers = function() {
                 $.ajax({
                     url: './favourites.php',
@@ -167,7 +177,7 @@
                         //console.log(data); // Inspect this in your console
 
                         document.getElementById("nameGroomers").innerHTML = "";
-                        document.getElementById("closeGroomers").innerHTML = "";
+                        hideClose();
                         hideMap();
                         hideSearchByName();
 
@@ -185,10 +195,9 @@
             getFavouriteGroomers();
             favourite_groomers_displayed = 1;
         } else {
-            document.getElementById("favGroomers").innerHTML = "";
-            favourite_groomers_displayed = 0;
+            hideFavs()
         }
-        
+
     }
 
     var formVisible = 0;
@@ -208,8 +217,8 @@
             hideSearchByName();
         } else {
             displaySearchByName();
-            document.getElementById("favGroomers").innerHTML = "";
-            document.getElementById("closeGroomers").innerHTML = "";
+            hideFavs();
+            hideClose();
             hideMap();
         }
     }
@@ -248,7 +257,7 @@
     }
 
     function searchGroomersByDistance() {
-        if ( groomers_by_distance_displayed == 0 ) {
+        if (groomers_by_distance_displayed == 0) {
             var getGroomersByDistance = function() {
                 $.ajax({
                     url: './distance.php',
@@ -258,7 +267,7 @@
                         //console.log(data); // Inspect this in your console
 
                         hideSearchByName();
-                        document.getElementById("favGroomers").innerHTML = "";
+                        hideFavs();
                         hideMap();
 
                         var ul = document.createElement('ul');
@@ -277,10 +286,9 @@
             getGroomersByDistance();
             groomers_by_distance_displayed = 1;
         } else {
-            document.getElementById("closeGroomers").innerHTML = "";
-            groomers_by_distance_displayed = 0;
+            hideClose();
         }
-        
+
     }
 
     home.setAttribute("class", "nav-link");
