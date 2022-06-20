@@ -20,7 +20,7 @@
 
 <body>
 
-    <div class="container">
+    <div class="container profile-edit-page">
         <h1 style="font-weight: bold ; text-align: center;">Profile Edit</h1>
 
         <div class="text-center mb-3">

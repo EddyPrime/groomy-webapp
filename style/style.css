@@ -133,6 +133,10 @@
   }
 
   /* PET PAGE */
+.pet-page {
+  padding-bottom: 120px;
+}
+
   .pet-page .pet-image {
     width: 100%;
     margin-bottom: 5%;
@@ -295,6 +299,11 @@
   }
 
   .search-groomer-by-name-page {
+    padding-bottom: 120px;
+  }
+
+  /*PROFILE EDIT PAGE */
+  .profile-edit-page {
     padding-bottom: 120px;
   }
 
