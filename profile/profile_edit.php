@@ -67,7 +67,7 @@
             <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-left:15%" type="button" onclick="window.location.href='./profile.php';">Cancel</button>
             <button class="btn btn-lg btn-primary btn-block mb-4" style="margin-left:20%" type="button" onclick="saveChanges()">Save</button>
     
-            <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-left:30%" type="button" onclick="deleteAccount()">Delete Account</button>
+            <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="width: 50%; margin-left:25%" type="button" onclick="deleteAccount()">Delete Account</button>
         
     </div>
 
