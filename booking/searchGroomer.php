@@ -202,7 +202,7 @@
 
             var elem = document.createElement('span');
             elem.innerHTML = element;
-            elem.setAttribute("onclick", "setGroomer(this.innerHTML);");
+            li.setAttribute("onclick", "setGroomer(this.innerHTML);");
             li.appendChild(elem);
             li.appendChild(br);
 
