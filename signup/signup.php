@@ -50,10 +50,8 @@
             <!-- Telephone number input -->
             <div class="form-outline mb-4">
               <label class="form-label" for="registerTelephone">Phone Number</label>
-              <input type="tel" name="phoneNumber" id="registerphone" class="form-control" />
+              <input type="tel" name="phoneNumber" id="registerphone" class="form-control" maxlength="10" />
             </div>
-
-
 
             <!-- Password input -->
             <div class="row">
