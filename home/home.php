@@ -62,7 +62,7 @@
                         }
 
                         echo '<li>
-                            <a href="../appointment/appointment.php?groomer='.$groomer.'&pet_name='.$pet.'"> 
+                            <a href="../appointment/appointment.php?groomer='.$groomer.'&pet_name='.$pet.'&date='.$date.'"> 
                                 <div class="appointment-info ' . $class . '" >
                                     Groomer: <span id="name">' . $groomer . '</span><br> Address: ' . $address . '<br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
                                 </div>

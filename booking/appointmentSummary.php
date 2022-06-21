@@ -146,6 +146,7 @@
                             taglio_unghie: document.getElementById("taglio_unghie").checked ? 1 : 0,
                             spa: document.getElementById("spa").checked ? 1 : 0,
                             anti_parassitari: document.getElementById("anti_parassitari").checked ? 1 : 0,
+                            acconciatura_concorsi: document.getElementById('acconciatura_concorsi').checked ? 1 : 0,
                             notes: document.getElementById("notes").value,
                         },
                         success: function(data) {

@@ -6,6 +6,7 @@ session_start();
 $email = $_SESSION['email'];
 $pet_name = $_GET['pet_name'];
 $groomer = $_GET['groomer'];
+$date = $_GET['date'];
 
 
 /* retrieve pet informations */
@@ -13,7 +14,7 @@ $petsFile = "../db/pets.txt";
 $pets = explode("\n", file_get_contents($petsFile));
 for ($i = 0; $i < count($pets); $i++) {
     $infoElementArray = explode(";", $pets[$i]);
-    if ($infoElementArray[0] == $email && $infoElementArray[1] == $pet_name) {
+    if ($infoElementArray[0] == $email && $infoElementArray[1] == $pet_name ) {
         //PET FOUND --> retrieve img and infos
         if ( strpos($infoElementArray[11], 'default' ) !== false ){
             $img = '../img/pet.svg';
@@ -59,7 +60,7 @@ $appointmentsFile = "../db/appointments.txt";
 $appointments = explode("\n", file_get_contents($appointmentsFile));
 for ($i = 0; $i < count($appointments); $i++) {
     $infoElementArray = explode(";", $appointments[$i]);
-    if ($infoElementArray[0] == $email && $infoElementArray[1] == $pet_name && $infoElementArray[2] == $groomer ) {
+    if ( $infoElementArray[0] == $email && $infoElementArray[1] == $pet_name && $infoElementArray[2] == $groomer && $date == $infoElementArray[5]) {
         //APPOINTMENT FOUND --> retrieve infos
         $address = $infoElementArray[3];
         $hour = $infoElementArray[4];
@@ -74,7 +75,6 @@ for ($i = 0; $i < count($appointments); $i++) {
         $antiparassitari = $infoElementArray[11];
         $acconciatura_concorsi = $infoElementArray[12];
         $notes = $infoElementArray[13];
-        /* TO DO: services */
     }
 }
 
@@ -162,11 +162,16 @@ for ($i = 0; $i < count($appointments); $i++) {
             </label>
             </div>
 
-            <div class="form-check">
+            <div class="form-check mb-1">
             <input class="form-check-input" type="checkbox" id="acconciatura_concorsi" onclick="return false;" <?php if ($acconciatura_concorsi == 1){ echo 'checked'; }?>>
             <label class="form-check-label" for="flexCheckDefault">
                 Contest Preparation
             </label>
+            </div>
+
+            <div class="form-outline mb-1">
+                <label for="exampleFormControlTextarea1" class="form-label"><strong>Additional notes</strong></label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" style="resize:none;" readonly><?php echo $notes; ?></textarea>
             </div>
 
             <?php
