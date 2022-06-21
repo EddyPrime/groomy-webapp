@@ -307,5 +307,15 @@
     padding-bottom: 120px;
   }
 
+  .appointment-summary {
+    padding-bottom: 120px;
+  }
+
+}
+
+@media only screen and (max-width: 380px) {
+	.container {
+		padding-bottom: 150px;
+	}
 }
 

@@ -34,7 +34,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container appointment-summary">
         <div class="tab-content text-center">
             <h1 style="font-weight: bold ;">Appointment Summary</h1>
             <div style="margin-top: 5%;">
