@@ -28,7 +28,7 @@
     <div class="container pets-page text-center">
         <h1 style="font-weight: bold ;">Pets</h1>
         <p>Here you can manage you pets and register new ones!</p>
-        <button type="button" class="btn btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
+        <button type="button" class="btn btn-lg btn-success" onclick="location.href='./new_pet.php'">Add new pet</button>
         <div class="pets-list">
             <ul>
                 <?php
