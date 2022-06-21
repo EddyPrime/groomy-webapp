@@ -87,8 +87,8 @@
                 <span id="hour"></span>
             </div>
             <div style="margin-top: 10%;">
-                <button class="btn btn-danger profile-button" type="button" onclick="back();">Cancel</button>
-                <button class="btn btn-primary profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
+                <button class="btn btn-danger btn-lg profile-button" type="button" onclick="back();">Cancel</button>
+                <button class="btn btn-primary btn-lg profile-button" type="button" onclick="confirmAppointment();">Confirm</button>
             </div>
         </div>
     </div>
