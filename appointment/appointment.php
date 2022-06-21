@@ -60,7 +60,7 @@ $appointmentsFile = "../db/appointments.txt";
 $appointments = explode("\n", file_get_contents($appointmentsFile));
 for ($i = 0; $i < count($appointments); $i++) {
     $infoElementArray = explode(";", $appointments[$i]);
-    if ( $infoElementArray[0] == $email && $infoElementArray[1] == $pet_name && $infoElementArray[2] == $groomer && $date == $infoElementArray[5]) {
+    if ( $infoElementArray[0] == $email && $infoElementArray[1] == $pet_name && $infoElementArray[2] == $groomer && $date == $infoElementArray[5] ) {
         //APPOINTMENT FOUND --> retrieve infos
         $address = $infoElementArray[3];
         $hour = $infoElementArray[4];
@@ -177,7 +177,7 @@ for ($i = 0; $i < count($appointments); $i++) {
             <?php
                 
                     echo '<div class="form-outline mb-1 text-center">
-                    <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . '" ?>Delete Appointment</button>
+                    <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . ';' . $date .'" ?>Delete Appointment</button>
                     </div>';
                 
             ?>
@@ -195,6 +195,7 @@ function deleteappointment(obj) {
         info = value.split(";");
         parameter1 = info[0];
         parameter2 = info[1];
+        parameter3 = info[3];
         //alert(info[1]);
         if (confirm("Are you sure you want to delete your pet?")) {
             var deleteAppointment = function() {
@@ -203,7 +204,8 @@ function deleteappointment(obj) {
                     type: 'GET',
                     data: {
                         groomer: parameter1,
-                        pet_name: parameter2
+                        pet_name: parameter2,
+                        date = parameter3
                     },
                     success: function(data) {
                         //window.location.reload();
