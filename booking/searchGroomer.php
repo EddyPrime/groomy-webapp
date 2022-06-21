@@ -273,7 +273,7 @@
 
         var getGroomersByName = function() {
 
-            const name = document.getElementById("groomerNameInput").value;
+            const name = document.getElementById("groomerNameInput").value.trim();
             if (name.length < 1)
                 return;
 
