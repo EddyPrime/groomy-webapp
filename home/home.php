@@ -25,7 +25,7 @@
             session_start();
             echo '<h1 style="font-weight: bold ;">Hi ' . $_SESSION["name"] . '!</h1>';?>
         <p>Here you can see the summary of your appointments!</p>
-        <p>By clickin on each box, you can see all the details of the appointment and even delete it!</p> 
+        <p>By clicking on each box, you can see all the details of the appointment and even delete it!</p> 
         <div class="appointments-list">
             <?php
                 $txt_file = fopen('../db/appointments.txt','r');
