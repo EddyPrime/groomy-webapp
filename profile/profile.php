@@ -16,10 +16,24 @@
     <?php
     include "../navbar/navbar.php";
     ?>
+
+    <script>
+        home.setAttribute("class", "nav-link");
+        home.setAttribute("aria-current", "");
+
+        booking.setAttribute("class", "nav-link");
+        booking.setAttribute("aria-current", "");
+
+        pets.setAttribute("class", "nav-link");
+        pets.setAttribute("aria-current", "");
+
+        profile.setAttribute("class", "nav-link active");
+        profile.setAttribute("aria-current", "page");
+    </script>
 </head>
 
 <body>
-    <div  class="container">
+    <div class="container">
 
 
         <h1 style="font-weight: bold ; text-align: center;">Profile</h1>
@@ -78,18 +92,6 @@
         clearSessionStorage();
         window.location.href = '../index.php';
     }
-
-    home.setAttribute("class", "nav-link");
-    home.setAttribute("aria-current", "");
-
-    booking.setAttribute("class", "nav-link");
-    booking.setAttribute("aria-current", "");
-
-    pets.setAttribute("class", "nav-link");
-    pets.setAttribute("aria-current", "");
-
-    profile.setAttribute("class", "nav-link active");
-    profile.setAttribute("aria-current", "page");
 </script>
 
 </html>

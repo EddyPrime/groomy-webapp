@@ -101,8 +101,8 @@
 
                 <br>
 
-                <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block mb-4">Submit</button>
-                <button type="button" class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-left:20%" onclick="history.back()">Cancel</button>
+                <button type="button" class="btn btn-lg btn-primary btn-block mb-4 btn-danger" onclick="history.back()">Cancel</button>
+                <button type="submit" name="submit" class="btn btn-lg btn-primary btn-block mb-4" style="margin-left:20%" >Submit</button>
             </div>
         </form>
 

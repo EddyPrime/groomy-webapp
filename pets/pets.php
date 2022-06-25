@@ -20,6 +20,20 @@
     <link rel="stylesheet" type="text/css" href="../dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 
+    <script>
+        home.setAttribute("class", "nav-link");
+        home.setAttribute("aria-current", "");
+
+        booking.setAttribute("class", "nav-link");
+        booking.setAttribute("aria-current", "");
+
+        pets.setAttribute("class", "nav-link active");
+        pets.setAttribute("aria-current", "page");
+
+        profile.setAttribute("class", "nav-link");
+        profile.setAttribute("aria-current", "");
+    </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </head>
@@ -77,7 +91,7 @@
                 ?>
             </ul>
         </div>
-        
+
     </div>
 </body>
 
@@ -108,16 +122,4 @@
             //setTimeout( window.location.reload(), 1000 );
         }
     }
-
-    home.setAttribute("class", "nav-link");
-    home.setAttribute("aria-current", "");
-
-    booking.setAttribute("class", "nav-link");
-    booking.setAttribute("aria-current", "");
-
-    pets.setAttribute("class", "nav-link active");
-    pets.setAttribute("aria-current", "page");
-
-    profile.setAttribute("class", "nav-link");
-    profile.setAttribute("aria-current", "");
 </script>

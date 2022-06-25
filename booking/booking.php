@@ -15,6 +15,20 @@
     <?php
     include "../navbar/navbar.php";
     ?>
+
+    <script>
+        home.setAttribute("class", "nav-link");
+        home.setAttribute("aria-current", "");
+
+        booking.setAttribute("class", "nav-link active");
+        booking.setAttribute("aria-current", "page");
+
+        pets.setAttribute("class", "nav-link");
+        pets.setAttribute("aria-current", "");
+
+        profile.setAttribute("class", "nav-link");
+        profile.setAttribute("aria-current", "");
+    </script>
 </head>
 
 <body>
@@ -45,8 +59,8 @@
 
 
 <script>
-    
     var formVisible = 0;
+
     function searchByDateClick() {
         if (formVisible) {
             formVisible = 0;
@@ -59,18 +73,6 @@
 
     const today = (new Date()).toISOString().slice(0, 16); // get local current date
     document.getElementById("time").min = today;
-
-    home.setAttribute("class", "nav-link");
-    home.setAttribute("aria-current", "");
-
-    booking.setAttribute("class", "nav-link active");
-    booking.setAttribute("aria-current", "page");
-
-    pets.setAttribute("class", "nav-link");
-    pets.setAttribute("aria-current", "");
-
-    profile.setAttribute("class", "nav-link");
-    profile.setAttribute("aria-current", "");
 </script>
 
 

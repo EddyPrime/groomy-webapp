@@ -197,7 +197,7 @@ function deleteappointment(obj) {
         parameter2 = info[1];
         parameter3 = info[2];
         //alert(info[1]);
-        if (confirm("Are you sure you want to delete your pet?")) {
+        if (confirm("Are you sure you want to delete your appointment?")) {
             var deleteAppointment = function() {
                 $.ajax({
                     url: './delete_appointment.php',
