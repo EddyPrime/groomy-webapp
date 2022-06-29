@@ -39,7 +39,7 @@
         <div style="margin-top: 30%;">
             <div class="text-center mb-3" style=" display: flex; justify-content: center;">
                 <div>
-                    <button class="btn btn-outline-info" onclick="searchByDateClick();">Search By Date</button>
+                    <button class="btn btn-info" onclick="searchByDateClick();">Search By Date</button>
                     <div id="datetimeForm" style="visibility: hidden;">
                         <form action="./search.php" method="post">
                             <input type="datetime-local" id="time" name="time" required>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="text-center mb-3" style=" display: flex; justify-content: center;">
-                <button class="btn btn-outline-info" onclick="window.location = './searchGroomer.php';">Search By Groomer</button>
+                <button class="btn btn-info" onclick="window.location = './searchGroomer.php';">Search By Groomer</button>
             </div>
         </div>
     </div>
