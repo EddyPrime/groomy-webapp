@@ -88,14 +88,23 @@
     padding: 25px;
     border-radius: 10px;
     text-align: left;
+    position: relative;
+  }
+
+  .appointment-info .btn-delete-appointment {
+    position: absolute;
+    bottom: 0;
+    right: 25px;
   }
 
   .appointments-list {
     margin-top: 10%;
   }
 
-  .appointments-list a {
+  .appointments-list a,
+  .appointment-info a {
     text-decoration: none;
+    color: black;
   }
 
   .appointments-list ol {
