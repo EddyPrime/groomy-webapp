@@ -103,7 +103,8 @@
                             <div class="appointment-info ' . $class . '" >
                                 <a href="../appointment/appointment.php?groomer=' . $groomer . '&pet_name=' . $pet . '&date=' . $date . '"> 
                                     Groomer: <span id="name">' . $groomer . '</span><br> Address: ' . $address . '<br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
-                                </a> 
+                                </a>
+                                <button class="btn-delete-appointment btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet . ';' . $date . '"><i class="fa-solid fa-trash-can"></i></button> 
                             </div>
                         </li>';
                     
