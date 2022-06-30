@@ -78,7 +78,7 @@
                     if ($date < '20' . date('y-m-d')) {
                         $class = 'passed';
                     }
-                    
+                    /*
                     if ( $class != 'passed' ){
                         echo '<li>
                             <div class="appointment-info ' . $class . '" >
@@ -98,6 +98,14 @@
                         </li>';
 
                     }
+                    */
+                    echo '<li>
+                            <div class="appointment-info ' . $class . '" >
+                                <a href="../appointment/appointment.php?groomer=' . $groomer . '&pet_name=' . $pet . '&date=' . $date . '"> 
+                                    Groomer: <span id="name">' . $groomer . '</span><br> Address: ' . $address . '<br> Pet: ' . $pet . '<br> Date: ' . $date . '<br>Hour: ' . $hour . '  
+                                </a> 
+                            </div>
+                        </li>';
                     
                     $printed++;
                 }
