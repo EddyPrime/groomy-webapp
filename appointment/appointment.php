@@ -175,10 +175,12 @@ for ($i = 0; $i < count($appointments); $i++) {
             </div>
 
             <?php
-                
+                if ( $appointment_status != 1 ){
                     echo '<div class="form-outline mb-1 text-center">
                     <button class="btn btn-lg btn-primary btn-block mb-4 btn-danger" style="margin-top: 5%;" type="button" onclick="deleteappointment(this)" name="delete_appointment" value="'. $groomer . ';' . $pet_name . ';' . $date . '">Delete Appointment</button>
                     </div>';
+                }
+                    
                 
             ?>
         </div>
