@@ -10,6 +10,11 @@
     cursor: pointer;
   }
   */
+  .appointments-list a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: black !important;
+  }
+
   form:not(.sign-up-form, .login-form),
   .homepage,
   .appointment-page {
